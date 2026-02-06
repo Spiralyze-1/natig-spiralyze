@@ -1,0 +1,21 @@
+// -----------------------------Disclaimer---------------------------------
+
+// ------------------------------------------------------------------------
+// This code includes the SPZ-1001 code we used to successfully run this
+// experiement on VWO. We have fully QAed the code while the test was
+// running, but we recommend you rewrite this code to fit your codebase's 
+// needs. Please ensure to conduct QA again after making the changes.
+//-------------------------------------------------------------------------
+
+//------------------ Document changes -------------------
+
+1. Changed hero background (assets\hero-background-image)
+2. Added bottom sticked image in hero section (assets\hero-bottom-image)
+3. Added additional section right after the hero section with image content (assets\bottom-section-image)
+4. Added trust pilot icon and stars with current rating at the top of the hero section (assets\trust-pilot-image)
+5. Replace image in "Trusted by experts. Loved by customers" aka "#section-g-2-badges" section and adjust (assets\trusted-section-image)
+6. Added tiles after subtitle (assets\tile-icons)
+7. Slider is based on default scroll. The function that is used for centering can be re-used
+8. Removed "View plain options" and "No credit card required" from CTA signup form in hero section
+9. The CTA signup form shouldn't have required attr
+10. User can select multiple select and there is no need to handle (carry it through the submission)

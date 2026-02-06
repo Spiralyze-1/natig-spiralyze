@@ -1,0 +1,209 @@
+.spz_236_v1:has(.spz236_v) .modal-backdrop {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.50);
+}
+.spz_236_v1 .exit-intent-modal {
+	padding-right: 0 !important;
+}
+.spz_236_v1 .exit-intent-modal .modal-content{
+	background: none !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+.spz_236_v1 .exit-intent-modal .modal-dialog{
+	max-width: 918px;
+	transform: translateY(137px);
+}
+
+.spz_236_v1 .spz_236_modal_content {
+    border-radius: 32px;
+    padding: 67px 33px 67px 33px;
+    background: radial-gradient(290.65% 163.68% at 4.22% -11.16%, rgba(130, 99, 255, 0.10) 0%, rgba(73, 255, 135, 0.08) 100%), #FFF;
+    position: relative;
+}
+	
+.spz_236_v1 .spz_236_modal_close {
+    position: absolute !important;
+    top: 31px;
+    right: 32px;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    z-index: 1 !important;
+    padding: 0 !important;
+}
+
+.spz_236_v1 .spz_236_modal_body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateX(-136px);
+}
+
+.spz_236_v1 .spz_236_modal_image {
+    flex: 1;
+    transform: translateX(-3px);
+}
+.spz_236_v1 .spz_236_modal_image img{
+    width: 529px;
+    height: 314px;
+}
+
+.spz_236_v1 .spz_236_modal_text {
+    flex: 0 0 446px;
+    padding: 10px
+}
+
+.spz_236_v1 .spz_236_camtasia_logo {
+    margin-bottom: 32px;
+}
+.spz_236_v1 .spz_236_camtasia_logo img {
+    width: 169px;
+    height: 32px;
+}
+
+.spz_236_v1 .spz_236_modal_title {
+    color: #1A1A1A;
+    font-family: "Montserrat";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.32px;
+    margin-bottom: 12px;
+}
+
+.spz_236_v1 .spz_236_modal_description {
+    color: #1A1A1A;
+    font-family: "proxima-nova";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.spz_236_v1 .spz_236_start_btn {
+    border-radius: 24px;
+    background: #99E500;
+    color: #1A1A1A;
+    text-decoration: none;
+    display: flex;
+    width: fit-content;
+    height: 48px;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: none;
+
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+
+    transition: all 0.1s ease;
+}
+
+.spz_236_v1 .spz_236_start_btn:hover {
+    background: #c3ff4a;
+}
+
+@media(max-height: 750px){
+	.spz_236_v1 .exit-intent-modal .modal-dialog{
+		transform: translateY(67px);
+	}
+}
+
+@media(max-width: 1150px){
+    .spz_236_v1 .spz_236_modal_body {
+        transform: translateX(-92px);
+    }
+    .spz_236_v1 .spz_236_modal_text {
+        margin-left: auto;
+    }
+    .spz_236_v1 .exit-intent-modal .modal-dialog{
+    	max-width: 850px;
+    }
+    .spz_236_v1 .spz_236_modal_image img{
+        width: 449px;
+        height: 254px;
+    }
+}
+
+@media(max-width: 992px){
+    .spz_236_v1 .spz_236_modal_body {
+        flex-direction: column-reverse;
+        transform: translateX(0);
+        gap: 25px;
+    }
+    .spz_236_v1 .spz_236_modal_image {
+	    position: absolute;
+	    bottom: -122px;
+	    left: 50%;
+	    transform: translateX(-50%);
+		}
+    .spz_236_v1 .spz_236_modal_content{
+        padding: 40px;
+    }
+    .spz_236_v1 .exit-intent-modal .modal-dialog{
+    		max-width: 548px;
+        transform: translateY(86px);
+    }
+    .spz_236_v1 .spz_236_modal_text {
+        flex: auto;
+        padding: 10px;
+        padding-bottom: 224px;
+    }
+}
+
+@media (max-width: 768px) {
+	.spz_236_v1 .spz_236_modal_text {
+        padding-bottom: 196px;
+    }
+    .spz_236_v1 .spz_236_modal_image img{
+    		transform: translateY(13px);
+        width: 497px;
+        height: 296px;
+    }
+}
+
+@media(max-width: 600px){
+    .spz_236_v1 .spz_236_modal_content{
+        padding: 32px 20px;
+        border-radius: 24px;
+    }
+    .spz_236_v1 .exit-intent-modal .modal-dialog{
+        transform: translateY(22px);
+    		max-width: 320px;
+    }
+    .spz_236_v1 .spz_236_modal_body {
+        gap: 20px;
+    }
+    .spz_236_v1 .spz_236_modal_image {
+	    bottom: -92px;
+		}
+    .spz_236_v1 .spz_236_modal_image img{
+    		transform: translateY(11px);
+        width: 299px;
+        height: 177px;
+    }
+    .spz_236_v1 .spz_236_modal_text {
+        flex: auto;
+        padding: 10px;
+        padding-bottom: 105px;
+    }
+    .spz_236_v1 .spz_236_modal_title {
+        margin-bottom: 6px;
+    }
+    .spz_236_v1 .spz_236_modal_description{
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 23px;
+    }
+    .spz_236_v1 .spz_236_modal_close {
+        top: 23px;
+        right: 24px;
+    }
+}

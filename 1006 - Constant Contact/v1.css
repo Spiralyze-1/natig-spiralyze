@@ -1,0 +1,140 @@
+.spz_1006_v1 #features-checkbox-section{
+	padding-bottom: 460px;
+}
+
+.spz_1006_v1 .column-content__intro-text span{
+	color: #FFF;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 22px;
+	letter-spacing: 2.8px;
+	text-transform: uppercase;
+}
+
+.spz_1006_v1 #centered-cta-signupform .spz_form_wrapper{
+	flex-direction: column;
+	gap: 20px;
+	border: none;
+}
+
+.spz_1006_v1 #centered-cta-siteContactEmailLogin{
+	border-radius: 12px;
+	border: 1px solid #E4E9F1 !important;
+	height: 56px !important;
+}
+
+.spz_1006_v1 #centered-cta-siteContactEmailLogin:focus,
+.spz_1006_v1 #centered-cta-siteContactEmailLogin:hover{
+	border: 1px solid #FF9E1A !important;
+}
+
+.spz_1006_v1 #centered-cta-signupform .two-step__footer{
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	width: 100% !important;
+}
+
+.spz_1006_v1 #centered-cta-signupform .two-step__submit{
+	height: 56px;
+	padding: 16px 24px;
+	border-radius: 20px;
+	flex: 1;
+	min-width: 0;
+	line-height: 24px;
+}
+
+.spz_1006_v1 #centered-cta-signupform .spz-submit-button-separator{
+	color: #FDF0F0;
+	font-family: 'Poppins';
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.spz_1006_v1 #centered-cta-signupform .spz-buy-now-btn{
+	color: #FFF;
+	font-family: 'Poppins';
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 24px;
+	text-decoration: none;
+	
+	display: block;
+	padding: 16px 24px;
+	border-radius: 20px;
+	border: 1px solid #FFF;
+	background: rgba(255, 158, 26, 0.00);
+	
+	height: 56px;
+	
+	flex: 1;
+	min-width: 0;
+}
+
+.spz_1006_v1 #centered-cta-signupform .spz-buy-now-btn:hover{
+	color: #1856ED;
+	background: #FFF;
+}
+
+@media(max-width: 1270px){
+	.spz_1006_v1 #features-checkbox-section{
+		padding-bottom: 410px;
+	}		
+}
+
+@media(max-width: 1024px){
+	.spz_1006_v1 #features-checkbox-section{
+		padding-bottom: 360px !important;
+	}
+	.spz_1006_v1 #centered-cta-signupform .spz_form_wrapper{
+		width: 404px !important;
+	}
+	.spz_1006_v1 #centered-cta-signupform .two-step__submit{
+		width: auto !important;
+		min-width: 0 !important;
+	}	
+}
+
+@media(max-width: 991px){
+	.spz_1006_v1 #features-checkbox-section{
+		padding-bottom: 320px !important;
+	}	
+}
+
+@media(max-width: 768px){
+	.spz_1006_v1 #features-checkbox-section{
+		padding-bottom: 234px !important;
+	}
+	
+	.spz_1006_v1 .spz_signup_form .spz_form_wrapper>div:nth-child(2) {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 767.98px){
+	.spz_1006_v1 #features-checkbox-section{
+		padding-bottom: 210px !important;
+	}
+	.spz_1006_v1 #centered-cta-signupform .two-step__footer{
+		margin-top: 16px !important;
+	}
+	.spz_1006_v1 #centered-cta-signupform .two-step__footer{
+		gap: 16px;
+	}
+	
+	.spz_1006_v1 .column-content__intro-text span{
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 2.4px;
+	}
+}
+
+@media(max-width: 400px){
+	.spz_1006_v1 #features-checkbox-section{
+		padding-bottom: 175px !important;
+		background-size: 575px 160px,cover !important;
+	}
+}

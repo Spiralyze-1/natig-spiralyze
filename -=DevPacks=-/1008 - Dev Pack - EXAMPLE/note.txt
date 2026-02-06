@@ -1,0 +1,27 @@
+// -----------------------------Disclaimer---------------------------------
+
+// ------------------------------------------------------------------------
+// This code includes the SPZ-1008 code we used to successfully run this
+// experiement on VWO. We have fully QAed the code while the test was
+// running, but we recommend you rewrite this code to fit your codebase's 
+// needs. Please ensure to conduct QA again after making the changes.
+//-------------------------------------------------------------------------
+
+//------------------ Document changes -------------------
+This test is built on top of 1001, but only the 1008 changes are highlighted below so it will be easy to know the exact changes in this test.
+
+
+1. Change heading to 'Protect your'
+
+2. Insert slider just after the heading element
+    <div class="spz_animated_headline swiper">
+        <div class="content__list swiper-wrapper">
+            <div class="swiper-slide content__list__item">water & sewer lines</div>
+            <div class="swiper-slide content__list__item">HVAC systems</div>
+            <div class="swiper-slide content__list__item">gas & electrical systems</div>
+            <div class="swiper-slide content__list__item">appliance</div>
+        </div>
+    </div>
+
+3. Include/Import swiper to your code and initialize it same as in the v1.js/v2.js file
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>

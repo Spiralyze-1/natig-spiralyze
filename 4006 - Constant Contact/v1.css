@@ -1,0 +1,1084 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.spz_4006_v1 #v-2-pricing-section-marketing-made-easy::after,
+.spz_4006_v1 section#v-2-pricing-section-marketing-made-easy {
+    display: none;
+}
+
+/* .spz_4006_v1 .header {
+    height: 96px;
+}
+
+.spz_4006_v1 .header__nav {
+    top: 95px;
+}
+
+@media(min-width: 1024px) {
+    .spz_4006_v1 .header__menu-wrapper {
+        top: 95px;
+    }
+} */
+
+.spz_4006_v1 #v-2-pricing-section {
+    background: -o-linear-gradient(top, #CFDDFF 0%, #F7F9FD 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#CFDDFF), to(#F7F9FD));
+    background: linear-gradient(180deg, #CFDDFF 0%, #F7F9FD 100%);
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    padding: 60px 0 90px;
+}
+
+/* lighthouse improvement */
+@media(min-width: 992px) {
+    .spz_4006_v1 #v-2-pricing-section {
+        min-height: 1270px;
+    }
+}
+
+.spz_4006_v1 #v-2-pricing-section::before {
+    content: '';
+    position: absolute;
+    max-width: 1440px;
+    width: 100%;
+    height: 1052px;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/v1760686186/constantcontact/4001/pattern_1440.svg');
+    background-position: top -80px center;
+    background-size: cover;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.spz_4006_v1 #v-2-pricing-section:has(.spz-show-more-cta.spz-cta-expanded) {
+    padding: 60px 0 34px;
+}
+
+.spz_4006_v1 .spz-heading h1 {
+    color: #0F141C;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+    margin-bottom: 45px !important;
+    letter-spacing: 0;
+}
+
+.spz_4006_v1 .spz-review-text {
+    color: #63708A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.spz_4006_v1 .spz-review-text b {
+    color: #0F141C;
+    font-weight: 400;
+}
+
+.spz_4006_v1 .payflow-ui-standalone {
+    padding-left: 0;
+}
+
+.spz_4006_v1 .payflow-ui-plan-configs-wrapper {
+    margin-bottom: 10px !important;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box {
+    border-radius: 12px;
+    padding: 16px;
+    height: 56px;
+    margin-left: 0 !important;
+    border-color: #E4E9F1;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:hover {
+    border-color: #E4E9F1;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child {
+    max-width: 341px;
+    width: 100%;
+    margin-right: 8px !important;
+    position: relative;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child:hover {
+    border-color: #D1D9E6;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child:has(button[aria-expanded="true"]) {
+    border-color: #1856ED;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child .payflow-ui.select {
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.spz_4006_v1 .payflow-ui-standalone .payflow-ui.select label {
+    color: #0F141C;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px !important;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    position: absolute;
+    pointer-events: none;
+    top: 14px;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child:has(button[aria-expanded="true"]) .payflow-ui.select label {
+    position: absolute;
+    top: -8px;
+    background: #FFF;
+    font-size: 12px !important;
+    line-height: 16px;
+    font-weight: 400;
+    padding: 0 6px;
+    left: 10px;
+}
+
+.spz_4006_v1 .payflow-ui-standalone .payflow-ui.select .select__trigger {
+    color: #0F141C;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 0;
+    outline: 0;
+    height: auto;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child .payflow-ui.select .select__trigger {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child:has(button[aria-expanded="true"]) .payflow-ui.select .select__trigger {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.spz_4006_v1 .payflow-ui.select .select__trigger .select__icon svg {
+    width: 20px;
+    height: 8px;
+}
+
+.spz_4006_v1 .payflow-ui.select .select__trigger .select__icon svg path {
+    fill: #63708A;
+}
+
+.spz_4006_v1 .payflow-ui.select .select__trigger span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.spz_4006_v1 .badge-wrapper {
+    display: none;
+}
+
+.spz_4006_v1 .payflow-ui-card-select-wrapper {
+    max-width: 1224px;
+    margin: 0 auto;
+}
+
+.spz_4006_v1 .payflow-ui.card-select {
+    -webkit-column-gap: 16px;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted-text-exists {
+    border: none;
+    padding: 30px 32px 32px;
+    -webkit-box-shadow: 0 24px 80px 0 rgba(73, 59, 122, 0.05), 0 4px 12px 0 rgba(62, 48, 112, 0.05);
+    box-shadow: 0 24px 80px 0 rgba(73, 59, 122, 0.05), 0 4px 12px 0 rgba(62, 48, 112, 0.05);
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option .card-select-option__highlighted-text_container {
+    display: none;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted {
+    background: #FFF;
+    border-radius: 16px;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    right: 0;
+    bottom: 0;
+    background: -o-linear-gradient(left, #1856ED, #D9F2FF);
+    background: -webkit-gradient(linear, left top, right top, from(#1856ED), to(#D9F2FF));
+    background: linear-gradient(90deg, #1856ED, #D9F2FF);
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.spz_4006_v1 .spz-plan-top-wrapper {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    width: 100%;
+}
+
+.spz_4006_v1 .spz-plan-bottom-wrapper {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option .price {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.spz_4006_v1 .payflow-ui.price .price__container .price__currency,
+.spz_4006_v1 .payflow-ui.price .price__container .price__value {
+    color: #0F141C;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 32px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.spz_4006_v1 .payflow-ui.price .price__container .price__decimal-and-period>span {
+    color: #63708A;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option .card-select-option__value {
+    color: #0F141C;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 12px !important;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value .recommended-badge {
+    color: #1856ED;
+    text-align: center;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 200px;
+    background: #D9F2FF;
+    max-width: 158px;
+    width: 100%;
+    height: 36px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value .recommended-badge img {
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+.spz_4006_v1 .plan-heading-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.spz_4006_v1 .spz-plan-subtitle {
+    color: #63708A;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.spz_4006_v1 .card-select-option__price-suffix-container {
+    display: none;
+}
+
+.spz_4006_v1 .payflow-ui.card-select .card-select-option .card-select-button {
+    width: 100%;
+    height: 56px !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    margin-top: 0;
+    line-height: 24px;
+    text-transform: capitalize;
+}
+
+.spz_4006_v1 .card-select-option__bottom-price-label {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    margin-top: -12px !important;
+    margin-bottom: 24px;
+    color: #0f141c;
+    font-family: Poppins, sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.spz_4006_v1 .spz-plan-bottom-wrapper {
+    margin-top: 24px;
+}
+
+.spz_4006_v1 .spz-plan-bottom-wrapper .list-title {
+    color: #0F141C;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.spz_4006_v1 .spz-plan-feature-list {
+    margin-bottom: 0 !important;
+}
+
+.spz_4006_v1 .spz-plan-feature-list .spz-plan-feature {
+    color: #0F141C;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    line-height: 24px;
+    padding-left: 32px;
+    margin-bottom: 4px;
+}
+
+.spz_4006_v1 .spz-plan-feature-list .spz-plan-feature:last-child {
+    margin-bottom: 0;
+}
+
+.spz_4006_v1 .spz-plan-feature-list .spz-plan-feature::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.0303 5.71967C21.3232 6.01256 21.3232 6.48744 21.0303 6.78033L9.53033 18.2803C9.38764 18.423 9.19346 18.5022 8.99167 18.5C8.78988 18.4977 8.59751 18.4142 8.45802 18.2684L2.95802 12.5184C2.67171 12.2191 2.68226 11.7443 2.98158 11.458C3.28091 11.1717 3.75567 11.1823 4.04198 11.4816L9.01192 16.6774L19.9697 5.71967C20.2626 5.42678 20.7374 5.42678 21.0303 5.71967Z" fill="%231856ED"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.spz_4006_v1 .multi-account-option-wrapper {
+    display: none;
+}
+
+.spz_4006_v1 .multi-account-option-wrapper+.payflow-ui-comparison-table-wrapper {
+    margin-top: 52px;
+}
+
+.spz_4006_v1 .spz-contact-wrapper {
+    max-width: 1220px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 30px;
+    border-radius: 16px;
+    margin-top: 18px;
+    background: #FFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.spz_4006_v1 .spz-contact-wrapper::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    right: 0;
+    bottom: 0;
+    background: -o-linear-gradient(left, #1856ED, #d9e7ff);
+    background: -webkit-gradient(linear, left top, right top, from(#1856ED), to(#d9e7ff));
+    background: linear-gradient(90deg, #1856ED, #d9e7ff);
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.spz_4006_v1 .spz-contact-wrapper h2 {
+    color: #0F141C;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 40px;
+    margin-bottom: 12px !important;
+    max-width: 600px;
+}
+
+.spz_4006_v1 .spz-contact-text {
+    color: #63708A;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.spz_4006_v1 .spz-contact-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 333px;
+    width: 100%;
+    height: 56px;
+    border-radius: 52px;
+    border: 1px solid #1856ED;
+    color: #1856ED;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration: none;
+    margin-left: 24px;
+    -webkit-transition: background-color .3s cubic-bezier(.455, .03, .515, .955), color .3s cubic-bezier(.455, .03, .515, .955), border-color .3s cubic-bezier(.455, .03, .515, .955);
+    -o-transition: background-color .3s cubic-bezier(.455, .03, .515, .955), color .3s cubic-bezier(.455, .03, .515, .955), border-color .3s cubic-bezier(.455, .03, .515, .955);
+    transition: background-color .3s cubic-bezier(.455, .03, .515, .955), color .3s cubic-bezier(.455, .03, .515, .955), border-color .3s cubic-bezier(.455, .03, .515, .955);
+}
+
+.spz_4006_v1 .spz-contact-button:hover,
+.spz_4006_v1 .spz-contact-button:active {
+    background: #d9f2ff;
+    border-color: #d9f2ff;
+    color: #1856ed;
+}
+
+.spz_4006_v1 .spz-show-more-cta {
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 42px auto 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.spz_4006_v1 .spz-show-more-cta span {
+    color: #1856ED;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+}
+
+.spz_4006_v1 .spz-show-more-cta img {
+    margin-left: 6px;
+    margin-right: 0;
+}
+
+.spz_4006_v1 .spz-show-more-cta.spz-cta-expanded img {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.spz_4006_v1 .spz-show-more-cta:hover span {
+    text-decoration: underline;
+}
+
+.spz_4006_v1 .spz-show-more-cta:not(.spz-cta-expanded)~.multi-account-option-wrapper~div:not(.spz-logo-section) {
+    display: none;
+}
+
+.spz_4006_v1 .spz-logo-section .logo-wrapper {
+    max-width: 1320px;
+    width: 100%;
+    padding: 0 48px;
+    margin: 56px auto 0;
+}
+
+.spz_4006_v1 .spz-logo-section .logo-wrapper picture {
+    display: block;
+    line-height: 0;
+}
+
+.spz_4006_v1 .payflow-ui.comparison-table-v2 .plans-container .plan-item-container .plan-item-title {
+    margin-right: 8px !important;
+    width: auto !important;
+}
+
+@media(max-width: 1279.98px) and (min-width: 991.98px) {
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted-text-exists {
+        padding: 30px 16px 32px;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option .card-select-option__value {
+        font-size: 24px;
+    }
+
+    .spz_4006_v1 .spz-plan-subtitle {
+        font-size: 14px;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value .recommended-badge {
+        max-width: 140px;
+        height: 28px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 991.98px) {
+
+    /* .spz_4006_v1 .header {
+        height: 80px;
+    }
+
+    .spz_4006_v1 .header__nav {
+        top: 79px;
+    } */
+
+    .spz_4006_v1 #v-2-pricing-section::before {
+        width: 100%;
+        height: 732px;
+        background-image: url('https://res.cloudinary.com/spiralyze/image/upload/v1760686186/constantcontact/4001/pattern_768.svg');
+        background-position: top -10px center;
+    }
+
+    .spz_4006_v1 #v-2-pricing-section {
+        padding: 40px 0 43px;
+    }
+
+    .spz_4006_v1 #v-2-pricing-section:has(.spz-show-more-cta.spz-cta-expanded) {
+        padding: 40px 0 28px;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted-text-exists {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .spz_4006_v1 .spz-plan-top-wrapper,
+    .spz_4006_v1 .spz-plan-bottom-wrapper {
+        max-width: calc(50% - 8px);
+        width: 100%;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option .card-select-button {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+        margin-top: 22px;
+    }
+
+    .spz_4006_v1 .card-select-option__bottom-price-label {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+        margin-top: 0 !important;
+        margin-bottom: 0;
+    }
+
+    .spz_4006_v1 .spz-heading h1 {
+        font-size: 44px;
+        line-height: 52px;
+        margin-bottom: 32px !important;
+    }
+
+    .spz_4006_v1 .payflow-ui-plan-configs-wrapper {
+        margin-bottom: 22px !important;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option .price {
+        margin-bottom: 0;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value {
+        margin-top: 0;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value .recommended-badge {
+        max-width: 152px;
+        height: 30px;
+    }
+
+    .spz_4006_v1 .spz-plan-bottom-wrapper .list-title {
+        margin-bottom: 16px;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value .recommended-badge img {
+        margin-left: 0;
+        -webkit-transform: translateX(8px);
+        -ms-transform: translateX(8px);
+        transform: translateX(8px);
+    }
+
+    .spz_4006_v1 .spz-plan-bottom-wrapper {
+        margin-top: 2px;
+        padding-left: 3px;
+    }
+
+    .spz_4006_v1 .spz-contact-wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 30px 32px;
+    }
+
+    .spz_4006_v1 .spz-contact-button {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 24px;
+    }
+
+    .spz_4006_v1 .spz-show-more-cta {
+        margin: 35px auto 0;
+    }
+
+    .spz_4006_v1 .spz-logo-section .logo-wrapper {
+        padding: 0 32px;
+        margin: 39px auto 0;
+    }
+
+    .spz_4006_v1 .multi-account-option-wrapper+.payflow-ui-comparison-table-wrapper {
+        margin-top: 33px;
+    }
+
+    .spz_4006_v1 .container--v-2-pricing-section:has(.spz-show-more-cta.spz-cta-expanded)+.spz-logo-section {
+        margin-top: 48px;
+    }
+}
+
+@media(max-width: 767px) {
+    /* .spz_4006_v1 .header {
+        height: 64px;
+    }
+
+    .spz_4006_v1 .header__nav {
+        top: 63px;
+    } */
+
+    .spz_4006_v1 #v-2-pricing-section {
+        padding: 30px 0 16px;
+        min-height: 1800px;
+    }
+
+    .spz_4006_v1 #v-2-pricing-section:has(.spz-show-more-cta.spz-cta-expanded) {
+        padding: 30px 0 15px;
+    }
+
+    .spz_4006_v1 #v-2-pricing-section::before {
+        background-image: url('https://res.cloudinary.com/spiralyze/image/upload/v1760686186/constantcontact/4001/pattern_360.svg');
+        height: 450px;
+    }
+
+    .spz_4006_v1 .container--v-2-pricing-section {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .spz_4006_v1 .spz-heading h1 {
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 24px !important;
+    }
+
+    .spz_4006_v1 .payflow-ui-plan-configs-wrapper {
+        margin-bottom: 14px !important;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child,
+    .spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box {
+        max-width: calc(50% - 2px);
+        width: 100%;
+        margin-right: 0 !important;
+        padding: 10px 14px 10px 16px !important;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone:has(.pricing-configurator__box[style="margin-left: 10px; display: none;"])>.pricing-configurator__box:first-child {
+        max-width: 100%;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:last-child .currency-select {
+        height: 100%;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child .payflow-ui.select {
+        position: relative;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone .payflow-ui.select label {
+        font-size: 10px !important;
+        line-height: 16px;
+        left: 0;
+        top: 0;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child:has(button[aria-expanded="true"]) .payflow-ui.select label {
+        position: absolute;
+        top: -18px;
+        left: -6px;
+        background: #FFF;
+        font-size: 10px !important;
+        line-height: 16px;
+        font-weight: 400;
+        padding: 0 6px;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone .payflow-ui.select .select__trigger#tier-select {
+        font-size: 12px;
+        line-height: 16px;
+        width: 100%;
+        height: 100%;
+        top: 10px;
+        position: absolute;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child:has(button[aria-expanded="true"]) .payflow-ui.select .select__trigger#tier-select {
+        top: 0;
+    }
+
+    .spz_4006_v1 .payflow-ui.select .select__trigger#tier-select span.select__icon {
+        -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone>.pricing-configurator__box:first-child:has(button[aria-expanded="true"]) .select__trigger#tier-select span.select__icon {
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+
+    .spz_4006_v1 .payflow-ui-standalone .payflow-ui.select .select__trigger {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted-text-exists {
+        padding: 16px 20px 20px !important;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .spz_4006_v1 .spz-plan-subtitle {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .spz_4006_v1 .spz-plan-top-wrapper, .spz_4006_v1 .spz-plan-bottom-wrapper {
+        max-width: 100%;
+    }
+
+    .spz_4006_v1 .spz-plan-bottom-wrapper {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+        padding-left: 0;
+    }
+
+    .spz_4006_v1 .card-select-option__bottom-price-label {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+        margin-bottom: -12px;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option .card-select-option__value {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 8px !important;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option .price {
+        margin-top: 16px;
+    }
+
+    .spz_4006_v1 .payflow-ui.price .price__container .price__currency, .spz_4006_v1 .payflow-ui.price .price__container .price__value {
+        font-size: 24px !important;
+        line-height: 32px;
+    }
+
+    .spz_4006_v1 .payflow-ui.price .price__container .price__decimal-and-period>span {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .spz_4006_v1 .payflow-ui.price .price__container .price__decimal-and-period>span.price__period-mobile {
+        display: none;
+    }
+
+    .spz_4006_v1 .payflow-ui.price .price__container .price__decimal-and-period>span.price__period {
+        display: inline;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option.highlighted .card-select-option__value .recommended-badge {
+        margin-left: 10px;
+    }
+
+    .spz_4006_v1 .payflow-ui.card-select .card-select-option .card-select-button {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+        margin-top: 24px;
+    }
+
+    .spz_4006_v1 .spz-plan-bottom-wrapper {
+        margin-top: 16px;
+    }
+
+    .spz_4006_v1 .spz-plan-bottom-wrapper .list-title {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .spz_4006_v1 .spz-contact-wrapper {
+        padding: 18px 20px;
+    }
+
+    .spz_4006_v1 .spz-contact-wrapper h2 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 8px !important;
+    }
+
+    .spz_4006_v1 .spz-contact-text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .spz_4006_v1 .spz-plan-bottom-wrapper .list-title {
+        margin-bottom: 12px;
+    }
+
+    .spz_4006_v1 .spz-plan-feature-list .spz-plan-feature {
+        font-size: 14px;
+        line-height: 22px;
+        padding-left: 24px;
+    }
+
+    .spz_4006_v1 .spz-plan-feature-list .spz-plan-feature::before {
+        width: 16px;
+        height: 16px;
+        top: 3px;
+    }
+
+    .spz_4006_v1 .spz-logo-section .logo-wrapper {
+        padding: 0 20px;
+        margin: 39px auto 0px;
+    }
+
+    .spz_4006_v1 .spz-show-more-cta {
+        margin: 27px auto 0px;
+    }
+
+    .spz_4006_v1 .multi-account-option-wrapper+.payflow-ui-comparison-table-wrapper {
+        margin-top: 56px;
+    }
+
+    .spz_4006_v1 .container--v-2-pricing-section:has(.spz-show-more-cta.spz-cta-expanded)+.spz-logo-section {
+        margin-top: 0;
+    }
+
+    .spz_4006_v1 .container--v-2-pricing-section:has(.spz-show-more-cta.spz-cta-expanded)+.spz-logo-section .logo-wrapper {
+        margin: 23px auto 0px;
+    }
+}
+
+.spz_4006_v1 .price__old-value{
+	margin-top: 4px;
+	color: #63708A !important;
+	
+	font-family: "CTCTDisplay" !important;
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	line-height: 26px !important; 
+}
+
+.spz_4006_v1 .price__container{
+	margin-top: 0;
+}
+
+.spz_4006_v1 .card-select-option__price {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 4px !important;
+}
+
+.spz_4006_v1 .payflow-ui-card-select-wrapper.one-dollar-standard-pricing .payflow-ui.card-select .card-select-option .price__old-value:after{
+    content: "" !important;
+    margin-bottom: 2px;
+    margin-left: 12px;
+    width: 113px;
+    height: 22px;
+    
+    display: inline-block !important;
+    vertical-align: middle;
+    
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="113" height="22" viewBox="0 0 113 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 0.5H102C107.799 0.5 112.5 5.20101 112.5 11C112.5 16.799 107.799 21.5 102 21.5H11C5.20101 21.5 0.5 16.799 0.5 11C0.5 5.20101 5.20101 0.5 11 0.5Z" fill="%23ECFDF3"/><path d="M13.4 15.228H8V6.708H9.452V13.932H13.4V15.228Z" fill="%23085D3A"/><path d="M15.4669 8.508C14.9629 8.508 14.5669 8.1 14.5669 7.608C14.5669 7.128 14.9629 6.72 15.4669 6.72C15.9709 6.72 16.3789 7.128 16.3789 7.608C16.3789 8.1 15.9709 8.508 15.4669 8.508ZM16.1389 15.228H14.7949V9.372H16.1389V15.228Z" fill="%23085D3A"/><path d="M19.3244 15.228H17.9804V9.372H19.3244V10.176H19.3364C19.8164 9.6 20.4884 9.288 21.1604 9.288C21.9524 9.288 22.5644 9.6 22.9124 10.26H22.9364C23.4284 9.624 24.1724 9.288 25.0364 9.288C26.3204 9.288 27.0884 10.092 27.0884 11.844V15.228H25.7444V12.18C25.7444 11.124 25.3964 10.5 24.6044 10.5C23.8484 10.5 23.2364 11.16 23.2364 12.312V15.228H21.8924V12.18C21.8924 11.124 21.5204 10.5 20.7284 10.5C19.9244 10.5 19.3244 11.16 19.3244 12.312V15.228Z" fill="%23085D3A"/><path d="M29.506 8.508C29.002 8.508 28.606 8.1 28.606 7.608C28.606 7.128 29.002 6.72 29.506 6.72C30.01 6.72 30.418 7.128 30.418 7.608C30.418 8.1 30.01 8.508 29.506 8.508ZM30.178 15.228H28.834V9.372H30.178V15.228Z" fill="%23085D3A"/><path d="M33.7595 15.324C32.7515 15.324 32.1275 14.688 32.1275 13.38V10.512H31.4075V9.372H32.1275V7.428L33.4715 7.284V9.372H35.1875V10.512H33.4715V13.248C33.4715 13.848 33.6515 14.064 34.0355 14.064C34.2635 14.064 34.5875 13.98 34.8995 13.812L35.2475 14.976C34.8995 15.168 34.5275 15.324 33.7595 15.324Z" fill="%23085D3A"/><path d="M41.4731 12.228C41.4731 12.444 41.4491 12.648 41.4371 12.744H37.1651C37.3331 13.596 37.9691 14.1 38.8811 14.1C39.5771 14.1 40.0571 13.788 40.3571 13.416L41.2931 14.22C40.8011 14.856 40.0691 15.324 38.8091 15.324C37.0331 15.324 35.7731 14.136 35.7731 12.3C35.7731 10.5 36.9971 9.288 38.7131 9.288C40.3571 9.288 41.4731 10.524 41.4731 12.228ZM38.7011 10.5C37.9571 10.5 37.3811 10.92 37.1891 11.688H40.1171C39.9491 10.98 39.4691 10.5 38.7011 10.5Z" fill="%23085D3A"/><path d="M45.3433 15.324C43.7233 15.324 42.4993 14.136 42.4993 12.324C42.4993 10.56 43.7233 9.288 45.3313 9.288C46.0993 9.288 46.7593 9.564 47.2033 10.092H47.2153V6.396H48.5473V15.228H47.2633V14.436H47.2513C46.8193 15 46.1833 15.324 45.3433 15.324ZM45.5473 14.1C46.5073 14.1 47.2633 13.392 47.2633 12.336C47.2633 11.292 46.5673 10.5 45.5593 10.5C44.6233 10.5 43.8673 11.208 43.8673 12.336C43.8673 13.368 44.5633 14.1 45.5473 14.1Z" fill="%23085D3A"/><path d="M55.2517 15.324C54.2437 15.324 53.6197 14.688 53.6197 13.38V10.512H52.8997V9.372H53.6197V7.428L54.9637 7.284V9.372H56.6797V10.512H54.9637V13.248C54.9637 13.848 55.1437 14.064 55.5277 14.064C55.7557 14.064 56.0797 13.98 56.3917 13.812L56.7397 14.976C56.3917 15.168 56.0197 15.324 55.2517 15.324Z" fill="%23085D3A"/><path d="M58.6505 8.508C58.1465 8.508 57.7505 8.1 57.7505 7.608C57.7505 7.128 58.1465 6.72 58.6505 6.72C59.1545 6.72 59.5625 7.128 59.5625 7.608C59.5625 8.1 59.1545 8.508 58.6505 8.508ZM59.3225 15.228H57.9785V9.372H59.3225V15.228Z" fill="%23085D3A"/><path d="M62.508 15.228H61.164V9.372H62.508V10.176H62.52C63 9.6 63.672 9.288 64.344 9.288C65.136 9.288 65.748 9.6 66.096 10.26H66.12C66.612 9.624 67.356 9.288 68.22 9.288C69.504 9.288 70.272 10.092 70.272 11.844V15.228H68.928V12.18C68.928 11.124 68.58 10.5 67.788 10.5C67.032 10.5 66.42 11.16 66.42 12.312V15.228H65.076V12.18C65.076 11.124 64.704 10.5 63.912 10.5C63.108 10.5 62.508 11.16 62.508 12.312V15.228Z" fill="%23085D3A"/><path d="M77.2856 12.228C77.2856 12.444 77.2616 12.648 77.2496 12.744H72.9776C73.1456 13.596 73.7816 14.1 74.6936 14.1C75.3896 14.1 75.8696 13.788 76.1696 13.416L77.1056 14.22C76.6136 14.856 75.8816 15.324 74.6216 15.324C72.8456 15.324 71.5856 14.136 71.5856 12.3C71.5856 10.5 72.8096 9.288 74.5256 9.288C76.1696 9.288 77.2856 10.524 77.2856 12.228ZM74.5136 10.5C73.7696 10.5 73.1936 10.92 73.0016 11.688H75.9296C75.7616 10.98 75.2816 10.5 74.5136 10.5Z" fill="%23085D3A"/><path d="M84.6068 15.324C82.7588 15.324 81.5348 14.028 81.5348 12.312C81.5348 10.584 82.7588 9.288 84.6068 9.288C86.4068 9.288 87.6788 10.512 87.6788 12.312C87.6788 14.088 86.4068 15.324 84.6068 15.324ZM84.6068 14.1C85.5548 14.1 86.3108 13.368 86.3108 12.312C86.3108 11.232 85.5668 10.5 84.6068 10.5C83.5868 10.5 82.9028 11.292 82.9028 12.312C82.9028 13.308 83.5988 14.1 84.6068 14.1Z" fill="%23085D3A"/><path d="M90.4221 15.228H89.0781V9.372H90.4221V10.176H90.4461C90.9261 9.6 91.6341 9.288 92.4021 9.288C93.6861 9.288 94.5501 10.02 94.5501 11.784V15.228H93.2061V12.132C93.2061 10.896 92.7381 10.5 91.9341 10.5C91.0221 10.5 90.4221 11.136 90.4221 12.288V15.228Z" fill="%23085D3A"/><path d="M96.2754 15.228V6.396H97.6194V15.228H96.2754Z" fill="%23085D3A"/><path d="M101.385 17.604H99.9928L101.049 14.904L98.6488 9.372H100.089L101.697 13.296H101.721L103.221 9.372H104.601L101.385 17.604Z" fill="%23085D3A"/></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+}
+
+.spz_4006_v1 .payflow-ui.price .price__container .price__currency, 
+.spz_4006_v1 .payflow-ui.price .price__container .price__value{
+	color: #0F141C !important;
+	font-family: "CTCTDisplay" !important;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 40px;
+}
+
+.spz_4006_v1 .payflow-ui.price .price__container .price__decimal-and-period>span{
+	color: #63708A !important;
+	font-family: "CTCTDisplay" !important;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 40px;
+	transform: translateY(3px);
+}
+
+.spz_4006_v1 .payflow-ui-card-select-wrapper.one-dollar-standard-pricing .payflow-ui.card-select .card-select-option .price__container{
+	margin-top: 10px !important;
+}
+
+@media(max-width: 767.98px){
+	
+	.spz_4006_v1 .payflow-ui.price .price__container .price__currency, 
+	.spz_4006_v1 .payflow-ui.price .price__container .price__value{
+		font-size: 24px;
+		line-height: 32px;
+	}
+	.spz_4006_v1 .payflow-ui.price .price__container .price__decimal-and-period>span{
+		font-size: 18px;
+		line-height: 32px;
+		transform: translateY(2px);
+	}
+	
+	.spz_4006_v1  .price__old-value{
+		padding-bottom: 0 !important;
+	}
+	.spz_4006_v1 button.payflow-ui.button{
+		margin-top: 16px !important;		
+	}
+}

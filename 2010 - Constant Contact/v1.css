@@ -1,0 +1,84 @@
+.spz_2010_v1 #main{
+	background: #fff;
+}
+
+.spz_2010_v1 #main > section {
+	padding-top: 80px !important;
+}
+
+.spz_2010_v1 .spz-logo-list-wrapper{
+	padding: 30px 20px 80px 20px;
+	max-width: 1240px;
+	margin: 0 auto;
+}
+
+.spz_2010_v1.spz_2010_v1_buynow .spz-logo-list-wrapper{
+	padding: 50px 20px 80px 20px;
+}
+
+.spz_2010_v1 .spz-logo-list-wrapper > h3{
+	color: #63708A;
+	text-align: center;
+	font-family: "CTCTDisplay", sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 26px;
+	margin-bottom: 24px;
+}
+
+.spz_2010_v1 .spz-logo-list{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.spz_2010_v1 .spz-logo-list > li > img{
+	height: 48px;
+	width: auto;
+}
+
+@media(max-width: 1023px){
+	.spz_2010_v1 #main > section {
+		padding-top: 64px !important;
+	}
+
+	.spz_2010_v1 .spz-logo-list-wrapper{
+		padding: 39px 32px 64px 32px;
+	}
+	.spz_2010_v1.spz_2010_v1_buynow .spz-logo-list-wrapper{
+		padding: 55px 32px 64px 32px;
+	}
+	.spz_2010_v1 .spz-logo-list{
+		gap: 24px 48px;
+		justify-content: center;
+	}
+}
+
+@media(max-width: 767.98px){
+	.spz_2010_v1 #main > section {
+		padding-top: 32px !important;
+	}
+
+	.spz_2010_v1 .spz-logo-list-wrapper{
+		max-width: 360px;
+		padding: 0px 16px 32px 16px;
+	}
+	.spz_2010_v1.spz_2010_v1_buynow .spz-logo-list-wrapper{
+		padding: 15px 16px 32px 16px;
+	}
+	.spz_2010_v1 .spz-logo-list{
+		gap: 16px;
+	}
+	.spz_2010_v1 .spz-logo-list > li > img{
+		height: 32px;
+		width: auto;
+	}
+}
+
+@media(max-width: 450px){
+	.spz_2010_v1 .spz-logo-list-wrapper{
+		max-width: 360px;
+	}
+}

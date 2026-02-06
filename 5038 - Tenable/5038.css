@@ -1,0 +1,21 @@
+.spz_5038_v1 .spz_5038_iframe{
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px !important;
+    margin-bottom: 140px;
+    display: none !important;
+}
+
+.spz_5038_v1 .spz_5038_iframe iframe{
+    border-radius: 16px;
+    border: 0;
+    outline: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+@media(min-width: 1440px){
+    .spz_5038_v1 .spz_5038_iframe{
+        display: flex !important;
+    }
+}

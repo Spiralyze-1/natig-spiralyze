@@ -1,0 +1,148 @@
+.spz_1006_v2 #features-checkbox-section{
+	padding-bottom: 390px;
+}
+
+.spz_1006_v2 .column-content__intro-text span{
+	color: #FFF;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 22px;
+	letter-spacing: 2.8px;
+	text-transform: uppercase;
+}
+
+.spz_1006_v2 #centered-cta-signupform .spz_form_wrapper{
+	flex-direction: column;
+	gap: 20px;
+	border: none;
+}
+
+.spz_1006_v2 #centered-cta-signupform .two-step__body{
+	display: none;
+}
+
+.spz_1006_v2 #centered-cta-signupform .two-step__footer{
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	width: 100% !important;
+}
+
+.spz_1006_v2 #centered-cta-signupform .spz-two-step__submit{
+	color: #0F141C;
+	font-family: 'Poppins';
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 24px;
+	text-decoration: none;
+	
+	display: block;
+	padding: 16px 24px;
+	border-radius: 20px;
+	background: #FF9E1A;
+	
+	min-width: 191px !important;
+	height: 56px !important;
+	
+	flex: 1;
+	min-width: 0;
+}
+
+.spz_1006_v2 #centered-cta-signupform .spz-buy-now-btn {
+    color: #FFF;
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration: none;
+    
+    padding: 15px 24px;
+    border-radius: 20px;
+    border: 1px solid #FFF;
+    background: rgba(255, 158, 26, 0.00);
+    
+    min-width: 191px !important;
+    height: 56px !important;
+    box-sizing: border-box;
+    
+    flex: 1;
+    min-width: 0;
+}
+
+.spz_1006_v2 #centered-cta-signupform .spz-buy-now-btn:hover{
+	color: #1856ED;
+	background: #FFF;
+}
+
+.spz_1006_v2 #centered-cta-signupform .spz-two-step__submit:hover{
+	background: #E97420;
+}
+
+@media(max-width: 1270px){
+	.spz_1006_v2 #features-checkbox-section{
+		padding-bottom: 330px;
+	}		
+}
+
+@media(max-width: 1024px){
+	.spz_1006_v2 #features-checkbox-section{
+		padding-bottom: 310px;
+	}
+	.spz_1006_v2 #centered-cta-signupform .spz_form_wrapper{
+		width: 404px !important;
+	}
+	
+	.spz_1006_v2 #centered-cta-signupform .spz-buy-now-btn,
+	.spz_1006_v2 #centered-cta-signupform .spz-two-step__submit{
+		width: auto !important;
+		min-width: 0 !important;
+	}	
+}
+
+@media(max-width: 991px){
+	.spz_1006_v2 #features-checkbox-section{
+		padding-bottom: 270px;
+	}	
+}
+
+@media(max-width: 768px){
+	.spz_1006_v2 #features-checkbox-section{
+		padding-bottom: 254px;
+	}
+	.spz_1006_v2 .spz_signup_form .spz_form_wrapper>div:nth-child(2){
+		margin-top: 0;
+	}
+	
+	.spz_1006_v2 .spz_signup_form .spz_form_wrapper{
+		margin-top: 0;
+	}
+}
+
+@media(max-width: 767.98px){
+	.spz_1006_v2 #features-checkbox-section{
+		padding-bottom: 210px;
+	}
+	.spz_1006_v2 #centered-cta-signupform .two-step__footer{
+		gap: 20px;
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.spz_1006_v2 #centered-cta-signupform .spz-buy-now-btn{
+		width: 100%;
+	}
+	.spz_1006_v2 .column-content__intro-text span{
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 2.4px;
+	}
+}
+
+@media(max-width: 400px){
+	 
+	.spz_1006_v2 #features-checkbox-section{
+		padding-bottom: 175px;
+		background-size: 575px 160px,cover !important;
+	}
+}

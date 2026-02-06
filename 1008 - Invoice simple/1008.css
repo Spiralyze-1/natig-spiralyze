@@ -1,0 +1,257 @@
+/*Dont use :root if you are working on Single page app. Multiple tests may conflict and override each other*/
+
+:root {
+  --sticky-footer-container: 100%; /*Define container max width*/
+  --left-section-width: 264px; /*left section max-width*/
+  --middle-section-width: 300px; /*Middle section max width*/
+  --right-section-width: 136px; /*Right section max width*/
+}
+.spz-sticky-footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 99999999;
+  background: 
+    url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/invoicesimple/1008/full_hd_bg_left.webp') no-repeat left center / contain,
+    url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/invoicesimple/1008/full_hd_bg_right.webp') no-repeat right center / contain,
+    #fff;
+  padding: 28px 0 20px 0;
+  box-shadow: 0 -7px 14.9px -1px rgba(0, 0, 0, 0.09);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out 0s;
+}
+.goUp .spz-sticky-footer {
+  visibility: visible;
+  opacity: 1;
+}
+.spz-footer-container{
+    max-width: var(--sticky-footer-container);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 140px;
+}
+/* Left content */
+.section-left{
+    max-width: var(--left-section-width);
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-left .spz__app-platforms{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-left .spz__app-platforms .spz__vertical-line{
+    width: 1px;
+    height: 17px;
+    background-color: #C2C2C2;
+}
+
+.section-left .spz__rating{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.section-left .spz__rating > strong{
+    color: #333;
+    text-align: center;
+
+    font-family: "Source Sans Pro";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+}
+.section-left .spz__rating > p{
+    color: #5C5C5C;
+    text-align: center;
+    font-family: "Source Sans Pro";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    padding: 0;
+}
+
+/* middle content */
+.middle-section{
+    max-width: var(--middle-section-width);
+    width: 100%;
+}
+
+/* Right content */
+.section-right{
+    max-width: var(--right-section-width);
+    width: 100%;
+}
+
+.section-right .spz1008_v1{
+    border-radius: 4px;
+    background: #F15320;
+    border: 1px solid #F15320;
+
+    color: #FFF;
+    text-align: center;
+   
+    font-family: Quicksand;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: block;
+
+    width: 136px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.1s ease;
+}
+
+.section-right .spz1008_v1:hover {
+    background: #FFF;
+    border-color: #F15320;
+    color: #F15320;
+}
+
+.section-right .spz1008_v1:active,
+.section-right .spz1008_v1:focus,
+.section-right .spz1008_v1[data-touch-active="true"] {
+    background: #BE131C !important;
+    border-color: #BE131C !important;
+    color: #FFF !important;
+}
+
+/* Close btn content */
+.close_wrapper .sticky_close {
+  right: 2px;
+  top: 2px;
+  position: absolute;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.close_wrapper .sticky_close:hover > svg{
+    pointer-events: none;    
+}
+.close_wrapper .sticky_close:hover > svg > path{
+    fill: #333;
+    fill-opacity: 1;
+}
+
+/* intercom */
+.intercom-modal-container,
+.intercom-with-namespace-4wz414,
+.intercom-lightweight-app-launcher,
+#intercom-modal-container,
+.intercom-messenger-frame {
+    bottom: 20px !important;
+    right: 10px !important;
+}
+
+/* When body has lifted class, lift all Intercom elements */
+body.intercom-lifted .intercom-modal-container,
+body.intercom-lifted .intercom-with-namespace-4wz414,
+body.intercom-lifted .intercom-lightweight-app-launcher,
+body.intercom-lifted .intercom-namespace .intercom-with-namespace-4wz414,
+body.intercom-lifted #intercom-modal-container,
+body.intercom-lifted .intercom-messenger-frame {
+    bottom: 100px !important;
+    right: 10px !important;
+}
+
+body.intercom-lifted .intercom-launcher-discovery-frame {
+    bottom: 90px !important;
+}
+
+/* body.intercom-lifted .intercom-launcher-frame {
+    position: absolute !important;
+} */
+
+.osano-cm-widget--position_left {
+    bottom: 20px;
+    left: 10px;
+}
+
+body.intercom-lifted .osano-cm-widget--position_left {
+    bottom: 100px;
+    left: 10px;
+}
+@supports (-webkit-touch-callout: none) {
+  .spz-sticky-footer {
+    bottom: 0 !important;
+  }
+}
+
+@media (max-width: 1023px) {
+    .spz-footer-container{
+        padding: 0 30px;
+    }
+}
+@media (max-width: 767.98px) {
+    .spz-footer-container{
+        padding: 0 24px;
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+    .spz-sticky-footer{
+       background: 
+        url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/invoicesimple/1008/bg_360_left.webp') no-repeat left center / contain,
+        url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/invoicesimple/1008/bg_360_right.webp') no-repeat right center / contain,
+        #fff;
+    }
+    .section-left{
+        max-width: 100%;
+        justify-content: center;
+    }
+    .section-right{
+        max-width: 100%;
+    }
+    .section-right .spz1008_v1{
+        width: 100%;
+    }
+
+    .section-left .spz__rating > strong,
+    .section-left .spz__rating > p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    body.intercom-lifted .intercom-modal-container,
+    body.intercom-lifted .intercom-with-namespace-4wz414,
+    body.intercom-lifted .intercom-lightweight-app-launcher,
+    body.intercom-lifted .intercom-namespace .intercom-with-namespace-4wz414,
+    body.intercom-lifted #intercom-modal-container,
+    body.intercom-lifted .intercom-messenger-frame {
+        bottom: 134px !important;
+        right: 10px !important;
+    }
+
+    body.intercom-lifted .intercom-launcher-discovery-frame {
+        bottom: 124px !important;
+    }
+
+    body.intercom-lifted .intercom-launcher-frame {
+        bottom: 34px !important;
+        right: -10px !important;
+    }
+
+    body.intercom-lifted .osano-cm-widget--position_left {
+        bottom: 134px;
+        left: 10px;
+    }
+}

@@ -1,0 +1,1461 @@
+/* V2-specific: Hide original logo img, show SVG logo */
+.spz6001_v2 header a.header__logo img {
+    display: none;
+}
+
+.spz6001_v2 header.header {
+    background: none;
+    border: none;
+    margin-top: 20px;
+}
+
+.spz6001_v2 .header .header__logo:focus {
+    outline: none;
+}
+
+/* V2: Dark blue background with white text */
+.spz6001_v2 main#main .spz-hero-section-6001 {
+    background: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-1440.webp) no-repeat;
+    background-color: #12277D;
+    background-size: cover;
+    height: 100%;
+    margin-top: -65px;
+    padding-top: 102px;
+    min-height: 796px;
+    max-height: 100%;
+    padding-bottom: 80px;
+    margin-bottom: 40px;
+    height: auto;
+    z-index: 0;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001#landing1-email-marketing-campaign-mobile {
+    padding-top: 185px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero {
+    background: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-v2.webp') no-repeat;
+    background-color: #12277D;
+    background-size: cover;
+    background-position: top center;
+    padding-top: 127px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__content>*:not(.spz-newHero) {
+    display: none;
+}
+
+body.spz6001_v2.spz-form-height.spz-form-error.spz-form-error-800 main#main .spz-hero-section-6001 {
+    max-height: 100%;
+}
+
+.spz-newHero {
+    max-width: 95.3%;
+}
+
+#social-media-marketing-tools-hero .spz-newHero {
+    max-width: 97%;
+}
+
+.spz-newHero h3.spz-subHeading {
+    color: #FF9E1A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+    margin: 0 !important;
+}
+
+.spz6001_v2 form.material-ui-form .field__password-wrapper .message.mui-error-message{
+	margin-bottom: 5px;
+}
+
+.spz6001_v2 form.material-ui-form .field__wrapper label,
+.spz6001_v2 form.material-ui-form .field__password-wrapper label,
+.spz6001_v2 form.material-ui-form #label-tel{
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.spz6001_v2 form.material-ui-form .field__wrapper label::before,
+.spz6001_v2 form.material-ui-form .field__password-wrapper label::before,
+.spz6001_v2 form.material-ui-form #label-tel::before {
+  text-align: left;
+  content: attr(aria-label);
+  color: #63708A !important;
+  position: relative;
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+.spz6001_v2 form.material-ui-form h2::before,
+.spz6001_v2 form.material-ui-form h3::before {
+  text-align: center;
+  content: "Free Trial";
+  color: #0F141C !important;
+  position: relative;
+  display: block;
+  font-size: 40px !important;
+  font-weight: 700;
+  line-height: 48px !important;
+  width: 100%;
+  
+  letter-spacing: -0.08px;
+}
+
+.spz6001_v2 form.material-ui-form .form-headers h2::after,
+.spz6001_v2 form.material-ui-form .form-headers h3::after{
+  text-align: center;
+  content: "No credit card required.";
+  font-family: "CTCTDisplay";
+  color: #63708A !important;
+  position: relative;
+  display: block;
+  font-size: 14px;
+  line-height: 22px !important;
+  font-weight: 400;
+  width: 100%;
+  
+  margin-top: 8px;
+}
+.spz6001_v2 form.material-ui-form h2,
+.spz6001_v2 form.material-ui-form h3 {
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.spz6001_v2 form.material-ui-form .field__wrapper label.Mui-focused::before,
+.spz6001_v2 form.material-ui-form .field__password-wrapper label.Mui-focused::before,
+.spz6001_v2 form.material-ui-form #label-tel.Mui-focused::before,
+.spz6001_v2 form.material-ui-form .field__wrapper label.MuiFormLabel-filled::before,
+.spz6001_v2 form.material-ui-form .field__password-wrapper label.MuiFormLabel-filled::before,
+.spz6001_v2 form.material-ui-form #label-tel.MuiFormLabel-filled::before
+{
+  color: #0F141C !important;
+}
+
+.spz6001_v2 form.material-ui-form .field__wrapper #label-email::before {
+	content: "Email";
+}
+.spz6001_v2 form.material-ui-form .field__password-wrapper #label-new-password::before {
+	content: "Password";
+}
+.spz6001_v2 form.material-ui-form .field__wrapper #label-given-name::before {
+	content: "First Name";
+}
+.spz6001_v2 form.material-ui-form .field__wrapper #label-family-name::before {
+	content: "Last Name";
+}
+.spz6001_v2 form.material-ui-form .field__wrapper #label-organization::before {
+	content: "Organization Name";
+}
+.spz6001_v2 form.material-ui-form #label-tel::before {
+	content: "Phone";
+}
+
+.spz6001_v2 form.material-ui-form button.cta {
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+.spz6001_v2 form.material-ui-form button.cta::before {
+  text-align: left;
+  content: 'Instant Access';
+  font-family: "CTCTDisplay";
+  color: #0F141C !important;
+  position: relative;
+  font-size: 18px !important;
+  font-weight: 600;
+  line-height: 24px !important;
+}
+
+/* V2: White heading text */
+.spz-newHero h1.spz-heading {
+    color: #fff;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52px;
+    margin: 16px 0 32px !important;
+    letter-spacing: -0.08px;
+    padding-right: 10px;
+}
+
+.spz-newHero ul.spz-heroUSP {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.spz6001_v2 form.material-ui-form .form-fields-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* V2: Light gray USP text */
+.spz6001_v2 #main .spz-newHero ul.spz-heroUSP li,
+.spz6001_lockedHero #main .spz-newHero ul.spz-heroUSP li {
+    padding-left: 24px;
+    position: relative;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: #D1D9E6 !important;
+}
+
+.spz6001_lockedHero #main #landing1-email-marketing-campaign-mobile .spz-newHero ul.spz-heroUSP li {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.spz-newHero ul.spz-heroUSP li:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: #FF9E1A;
+    border-radius: 50%;
+}
+
+/* V2: White strong text */
+.spz-newHero ul.spz-heroUSP li strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+.spz-socialProof {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+#social-media-marketing-tools-hero .spz-socialProof {
+    margin-top: 32px;
+}
+
+/* V2: White social proof text */
+.spz-socialProof p {
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 40px;
+}
+
+.spz-socialProof ul {
+    margin: 0 !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers h3 {
+    color: #0F141C;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.08px;
+    line-height: 48px;
+    margin-bottom: 12px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers p {
+	display: none;
+    color: #63708A;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers {
+    margin-bottom: 20px;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form>.form-fields-wrapper {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form {
+    padding: 32px 32px 40px;
+    -webkit-box-shadow: 0 16px 24px 0 rgba(23, 69, 93, 0.08), 0 16px 48px 0 rgba(13, 44, 120, 0.12);
+    box-shadow: 0 16px 24px 0 rgba(23, 69, 93, 0.08), 0 16px 48px 0 rgba(13, 44, 120, 0.12);
+    border: none;
+    border-radius: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero .hero__form {
+    padding-right: 0;
+    position: relative;
+    top: -22px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero .hero .hero__form {
+    padding-left: 16px;
+    top: -32px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero .hero__form .ctct-form-outer-wrapper {
+    grid-template-columns: repeat(11, 1fr);
+}
+
+.spz-form-fields-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 20px;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .MuiInputBase-root {
+    height: 56px;
+    max-height: 56px;
+    min-height: 56px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form label::after {
+    display: none;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 calc(50% - 20px);
+    flex: 1 1 calc(50% - 20px);
+    width: calc(50% - 20px);
+    display: inline-block;
+    margin: 0;
+    border-radius: 12px;
+    background: #FFF;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field fieldset {
+    border: 1px solid #E4E9F1;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .mui-13ttstk .MuiInputBase-root,
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .mui-vfzf2g .MuiInputBase-root{
+    border-radius: 12px !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field.spz-focus .field__tel-wrapper .country-code fieldset {
+    border-color: #1856ED !important;
+}
+
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .country-code__select.mui-1ttuhez {
+    border-radius: 12px 0 0 12px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .MuiInputBase-formControl.mui-1bp1ao6 {
+    border-radius: 12px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form .ctct-form-outer-wrapper>.ctct-form-inner-wrapper {
+    -ms-grid-column: 2 !important;
+    grid-column-start: 2 !important;
+    -ms-grid-column-span: 26 !important;
+    grid-column-end: 28 !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .country-code__flag {
+    width: 20px;
+    height: 12px;
+    margin: 6px 9px 0 4px !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: inline-block;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .country-code__text {
+    display: none;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .country-code__value {
+    margin-left: 0;
+    color: #63708A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero .hero__content {
+    padding-top: 26px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"] [data-testid="country-code"] #siteContactCountryCode {
+    padding-right: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Bhavesh start */
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"] [data-testid="country-code"] {
+	/* width: 112px; */
+    width: auto;
+}
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"] [data-testid="country-code"] #siteContactCountryCode {
+	position: relative;
+	top: auto;
+	left: auto;
+    transform: none;
+    display: flex;
+    width: 55px;
+    justify-content: space-around;
+    gap: 3px;
+}
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .country-code__value {
+    margin-right: 0;
+}
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .country-code__flag {
+    width: 20px;
+    height: 12px;
+    margin: 6px 0 !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: inline-block;
+}
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"] .country-code__label {
+	position: relative;
+	top: auto;
+	left: auto;
+    transform: none;
+    display: flex;
+    width: 55px;
+    justify-content: space-around;
+    gap: 3px;
+}
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id] .field__tel-wrapper>div:last-child label[data-shrink="true"] {
+    -webkit-transform: translate(-85px, -8px) scale(0.75);
+    -ms-transform: translate(-85px, -8px) scale(0.75);
+    transform: translate(-85px, -8px) scale(0.75);
+    margin-left: 0;
+    color: #0F141C;
+}
+
+/* Bhavesh end */
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"] [data-testid="country-code"] svg {
+    width: 12px;
+    height: 7px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: auto;
+    pointer-events: none;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"] .country-code:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    width: 1px;
+    height: 24px;
+    background: #E4E9F1;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .mui-1eq4vts .MuiInputLabel-root[data-shrink="false"] {
+    -webkit-transform: translate(11.5px, 16px) scale(1);
+    -ms-transform: translate(11.5px, 16px) scale(1);
+    transform: translate(11.5px, 16px) scale(1);
+    letter-spacing: 0.7px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field__password-wrapper {
+    height: 100%;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field__password-wrapper .mui-vfzf2g {
+    height: 100%;
+    border-radius: 12px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field__password-wrapper .mui-segi59 {
+    border-radius: 12px;
+    height: 100%;
+    min-height: 54px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field:hover fieldset {
+    border-color: #D1D9E6;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form .form.material-ui-form .field .field__tel-wrapper:hover fieldset,
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form .form.material-ui-form .field .field__tel-wrapper:hover select {
+    border-color: #D1D9E6 !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field.error .field__tel-wrapper:hover fieldset {
+    border-color: #E53935 !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field.error label {
+    color: #63708A;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field label {
+    color: #63708A;
+    line-height: 24px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .mui-1s1smav fieldset {
+    border-color: #1856ED !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form .form.material-ui-form .field .field__tel-wrapper .mui-8zdht4 fieldset {
+    border-color: #1856ED !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"].spz-field-focus .field__tel-wrapper fieldset {
+    border-color: #1856ED !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"].spz-field-focus .country-code fieldset {
+    border-color: #1856ED !important;
+}
+
+/* Phone field - sync focus state using MUI's Mui-focused class */
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"]:has(.Mui-focused) .field__tel-wrapper .country-code fieldset {
+    border-color: #1856ED !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"]:has(.Mui-focused) .field__tel-wrapper > div:last-child fieldset {
+    border-color: #1856ED !important;
+}
+
+/* Also handle when country code dropdown is open/focused */
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"]:has([aria-expanded="true"]) .field__tel-wrapper .country-code fieldset {
+    border-color: #1856ED !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="tel"]:has([aria-expanded="true"]) .field__tel-wrapper > div:last-child fieldset {
+    border-color: #1856ED !important;
+}
+
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field.error fieldset {
+    border-color: #E53935;
+}
+
+.spz-hero-section-6001 .hero__form form .field__tel-wrapper .field__select-wrapper {
+    max-height: 56px !important;
+}
+
+.spz-hero-section-6001 .hero__form form .field__tel-wrapper>div:last-child fieldset {
+    border-radius: 12px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none !important;
+}
+
+.spz-hero-section-6001 .hero__form form .field__tel-wrapper>div:first-child fieldset {
+    border-right: none !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field__tel-wrapper .MuiInputLabel-root[data-shrink=false] {
+    -webkit-transform: translate(14px, 17px) scale(1);
+    -ms-transform: translate(14px, 17px) scale(1);
+    transform: translate(14px, 17px) scale(1);
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id] .MuiInputLabel-root[data-shrink=false],
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="email"]+.field.material-ui-field .MuiInputLabel-root[data-shrink=false] {
+    -webkit-transform: translate(14px, 17px) scale(1);
+    -ms-transform: translate(14px, 17px) scale(1);
+    transform: translate(14px, 17px) scale(1);
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field:not([data-attr-form-field-id="tel"]) fieldset legend span {
+    font-size: 0;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field:not([data-attr-form-field-id]) button {
+    padding: 8px 11px !important;
+    position: relative;
+    top: 1px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form.material-ui-form .form__text-content {
+    text-align: center;
+    margin: 0 !important;
+    margin-top: 5px !important;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero .hero__content {
+    padding-top: 0;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id] .field__tel-wrapper>div:last-child label[data-shrink="true"] {
+    -webkit-transform: translate(-90px, -8px) scale(0.75);
+    -ms-transform: translate(-90px, -8px) scale(0.75);
+    transform: translate(-90px, -8px) scale(0.75);
+    margin-left: 0;
+    color: #0F141C;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form button.cta {
+    margin-top: 12px;
+    height: 56px;
+    outline: none;
+    order: 4;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form h2 {
+    color: #0F141C;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.08px;
+    margin: 0 auto 11px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form h1 {
+    margin-bottom: 12px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers h2.form-headline {
+    margin-bottom: 12px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form.material-ui-form .spz-disclaimer{
+	margin: 0 auto;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form.material-ui-form .form__text-content p {
+    color: #63708A;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form.material-ui-form .form__text-content p a {
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field.error .country-code__value,
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field.valid .country-code__value,
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field:has(label.Mui-focused) .country-code__value{
+	color: #0F141C;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .mui-vfzf2g .MuiInputLabel-root.Mui-error {
+    color: #63708A;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .mui-vfzf2g .MuiInputLabel-root.Mui-error.MuiInputLabel-shrink {
+    color: #0F141C;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .mui-1s1smav .MuiInputLabel-root.MuiInputLabel-shrink {
+    color: #0F141C;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .mui-13ttstk .MuiInputLabel-root.MuiInputLabel-shrink {
+    color: #0F141C;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id] .field__tel-wrapper>div:last-child .mui-8zdht4 .MuiInputLabel-root.MuiInputLabel-shrink {
+    color: #0F141C;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id] .field__tel-wrapper>div:last-child .mui-1eq4vts .MuiInputLabel-root.Mui-error {
+    color: #63708A;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id] .field__tel-wrapper>div:last-child .mui-1eq4vts .MuiInputLabel-root.MuiInputLabel-shrink.Mui-error {
+    color: #0F141C;
+}
+
+/* Tooltip adjustment */
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field.error .tooltip .tooltip--message {
+    left: -100%;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form .form.material-ui-form .message--error {
+    color: #E53935;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form h2 {
+    color: #0F141C;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.08px;
+    margin: 0 auto 11px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field .MuiInputBase-root.Mui-error fieldset,
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field:hover .MuiInputBase-root.Mui-error fieldset {
+	border-color: rgb(217, 45, 32);
+}
+
+/* NEW */
+.spz6001_v2 .form__error-message.form__error-message--visible {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-top: 20px;
+    width: 100%;
+    order: 3; /* Place it between fields and button */
+}
+/* NEW */
+
+/* Ensure error message is above other content */
+.spz6001_v2 .form__error-message {
+    position: relative;
+    z-index: 10;
+}
+
+
+@media only screen and (max-width: 1350px) and (min-width: 1024px) {
+    .spz6001_email_marketing_campaign_mobile main#main .spz-hero-section-6001 {
+        background-size: cover;
+        max-height: unset;
+        background-position: 30% 0;
+        height: auto;
+        padding-bottom: 70px;
+    }
+
+    .spz-newHero {
+        max-width: 100%;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id=tel] [data-testid=country-code] {
+        width: 130px;
+        width: auto;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id=tel] [data-testid=country-code] #siteContactCountryCode {
+        padding-right: 32px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id=tel] [data-testid=country-code] svg {
+        right: 12px;
+        left: auto;
+        cursor: pointer;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id=tel] .country-code:after {
+        right: 0;
+        z-index: 1;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id] .field__tel-wrapper>div:last-child label[data-shrink="true"] {
+        -webkit-transform: translate(-90px, -8px) scale(0.75);
+        -ms-transform: translate(-90px, -8px) scale(0.75);
+        transform: translate(-90px, -8px) scale(0.75);
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id] .MuiInputLabel-root[data-shrink=false],
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field[data-attr-form-field-id="email"]+.field.material-ui-field .MuiInputLabel-root[data-shrink=false] {
+        font-size: 14px;
+    }
+    
+    .spz6001_v2 form.material-ui-form .field__wrapper label::before,
+	.spz6001_v2 form.material-ui-form .field__password-wrapper label::before,
+	.spz6001_v2 form.material-ui-form #label-tel::before {
+	  font-size: 14px !important;
+	  line-height: 22px !important;
+	}
+}
+
+@media only screen and (max-width: 1023px) {
+    .spz6001_v2 main#main .spz-hero-section-6001 {
+        background: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-768.webp) no-repeat;
+        background-size: cover;
+        background-position: top center;
+        padding-top: 112px;
+        padding-bottom: 72px;
+        max-height: 100%;
+        height: auto;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero .hero__form {
+        top: 0;
+    }
+
+    .spz6001_v2.spz6001_lockedHero main#main .spz-hero-section-6001#landing1-email-marketing-campaign-mobile {
+        padding-top: 177px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001#landing1-email-marketing-campaign-mobile {
+        padding-top: 113px;
+    }
+
+    .spz-socialProof {
+        text-align: center;
+        margin-top: 48px;
+    }
+
+    .spz-socialProof ul {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-column-gap: 48px;
+        -moz-column-gap: 48px;
+        column-gap: 48px;
+        row-gap: 24px;
+    }
+
+    .spz-newHero {
+        max-width: 100%;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form .ctct-form-outer-wrapper>.ctct-form-inner-wrapper {
+        -ms-grid-column: 1 !important;
+        grid-column-start: 1 !important;
+    }
+    
+    .spz6001_v2 form.material-ui-form .field__wrapper label::before,
+	.spz6001_v2 form.material-ui-form .field__password-wrapper label::before,
+	.spz6001_v2 form.material-ui-form #label-tel::before {
+	  font-size: 16px !important;
+	  line-height: 24px !important;
+	}
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .spz-socialProof ul {
+        max-width: 704px;
+        margin: 0 auto !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+	
+    .spz6001_v2 header.header {
+        margin-top: 11px;
+    }
+
+    .spz6001_v2.spz6001_lockedHero header.header {
+        margin-top: 13px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 {
+        background: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-360.webp) no-repeat;
+        background-size: cover;
+        padding-bottom: 104px;
+        padding-top: 105px;
+    }
+
+    .spz-newHero h3.spz-subHeading {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 22px;
+        letter-spacing: 2.8px;
+        text-transform: uppercase;
+        max-width: 240px;
+    }
+
+    .spz6001_v2.spz6001_lockedHero main#main .spz-hero-section-6001#landing1-email-marketing-campaign-mobile {
+        padding-top: 153px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001#landing1-email-marketing-campaign-mobile {
+        padding-top: 89px;
+    }
+
+    .spz-newHero#social-media-marketing-tools-hero h3.spz-subHeading {
+        max-width: 75%;
+    }
+
+    .spz-newHero h1.spz-heading {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        margin: 17px 0 16px !important;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form h2 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: -0.08px;
+        margin: 0 auto 8px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form h1 {
+        margin-bottom: 8px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form h2.form-headline:before {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: -0.08px;
+        position: relative;
+        top: 1px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers h2.form-headline {
+        margin-bottom: 8px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers p.custom_subheading {
+        letter-spacing: 0;
+    }
+
+    .spz-newHero ul.spz-heroUSP {
+        gap: 12px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form {
+        padding: 16px;
+        padding-bottom: 24px;
+        border-radius: 16px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers h3 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 8px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .form-headers {
+        margin-bottom: 15px;
+    }
+
+    .spz6001_v2 form.material-ui-form .form-fields-wrapper,
+    .spz6001_v2 .spz-form-fields-wrapper {
+        gap: 16px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field {
+        width: 100%;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+        flex: 1 1 100%;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form.material-ui-form .form__text-content p {
+        color: #63708A;
+        text-align: center;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form.material-ui-form .form__text-content {
+        margin: 25px 0 23px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form.material-ui-form .form__text-content p a {
+        text-decoration: none;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form .ctct-form-outer-wrapper>.ctct-form-inner-wrapper {
+        -ms-grid-column: 1 !important;
+        grid-column-start: 1 !important;
+    }
+
+    .spz-socialProof {
+        margin-top: 40px;
+    }
+
+    .spz-socialProof ul {
+        gap: 16px;
+        -webkit-column-gap: 16px;
+        -moz-column-gap: 16px;
+        column-gap: 16px;
+    }
+
+    .spz-socialProof ul {
+        gap: 16px;
+        -webkit-column-gap: 16px;
+        -moz-column-gap: 16px;
+        column-gap: 16px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .spz-socialProof ul li img {
+        height: 32px;
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+
+    /* Tooltip adjustment */
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form .field.material-ui-field.error .tooltip .tooltip--message {
+        left: 0;
+    }
+    
+	.spz6001_v2 form.material-ui-form h2::before,
+	.spz6001_v2 form.material-ui-form h3::before {
+	  font-size: 24px !important;
+	  line-height: 32px !important;
+	}
+	
+	.spz6001_v2 form.material-ui-form .form-headers h2::after,
+	.spz6001_v2 form.material-ui-form .form-headers h3::after{
+	  font-size: 16px;
+	  line-height: 24px !important;
+	}
+	
+	.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form button.cta {
+	    margin-top: 3px;
+	}
+}
+
+@media only screen and (max-width: 767px) and (min-width: 580px) {
+    .spz-socialProof ul {
+        gap: 24px;
+        -webkit-column-gap: 36px;
+        -moz-column-gap: 36px;
+        column-gap: 36px;
+    }
+
+    .spz-socialProof ul li img {
+        height: 42px;
+    }
+}
+
+@media only screen and (max-width: 456px) and (min-width: 406px) {
+    .spz-socialProof ul {
+        -webkit-column-gap: 18px;
+        -moz-column-gap: 18px;
+        column-gap: 18px;
+    }
+
+    .spz-socialProof ul li img {
+        height: 37px;
+    }
+}
+
+@media only screen and (max-width: 506px) and (min-width: 457px) {
+    .spz-socialProof ul {
+        -webkit-column-gap: 20px;
+        -moz-column-gap: 20px;
+        column-gap: 20px;
+    }
+
+    .spz-socialProof ul li img {
+        height: 42px;
+    }
+}
+
+@media only screen and (max-width: 571px) and (min-width: 507px) {
+    .spz-socialProof ul {
+        -webkit-column-gap: 24px;
+        -moz-column-gap: 24px;
+        column-gap: 24px;
+    }
+
+    .spz-socialProof ul li img {
+        height: 45px;
+    }
+}
+
+@media only screen and (max-width: 599px) and (min-width: 562px) {
+    .spz-socialProof ul {
+        -webkit-column-gap: 24px;
+        -moz-column-gap: 24px;
+        column-gap: 24px;
+    }
+
+    .spz-socialProof ul li img {
+        height: 47px;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 572px) {
+    .spz-socialProof ul {
+        -webkit-column-gap: 25px;
+        -moz-column-gap: 25px;
+        column-gap: 25px;
+    }
+
+    .spz-socialProof ul li img {
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 645px) and (min-width: 601px) {
+    .spz-socialProof ul {
+        -webkit-column-gap: 35px;
+        -moz-column-gap: 35px;
+        column-gap: 35px;
+    }
+
+    .spz-socialProof ul li img {
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 699px) and (min-width: 646px) {
+    .spz-socialProof ul {
+        -webkit-column-gap: 38px;
+        -moz-column-gap: 38px;
+        column-gap: 38px;
+    }
+
+    .spz-socialProof ul li img {
+        height: 55px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 700px) {
+    .spz-socialProof ul {
+        -webkit-column-gap: 34px;
+        -moz-column-gap: 34px;
+        column-gap: 34px;
+        margin: 0 auto !important;
+        max-width: 90%;
+    }
+
+    .spz-socialProof ul li img {
+        height: 58px;
+    }
+}
+
+/* 6003 starts */
+.spz6001_v2 header.header .container--header {
+    position: relative;
+    max-width: 1440px;
+    padding: 0 96px;
+}
+
+main#main .spz-hero-section-6001 {
+    padding-top: 120px;
+}
+
+.spz6001_lockedHero.spz6001_v2 main#main .spz-hero-section-6001 {
+    padding-top: 185px;
+}
+
+.spz6001_lockedHero.spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero {
+    padding-top: 192px;
+}
+
+.spz6001_v2 .hero__image.hero__short {
+    display: none;
+}
+
+.spz6001_lockedHero main#main .spz-hero-section-6001,
+.spz6001_lockedHero.spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero {
+    background: none;
+    padding-bottom: 0;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero .hero__form {
+    top: -24px;
+    padding-left: 10px;
+}
+
+.spz6001_v2 main#main .spz-hero-section-6001 .hero__form form {
+    max-width: 520px;
+}
+
+.spz6001_lockedHero .main-grid {
+    -ms-grid-rows: -webkit-min-content 0;
+    -ms-grid-rows: min-content 0;
+    grid-template-rows: -webkit-min-content 0;
+    grid-template-rows: min-content 0;
+}
+
+.spz6001_lockedHero #main {
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    background: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-1440.webp') no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    padding-bottom: 70px;
+}
+
+.spz6001_lockedHero #main:has(#social-media-marketing-tools-hero) {
+    background: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-v2.webp') no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+}
+
+.spz6001_lockedHero main#main .spz-hero-section-6001,
+.spz6001_lockedHero main#main .spz-hero-section-6001#social-media-marketing-tools-hero {
+    background: none;
+}
+
+.spz6001_lockedHero #main>section:not(:first-child),
+.spz6001_lockedHero .footer {
+    display: none;
+}
+
+.spz6001_v2 .spz-hero-section-6001>.container {
+    max-width: 1440px !important;
+    padding: 0 96px !important;
+}
+
+.spz6001_v2:not(.spz6001_lockedHero) .spz-sticky-cta {
+    display: none;
+}
+
+/* V2: Orange sticky CTA */
+.spz6001_v2 .spz-sticky-cta {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 198px;
+    height: 54px;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 32px 32px 0 0;
+    background: #FF9E1A;
+    color: #0F141C;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.spz6001_v2 .spz-sticky-cta>div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateX(3px) translateY(2px);
+}
+
+.spz6001_v2 .spz-sticky-cta>div>div {
+    display: none;
+}
+
+.spz6001_v2 .spz-sticky-cta:hover,
+.spz6001_v2 .spz-sticky-cta:active {
+    background: #E97420;
+    box-shadow: 0 6px 24px 0 rgba(23, 69, 93, 0.08), 0 6px 48px 0 rgba(13, 44, 120, 0.12);
+}
+
+@media(max-width: 1260px) {
+
+    .spz6001_v2 .spz-hero-section-6001>.container,
+    .spz6001_v2 header.header .container--header {
+        padding: 0 48px !important;
+    }
+
+    .spz-socialProof {
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 1023.98px) {
+
+    .spz6001_lockedHero #main {
+        background: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-768.webp') no-repeat;
+        background-position: top center;
+        background-size: cover;
+        padding-bottom: 70px;
+    }
+
+    .spz6001_lockedHero #main:has(#social-media-marketing-tools-hero) {
+        background: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-v2-tablet.webp') no-repeat;
+        background-position: top center;
+        background-size: cover;
+        padding-bottom: 61px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero {
+        background: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-v2-tablet.webp') no-repeat;
+        background-position: top center;
+        background-size: cover;
+        padding-top: 112px;
+        padding-bottom: 63px;
+    }
+
+    .spz6001_email_marketing_campaign_mobile main#main .spz-hero-section-6001 {
+        padding-top: 89px;
+    }
+
+    .spz6001_lockedHero.spz6001_email_marketing_campaign_mobile main#main .spz-hero-section-6001,
+    .spz6001_lockedHero.spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero {
+        padding-top: 177px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form .ctct-form-outer-wrapper>.ctct-form-inner-wrapper {
+        -ms-grid-column: 1 !important;
+        grid-column-start: 1 !important;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero .hero__form,
+    .spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero .hero .hero__form {
+        top: 0;
+        padding-left: 0;
+    }
+
+    .spz6001_v2 .spz-hero-section-6001>.container,
+    .spz6001_v2 header.header .container--header {
+        padding: 0 32px !important;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form {
+        max-width: 100%;
+        top: 0;
+    }
+
+    .spz-socialProof,
+    #social-media-marketing-tools-hero .spz-socialProof {
+        margin-top: 48px;
+    }
+
+    .spz-socialProof p {
+        margin-bottom: 24px;
+    }
+}
+
+@media(max-width: 767.98px) {
+
+    .spz6001_lockedHero #main {
+        background: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-360.webp') no-repeat;
+        background-position: top center;
+        background-size: cover;
+        padding-bottom: 70px;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero {
+        background: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-v2-mobile.webp') no-repeat;
+        background-position: top center;
+        background-size: cover;
+        padding-bottom: 70px;
+    }
+
+    .spz6001_lockedHero.spz6001_email_marketing_campaign_mobile main#main .spz-hero-section-6001,
+    .spz6001_lockedHero.spz6001_v2 main#main .spz-hero-section-6001#social-media-marketing-tools-hero {
+        padding-top: 152px;
+    }
+
+    .spz6001_email_marketing_campaign_mobile main#main .spz-hero-section-6001 {
+        padding-top: 104px;
+    }
+
+    .spz6001_lockedHero #main:has(#social-media-marketing-tools-hero) {
+        padding-bottom: 54px;
+        background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/6003/hero-background-v2-mobile.webp');
+    }
+
+    .spz6001_v2 .spz-hero-section-6001>.container,
+    .spz6001_v2 header.header .container--header {
+        padding: 0 16px !important;
+    }
+
+    .spz6001_v2 main#main .spz-hero-section-6001 .hero__form form {
+        padding: 16px 16px 24px;
+    }
+
+    .spz-socialProof,
+    #social-media-marketing-tools-hero .spz-socialProof {
+        margin-top: 40px;
+    }
+
+    .spz-socialProof p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
