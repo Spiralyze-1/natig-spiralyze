@@ -1,81 +1,126 @@
 (function () {
-    const squeezePage = 'both';
-    const expName = "2034";
-    const variantName = `variant1_#${expName}`;
-    const clientDomain = ".hellopebl.com";
+  //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
 
-    const formHiddenValue = variantName;
-    if (squeezePage === true) {
-        window.squeezePageValue = formHiddenValue;
-    } else if (squeezePage === false) {
-        hiddenValue(expName, variantName);
-    } else if (squeezePage === "both") {
-        hiddenValue(expName, variantName);
-        window.squeezePageValue = formHiddenValue;
+  // Set the value of the squeezePage variable as needed:
+  // true  – if you are using a squeeze page (i.e., the page contains a form)
+  // false – if you are not using a squeeze page (i.e., the page does not contain a form)
+  // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
+
+  const squeezePage = 'both'; // true / false / 'both'
+  const expName = "2034"; //experiment name should be 1001, 1002, 1003 etc.
+  const variantName = `variant1_#` + expName; //variantName should be _variant, _true_control etc.
+  const clientDomain = ".hellopebl.com"; //domain should be .spiralyze.com
+
+  /***********************************
+    ************************************
+    DO NOT TOUCH
+    BEYOND THIS LINE
+    ******************************
+    ******************************/
+  const formHiddenValue = variantName;
+  if (squeezePage === true) {
+    window.squeezePageValue = formHiddenValue;
+  } else if (squeezePage === false) {
+    hiddenValue(expName, variantName);
+  } else if (squeezePage === "both") {
+    hiddenValue(expName, variantName);
+    window.squeezePageValue = formHiddenValue;
+  }
+  function hiddenValue(currentExperimentName, currentExperimentValue) {
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie =
+        name +
+        "=" +
+        (value || "") +
+        expires +
+        ";domain=" +
+        clientDomain +
+        ";path=/";
     }
 
-    function hiddenValue(currentExperimentName, currentExperimentValue) {
-        const setCookie = (name, value, days) => {
-            const expires = days
-                ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`
-                : "";
-            document.cookie = `${name}=${value || ""}${expires};domain=${clientDomain};path=/`;
-        };
-
-        const getCookie = (name) => {
-            const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
-            return match ? match[2] : null;
-        };
-
-        const existingName = getCookie("ExperimentName");
-        const existingValue = getCookie("ExperimentValue");
-        const nameList = existingName ? existingName.split(",") : [];
-        const index = nameList.indexOf(currentExperimentName);
-
-        if (!existingName) {
-            setCookie("ExperimentName", currentExperimentName, 1);
-            setCookie("ExperimentValue", currentExperimentValue, 1);
-        } else if (index === -1) {
-            setCookie("ExperimentName", `${existingName},${currentExperimentName}`, 1);
-            setCookie("ExperimentValue", `${existingValue},${currentExperimentValue}`, 1);
-        } else {
-            const names = existingName.split(",");
-            const values = existingValue.split(",");
-            values[index] = currentExperimentValue;
-            setCookie("ExperimentName", names.join(","), 1);
-            setCookie("ExperimentValue", values.join(","), 1);
-        }
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
     }
+
+    var ExistingExperimentName = getCookie("ExperimentName");
+    var ExistingExperimentValue = getCookie("ExperimentValue");
+    var ExistingExperimentNameList = ExistingExperimentName
+      ? ExistingExperimentName.split(",")
+      : [];
+
+    if (!ExistingExperimentName) {
+      setCookie("ExperimentName", currentExperimentName, 1);
+      setCookie("ExperimentValue", currentExperimentValue, 1);
+    } else if (
+      ExistingExperimentNameList.length > 0 &&
+      ExistingExperimentNameList.indexOf(currentExperimentName) == -1
+    ) {
+      setCookie(
+        "ExperimentName",
+        ExistingExperimentName + "," + currentExperimentName,
+        1
+      );
+      setCookie(
+        "ExperimentValue",
+        ExistingExperimentValue + "," + currentExperimentValue,
+        1
+      );
+    } else if (
+      ExistingExperimentNameList.length > 0 &&
+      ExistingExperimentNameList.indexOf(currentExperimentName) > -1
+    ) {
+      var existingNames = ExistingExperimentName.split(",");
+      var existingValues = ExistingExperimentValue.split(",");
+      var index = existingNames.indexOf(currentExperimentName);
+      existingValues[index] = currentExperimentValue;
+      setCookie("ExperimentName", existingNames.join(","), 1);
+      setCookie("ExperimentValue", existingValues.join(","), 1);
+    }
+  }
 })();
 
+
 function waitForElement(selector, callback, timeout = 5000) {
+  const el = document.querySelector(selector);
+  if (el) return callback(el);
+
+  const observer = new MutationObserver((_, obs) => {
     const el = document.querySelector(selector);
-    if (el) return callback(el);
+    if (el) {
+      obs.disconnect();
+      callback(el);
+    }
+  });
 
-    const observer = new MutationObserver((_, obs) => {
-        const el = document.querySelector(selector);
-        if (el) {
-            obs.disconnect();
-            callback(el);
-        }
-    });
-
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-    setTimeout(() => observer.disconnect(), timeout);
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  setTimeout(() => observer.disconnect(), timeout);
 }
 
 const testNumber = "2034";
 const testType = "v1";
 
 waitForElement("#block--unique-id-25661", (docEl) => {
-    const body = document.body;
-    const className = `spz_${testNumber}_${testType}`;
+  const body = document.body;
+  const className = `spz_${testNumber}_${testType}`;
 
-    if (!body.classList.contains(className)) {
-        body.classList.add(className);
-    }
+  if (!body.classList.contains(className)) {
+    body.classList.add(className);
+  }
 
-    docEl.querySelector(".component-content").innerHTML = `
+  docEl.querySelector(".component-content").innerHTML = `
     <div class="spz-hero-content">
       <div class="spz-hero-content-inner">
     	<div class="spz-hero-g2-reviews">
@@ -127,7 +172,7 @@ waitForElement("#block--unique-id-25661", (docEl) => {
     </div>
   `;
 
-    document.querySelector('.node__content .layout:nth-child(2)').innerHTML = `
+  document.querySelector('.node__content .layout:nth-child(2)').innerHTML = `
   <div class="spz-hero-logos spz-hero-logos-black">
       <div class="spz-hero-wrapper">
         <strong>Trusted by global leaders</strong>

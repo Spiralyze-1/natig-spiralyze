@@ -1,9 +1,22 @@
 (function () {
-    const squeezePage = 'both';
-    const expName = "2034";
-    const variantName = `variant2_#${expName}`;
-    const clientDomain = ".hellopebl.com";
+    //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
 
+    // Set the value of the squeezePage variable as needed:
+    // true  – if you are using a squeeze page (i.e., the page contains a form)
+    // false – if you are not using a squeeze page (i.e., the page does not contain a form)
+    // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
+
+    const squeezePage = 'both'; // true / false / 'both'
+    const expName = "2034"; //experiment name should be 1001, 1002, 1003 etc.
+    const variantName = `variant2_#` + expName; //variantName should be _variant, _true_control etc.
+    const clientDomain = ".hellopebl.com"; //domain should be .spiralyze.com
+
+    /***********************************
+      ************************************
+      DO NOT TOUCH
+      BEYOND THIS LINE
+      ******************************
+      ******************************/
     const formHiddenValue = variantName;
     if (squeezePage === true) {
         window.squeezePageValue = formHiddenValue;
@@ -13,37 +26,68 @@
         hiddenValue(expName, variantName);
         window.squeezePageValue = formHiddenValue;
     }
-
     function hiddenValue(currentExperimentName, currentExperimentValue) {
-        const setCookie = (name, value, days) => {
-            const expires = days
-                ? `; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`
-                : "";
-            document.cookie = `${name}=${value || ""}${expires};domain=${clientDomain};path=/`;
-        };
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie =
+                name +
+                "=" +
+                (value || "") +
+                expires +
+                ";domain=" +
+                clientDomain +
+                ";path=/";
+        }
 
-        const getCookie = (name) => {
-            const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
-            return match ? match[2] : null;
-        };
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(";");
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == " ") c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
 
-        const existingName = getCookie("ExperimentName");
-        const existingValue = getCookie("ExperimentValue");
-        const nameList = existingName ? existingName.split(",") : [];
-        const index = nameList.indexOf(currentExperimentName);
+        var ExistingExperimentName = getCookie("ExperimentName");
+        var ExistingExperimentValue = getCookie("ExperimentValue");
+        var ExistingExperimentNameList = ExistingExperimentName
+            ? ExistingExperimentName.split(",")
+            : [];
 
-        if (!existingName) {
+        if (!ExistingExperimentName) {
             setCookie("ExperimentName", currentExperimentName, 1);
             setCookie("ExperimentValue", currentExperimentValue, 1);
-        } else if (index === -1) {
-            setCookie("ExperimentName", `${existingName},${currentExperimentName}`, 1);
-            setCookie("ExperimentValue", `${existingValue},${currentExperimentValue}`, 1);
-        } else {
-            const names = existingName.split(",");
-            const values = existingValue.split(",");
-            values[index] = currentExperimentValue;
-            setCookie("ExperimentName", names.join(","), 1);
-            setCookie("ExperimentValue", values.join(","), 1);
+        } else if (
+            ExistingExperimentNameList.length > 0 &&
+            ExistingExperimentNameList.indexOf(currentExperimentName) == -1
+        ) {
+            setCookie(
+                "ExperimentName",
+                ExistingExperimentName + "," + currentExperimentName,
+                1
+            );
+            setCookie(
+                "ExperimentValue",
+                ExistingExperimentValue + "," + currentExperimentValue,
+                1
+            );
+        } else if (
+            ExistingExperimentNameList.length > 0 &&
+            ExistingExperimentNameList.indexOf(currentExperimentName) > -1
+        ) {
+            var existingNames = ExistingExperimentName.split(",");
+            var existingValues = ExistingExperimentValue.split(",");
+            var index = existingNames.indexOf(currentExperimentName);
+            existingValues[index] = currentExperimentValue;
+            setCookie("ExperimentName", existingNames.join(","), 1);
+            setCookie("ExperimentValue", existingValues.join(","), 1);
         }
     }
 })();
@@ -152,10 +196,4 @@ waitForElement("#block--unique-id-25661", (docEl) => {
       </div>
     </div>
   `;
-
-    if (document.readyState === "complete") {
-        setTimeout(initCarousel, 100);
-    } else {
-        window.addEventListener("load", initCarousel, { once: true });
-    }
 });

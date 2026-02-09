@@ -10,8 +10,8 @@
 }
 
 .spz_2034_v2 #block--unique-id-25661{
-	background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/pebl/2034/bg-1440.webp');
-	background-position: 0 0;
+	background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/pebl/2034/bg-1920_1.webp');
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	
@@ -19,27 +19,36 @@
 	
 	padding: 0;
 	
-	height: calc(100vh - 135px);
-	min-height: 820px;
+	height: calc(100vh - 95px);
+	min-height: 975px;
 }
 
 .spz_2034_v2 .spz-hero-content{
 	position: absolute;
-	top: 17px;
-	left: 14px;
-	width: 700px;
-	height: 640px;
-	background-image: url('https://res.cloudinary.com/spiralyze/image/upload/v1768420597/pebl/2034/vector_bg_6.svg');
-	background-position: center;
-	background-repeat: no-repeat;
+	top: -13px;
+	left: -2px;
+	width: 875px;
+	height: 822px;
+
+	/* Background color that will be masked */
+	background-color: #ffffff; /* Change this to your desired color */
 	
+	/* Apply the SVG as a mask */
+	mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="873" height="820" viewBox="0 0 873 820"><path d="M25.2484 283.819C23.3968 79.0613 66.1883 34.7852 267.693 32.9631L589.383 30.0541C790.888 28.232 834.473 71.727 836.324 276.485L838.6 528.124C840.451 732.882 797.66 777.158 596.156 778.98L274.465 781.889C72.9606 783.711 29.3755 740.216 27.5239 535.458L25.2484 283.819Z" fill="white"/></svg>');
+	-webkit-mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="873" height="820" viewBox="0 0 873 820"><path d="M25.2484 283.819C23.3968 79.0613 66.1883 34.7852 267.693 32.9631L589.383 30.0541C790.888 28.232 834.473 71.727 836.324 276.485L838.6 528.124C840.451 732.882 797.66 777.158 596.156 778.98L274.465 781.889C72.9606 783.711 29.3755 740.216 27.5239 535.458L25.2484 283.819Z" fill="white"/></svg>');
+	mask-size: 875px 822px;
+	-webkit-mask-size: 875px 822px;
+	mask-position: center;
+	-webkit-mask-position: center;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
 	
-	padding: 112px 70px 116px 80px;
-	transform: translateY(2px)
+	padding: 184px 70px 116px 117px;
+	transform: translateY(2px);
 }
 
 .spz_2034_v2 .spz-hero-content-inner{
-	max-width: 550px;
+	max-width: 631px;
 	transform: translateY(-4px);
 }
 
@@ -70,7 +79,7 @@
 	line-height: 135%;
 	letter-spacing: 0.225px;
 	
-	transform: translateY(1px);
+	transform: translate(3px, 1px);
 }
 
 .spz_2034_v2 .spz-hero-g2-reviews > p > b{
@@ -78,30 +87,30 @@
 }
 
 .spz_2034_v2 .spz-hero-content-inner strong{
-	max-width: 538px;
+	max-width: 631px;
 	color: #171717;
 	font-family: "FK Roman Standard";
-	font-size: 70px;
+	font-size: 85px;
 	font-weight: 700;
-	line-height: 100%;
-	letter-spacing: -3.255px;
+	line-height: 110%;
+	letter-spacing: -4.25px;
 }
 
 
 .spz_2034_v2 .spz-hero-content-inner > p{
-	max-width: 430px;
+	max-width: 631px;
 	
 	color: #171717;
 	font-size: 20px;
 	font-weight: 400;
 	line-height: 135%;
-	letter-spacing: 0.2px;
+	letter-spacing: 0px;
 	
 	margin-top: 29px;
 }
 
 .spz_2034_v2 .spz-btn-list{
-	margin-top: 40px;
+	margin-top: 42px;
 	display: flex;
     gap: 15px;
 }
@@ -238,6 +247,79 @@
 }
 
 /* medias */
+
+@media(max-width: 1600px){
+	.spz_2034_v2 #block--unique-id-25661{
+		background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/pebl/2034/bg-1440.webp');
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		
+		position: relative;
+		
+		padding: 0;
+		
+		height: calc(100vh - 135px);
+		min-height: 820px;
+	}
+
+	.spz_2034_v2 .spz-hero-content{
+		position: absolute;
+		top: 17px;
+		left: 14px;
+		width: 700px;
+		height: 640px;
+		background-image: url('https://res.cloudinary.com/spiralyze/image/upload/v1768420597/pebl/2034/vector_bg_6.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		
+		
+		padding: 112px 70px 116px 80px;
+		transform: translateY(2px);
+
+		mask: none;
+		-webkit-mask: none;
+		background-color: transparent;
+	}
+
+	.spz_2034_v2 .spz-hero-content-inner strong{
+		max-width: 538px;
+		color: #171717;
+		font-family: "FK Roman Standard";
+		font-size: 70px;
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: -3.255px;
+	}
+
+	.spz_2034_v2 .spz-hero-content-inner{
+		max-width: 550px;
+		transform: translateY(-4px);
+	}
+
+	.spz_2034_v2 .spz-hero-content-inner > p{
+		max-width: 430px;
+		
+		color: #171717;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 135%;
+		letter-spacing: 0.2px;
+		
+		margin-top: 29px;
+	}
+
+	.spz_2034_v2 .spz-hero-g2-reviews > p{
+		color: #171717;
+		font-family: "Sharp Earth";
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 135%;
+		letter-spacing: 0.225px;
+		
+		transform: translateY(1px);
+	}
+}
 
 @media(max-width: 1023px){
 	.spz_2034_v2 #block--unique-id-25661{

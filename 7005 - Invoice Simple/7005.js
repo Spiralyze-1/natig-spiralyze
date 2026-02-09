@@ -63,8 +63,12 @@ const planPrices = {
 const testNumber = '7005'
 const testVersion = 'v'
 
+console.log('7005 ping')
+
 function checkAndShowPopup() {
-    const isFreeTrial = !!document.querySelector('[data-sentry-component="getUpgradeElement"]') && !!document.querySelector('[aria-label="Navigate To Paywall"]')
+    console.log('pre clause - 7005')
+    const isFreeTrial = !!document.querySelector('[data-sentry-component="getFreeBannerTitle"]')
+
     if (!isFreeTrial) return
 
     console.log('7005 test started')
@@ -79,7 +83,7 @@ function checkAndShowPopup() {
             showPopup('plus');
             localStorage.setItem('plus_popup_shown', 'true');
         }
-        else if (docList.length > 1 && !localStorage.getItem('premium_popup_shown')) {
+        else if (docList.length == 2 && !localStorage.getItem('premium_popup_shown')) {
             showPopup('premium');
             localStorage.setItem('premium_popup_shown', 'true');
         }
