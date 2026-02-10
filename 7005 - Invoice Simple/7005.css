@@ -414,6 +414,10 @@
 }
 
 @media(max-height: 680px){
+    body.spz_7005_v{
+        overflow: hidden;
+    }
+
     .spz_7005_v .spz-popup-overlay{
         overflow-y: auto;
         overflow-x: hidden;

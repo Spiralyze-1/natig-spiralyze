@@ -74,20 +74,49 @@ function checkAndShowPopup() {
     console.log('7005 test started')
     document.body.classList.add(`spz_${testNumber}_${testVersion}`)
 
-    // Wait for the document list to render
-    waitForElement('[data-sentry-component="DocListRow"]', () => {
-        const docList = document.querySelectorAll('[data-sentry-component="DocListRow"]')
-        console.log(`Document count:`, docList.length)
+    let retryCount = 0;
+    const maxRetries = 3;
 
-        if (docList.length == 1 && !localStorage.getItem('plus_popup_shown')) {
-            showPopup('plus');
-            localStorage.setItem('plus_popup_shown', 'true');
-        }
-        else if (docList.length == 2 && !localStorage.getItem('premium_popup_shown')) {
-            showPopup('premium');
-            localStorage.setItem('premium_popup_shown', 'true');
-        }
-    });
+    function attemptShowPopup() {
+        console.log(`Attempt ${retryCount + 1} to find DocListRow elements`);
+
+        waitForElement('[data-sentry-component="DocListRow"]', () => {
+            const docList = document.querySelectorAll('[data-sentry-component="DocListRow"]')
+            console.log(`Document count:`, docList.length)
+
+            if (docList.length == 1 && !localStorage.getItem('plus_popup_shown')) {
+                showPopup('plus');
+                localStorage.setItem('plus_popup_shown', 'true');
+            }
+            else if (docList.length == 2 && !localStorage.getItem('premium_popup_shown')) {
+                showPopup('premium');
+                localStorage.setItem('premium_popup_shown', 'true');
+            }
+        });
+
+        // Retry mechanism: check if elements exist after timeout
+        setTimeout(() => {
+            const docList = document.querySelectorAll('[data-sentry-component="DocListRow"]');
+            const plusShown = localStorage.getItem('plus_popup_shown');
+            const premiumShown = localStorage.getItem('premium_popup_shown');
+
+            // If popup should have been shown but wasn't, retry
+            if ((docList.length == 1 && !plusShown) || (docList.length == 2 && !premiumShown)) {
+                retryCount++;
+                if (retryCount < maxRetries) {
+                    console.log(`Retry ${retryCount}/${maxRetries} - elements exist but popup not shown`);
+                    attemptShowPopup();
+                } else {
+                    console.log('Max retries reached');
+                }
+            }
+        }, 6000); // Check after waitForElement timeout (5s) + buffer
+    }
+
+    // Add initial delay to let React mount
+    setTimeout(() => {
+        attemptShowPopup();
+    }, 1000);
 }
 
 function handleSubscriptionPage() {

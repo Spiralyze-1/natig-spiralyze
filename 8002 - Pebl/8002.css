@@ -270,9 +270,10 @@
     opacity: 0.48;
 }
 
-.spz_8002_v1 .spz-carousel-prev svg:hover,
-.spz_8002_v1 .spz-carousel-next svg:hover {
+.spz_8002_v1 .spz-carousel-prev:hover svg,
+.spz_8002_v1 .spz-carousel-next:hover svg{
     opacity: 1;
+    cursor: pointer;
 }
 
 /* .spz_8002_v1 .spz-carousel-prev:disabled,
@@ -372,6 +373,11 @@
 
     .spz_8002_v1 .spz-carousel-wrapper{
         margin-bottom: 35px;
+    }
+
+    .spz_8002_v1 .spz-author-position{
+        font-size: 12px;
+        font-weight: 500;
     }
 
     .spz_8002_v1 .spz-carousel-prev svg{

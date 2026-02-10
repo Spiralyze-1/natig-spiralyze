@@ -262,10 +262,6 @@ function initCarousel() {
         const offset = -(currentIndex * (slideWidth + gap));
         track.style.transform = `translateX(${offset}px)`;
         currentSlideSpan.textContent = currentIndex + 1;
-
-        // Update button states
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= totalSlides - 1;
     }
 
     function nextSlide() {
@@ -281,8 +277,11 @@ function initCarousel() {
     function prevSlide() {
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarousel();
+        } else {
+            // Loop back to last slide
+            currentIndex = totalSlides - 1;
         }
+        updateCarousel();
     }
 
     function startAutoScroll() {
