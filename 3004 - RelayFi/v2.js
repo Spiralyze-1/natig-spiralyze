@@ -1,65 +1,116 @@
 // #3004 | Relay | Home | Bento - Variant 2
 // https://app.asana.com/1/77217210692853/task/1211867523594527
 
-const bentoConfig = {
-    insertBefore: 'main section:nth-of-type(3)', // Insert after hero section
-    ctaUrl: 'https://app.relayfi.com/v3/register/user',
-    baseUrl: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/3004/',
-    images: {
-        checkingSavings: {
-            fourK: 'copy_20.webp',
-            desktop: 'copy_11.webp',
-            tablet: 'copy_5.webp',
-            mobile: 'copy_8.webp',
-            alt: 'Business checking and savings'
-        },
-        creditDebit: {
-            fourK: 'copy_23.webp',
-            desktop: 'copy_14.webp',
-            tablet: 'copy_16.webp',
-            mobile: 'copy_4.webp',
-            alt: 'Credit and debit'
-        },
-        spendManagement: {
-            fourK: 'copy_19.webp',
-            desktop: 'copy_12.webp',
-            tablet: 'copy_9.webp',
-            mobile: 'copy_10.webp',
-            alt: 'Spend management'
-        },
-        accountsPayable: {
-            fourK: 'copy_22.webp',
-            desktop: 'copy_13.webp',
-            tablet: 'copy_1.webp',
-            mobile: 'copy_3.webp',
-            alt: 'Accounts payable'
-        },
-        accountsReceivable: {
-            fourK: 'copy_21.webp',
-            desktop: 'copy_15.webp',
-            tablet: 'copy_6.webp',
-            mobile: 'copy_7.webp',
-            alt: 'Accounts receivable'
-        },
-        integrations: {
-            fourK: 'copy_18.webp',
-            desktop: 'copy_17.webp',
-            tablet: 'copy_2.webp',
-            mobile: 'copy.webp',
-            alt: 'Integrations'
-        }
+// #3004 | Relay | Home | Bento - Variant 1
+// https://app.asana.com/1/77217210692853/task/1211867523594527
+
+function hiddenValue(currentExperimentName, currentExperimentValue) {
+  function setCookie(name, value, days) {
+    var expires = ''
+    if (days) {
+      var date = new Date()
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
+      expires = '; expires=' + date.toUTCString()
     }
+    document.cookie = name + '=' + (value || '') + expires + '; path=/'
+  }
+
+  function getCookie(name) {
+    var nameEQ = name + '='
+    var ca = document.cookie.split(';')
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i]
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length)
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length)
+    }
+    return null
+  }
+
+  var ExistingExperimentName = getCookie('ExperimentName')
+  var ExistingExperimentValue = getCookie('ExperimentValue')
+
+  if (!ExistingExperimentName) {
+    setCookie('ExperimentName', currentExperimentName, 1)
+    setCookie('ExperimentValue', currentExperimentValue, 1)
+  } else if (ExistingExperimentName && !ExistingExperimentName.includes(currentExperimentName)) {
+    setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1)
+    setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1)
+  } else if (ExistingExperimentName && ExistingExperimentName.includes(currentExperimentName)) {
+    var existingNames = ExistingExperimentName.split(',')
+    var existingValues = ExistingExperimentValue.split(',')
+    var index = existingNames.indexOf(currentExperimentName)
+    existingValues[index] = currentExperimentValue
+    setCookie('ExperimentName', existingNames.join(','), 1)
+    setCookie('ExperimentValue', existingValues.join(','), 1)
+  }
+}
+hiddenValue('#3004 | Relay | Home | Bento', '3004-home-test-variant2');
+
+const bentoConfig = {
+  insertBefore: '.hero', // Insert after hero section
+  insertBeforeMobile: '.product-family',
+  ctaUrl: 'https://app.relayfi.com/v3/register/user',
+  baseUrl: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/3004/',
+  images: {
+    checkingSavings: {
+      fourK: 'copy_20.webp',
+      desktop: 'copy_11.webp',
+      tablet: 'copy_5.webp',
+      mobile: 'copy_8.webp',
+      alt: 'Business checking and savings'
+    },
+    creditDebit: {
+      fourK: 'copy_23.webp',
+      desktop: 'copy_14.webp',
+      tablet: 'copy_16.webp',
+      mobile: 'copy_4.webp',
+      alt: 'Credit and debit'
+    },
+    spendManagement: {
+      fourK: 'copy_19.webp',
+      desktop: 'copy_12.webp',
+      tablet: 'copy_9.webp',
+      mobile: 'copy_10.webp',
+      alt: 'Spend management'
+    },
+    accountsPayable: {
+      fourK: 'copy_22.webp',
+      desktop: 'copy_13.webp',
+      tablet: 'copy_1.webp',
+      mobile: 'copy_3.webp',
+      alt: 'Accounts payable'
+    },
+    accountsReceivable: {
+      fourK: 'copy_21.webp',
+      desktop: 'copy_15.webp',
+      tablet: 'copy_6.webp',
+      mobile: 'copy_7.webp',
+      alt: 'Accounts receivable'
+    },
+    integrations: {
+      fourK: 'copy_18.webp',
+      desktop: 'copy_17.webp',
+      tablet: 'copy_2.webp',
+      mobile: 'copy.webp',
+      alt: 'Integrations'
+    }
+  }
 };
 
 // Initialize Bento section when page is ready
 const initBento = setInterval(() => {
-    const targetSection = document.querySelector(bentoConfig.insertBefore);
+  const targetSection = document.querySelector(bentoConfig.insertBefore);
+  const targetSectionMobile = document.querySelector(bentoConfig.insertBeforeMobile)
 
-    if (targetSection && !document.querySelector('.spz-bento-section-v2')) {
-        clearInterval(initBento);
-        document.body.classList.add('spz_3004_v2');
-        insertBentoSection();
-    }
+  document.body.classList.add('spz_3004_v2');
+  if (targetSection && !document.querySelector('.spz-bento-section-v2')) {
+    clearInterval(initBento);
+    insertBentoSection();
+  }
+  if (targetSectionMobile && !document.querySelector('.spz-bento-section-v2')) {
+    clearInterval(initBento);
+    insertBentoSection();
+  }
 }, 100);
 
 // Timeout to stop checking after 10 seconds
@@ -67,10 +118,10 @@ setTimeout(() => clearInterval(initBento), 10000);
 
 // Generate responsive picture element
 function generatePicture(imageConfig) {
-    const { baseUrl } = bentoConfig;
-    const { fourK, desktop, tablet, mobile, alt } = imageConfig;
+  const { baseUrl } = bentoConfig;
+  const { fourK, desktop, tablet, mobile, alt } = imageConfig;
 
-    return `
+  return `
     <picture>
       <source media="(min-width: 1920px)" srcset="${baseUrl}${fourK}">
       <source media="(min-width: 1025px)" srcset="${baseUrl}${desktop}">
@@ -82,7 +133,7 @@ function generatePicture(imageConfig) {
 
 // Create and insert the Bento section
 function insertBentoSection() {
-    const bentoHTML = `
+  const bentoHTML = `
     <section class="spz-bento-section-v2">
       <div class="spz-bento-container">
         <h2 class="spz-bento-heading">All your banking &&nbsp<br>finance in one place</h2>
@@ -165,21 +216,27 @@ function insertBentoSection() {
     </section>
   `;
 
-    const targetSection = document.querySelector(bentoConfig.insertBefore);
-    if (targetSection) {
-        targetSection.insertAdjacentHTML('afterbegin', bentoHTML);
-    }
+  const targetSection = document.querySelector(bentoConfig.insertBefore);
+  const targetSectionMobile = document.querySelector(bentoConfig.insertBeforeMobile)
+  if (targetSection) {
+    targetSection.insertAdjacentHTML('afterbegin', bentoHTML);
+    console.log('addedDesktop', targetSection)
+  }
+  if (targetSectionMobile) {
+    targetSectionMobile.insertAdjacentHTML('beforebegin', bentoHTML);
+    console.log('addedMobile', targetSectionMobile)
+  }
 }
 
 // Add hover effects to CTA button
 document.addEventListener('mouseover', (e) => {
-    if (e.target.closest('.spz-bento-button')) {
-        e.target.closest('.spz-bento-button').classList.add('spz-hover');
-    }
+  if (e.target.closest('.spz-bento-button')) {
+    e.target.closest('.spz-bento-button').classList.add('spz-hover');
+  }
 });
 
 document.addEventListener('mouseout', (e) => {
-    if (e.target.closest('.spz-bento-button')) {
-        e.target.closest('.spz-bento-button').classList.remove('spz-hover');
-    }
+  if (e.target.closest('.spz-bento-button')) {
+    e.target.closest('.spz-bento-button').classList.remove('spz-hover');
+  }
 });

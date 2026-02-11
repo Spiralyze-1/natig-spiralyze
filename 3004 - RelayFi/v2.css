@@ -19,7 +19,7 @@
   --spz-font-body: "Basis Grotesque Pro", sans-serif;
   --spz-gap: 24px;
   --spz-border-radius: 24px;
-  --spz-section-padding: 124px 0;
+  --spz-section-padding: 94px 0 56px;
 }
 
 #main section:nth-child(2){
@@ -209,8 +209,7 @@
 
 @media(max-width: 1440px){
   :root {
-    /* --spz-section-padding: 96px 75px 72px; */
-    --spz-section-padding: 96px 0 72px;
+    --spz-section-padding: 66px 0 36px;
   }
   .spz-bento-container {
     max-width: 1196px;
@@ -243,7 +242,7 @@
 
 @media (max-width: 1024px) {
   :root {
-    --spz-section-padding: 96px 0 64px;
+    --spz-section-padding: 96px 0 16px;
     --spz-gap: 20px;
     --spz-border-radius: 20px;
   }
@@ -302,7 +301,7 @@
 
 @media (max-width: 767px) {
   :root {
-    --spz-section-padding: 64px 20px 56px;
+    --spz-section-padding: 64px 20px 76px;
     --spz-gap: 16px;
   }
 
@@ -356,6 +355,9 @@
 }
 
 @media(max-width: 400px){
+  :root {
+    --spz-section-padding: 64px 0 76px;
+  }
   .spz-card-image img{
     object-fit: cover;
   }

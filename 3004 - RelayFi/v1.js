@@ -1,6 +1,48 @@
 // #3004 | Relay | Home | Bento - Variant 1
 // https://app.asana.com/1/77217210692853/task/1211867523594527
 
+function hiddenValue(currentExperimentName, currentExperimentValue) {
+  function setCookie(name, value, days) {
+    var expires = ''
+    if (days) {
+      var date = new Date()
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
+      expires = '; expires=' + date.toUTCString()
+    }
+    document.cookie = name + '=' + (value || '') + expires + '; path=/'
+  }
+
+  function getCookie(name) {
+    var nameEQ = name + '='
+    var ca = document.cookie.split(';')
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i]
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length)
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length)
+    }
+    return null
+  }
+
+  var ExistingExperimentName = getCookie('ExperimentName')
+  var ExistingExperimentValue = getCookie('ExperimentValue')
+
+  if (!ExistingExperimentName) {
+    setCookie('ExperimentName', currentExperimentName, 1)
+    setCookie('ExperimentValue', currentExperimentValue, 1)
+  } else if (ExistingExperimentName && !ExistingExperimentName.includes(currentExperimentName)) {
+    setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1)
+    setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1)
+  } else if (ExistingExperimentName && ExistingExperimentName.includes(currentExperimentName)) {
+    var existingNames = ExistingExperimentName.split(',')
+    var existingValues = ExistingExperimentValue.split(',')
+    var index = existingNames.indexOf(currentExperimentName)
+    existingValues[index] = currentExperimentValue
+    setCookie('ExperimentName', existingNames.join(','), 1)
+    setCookie('ExperimentValue', existingValues.join(','), 1)
+  }
+}
+hiddenValue('#3004 | Relay | Home | Bento', '3004-home-test-variant1');
+
 const bentoConfig = {
   insertAfter: 'main section:nth-of-type(2)', // Insert after hero section
   ctaUrl: 'https://app.relayfi.com/v3/register/user',
