@@ -47,7 +47,7 @@ function hiddenValue(currentExperimentName, currentExperimentValue) {
 hiddenValue('#3004 | Relay | Home | Bento', '3004-home-test-variant2');
 
 const bentoConfig = {
-  insertBefore: '.hero', // Insert after hero section
+  insertBefore: '.hero',
   insertBeforeMobile: '.product-family',
   ctaUrl: 'https://app.relayfi.com/v3/register/user',
   baseUrl: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/3004/',

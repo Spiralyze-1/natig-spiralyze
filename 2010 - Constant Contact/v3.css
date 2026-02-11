@@ -189,7 +189,7 @@
 
 /* medias */
 
-@media (min-width: 1024px) and (min-height: 1200px) {
+@media (min-width: 1025px) and (min-height: 1200px) {
 	.spz_2010_v3 #main{
 		background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/2010/1032_3.webp') !important;
 		background-repeat: no-repeat;
@@ -198,7 +198,7 @@
 	}
 }
 
-@media(max-width: 1023px) and (min-width: 768px){
+@media(max-width: 1024px) and (min-width: 768px){
 	.spz_2010_v3 #main{
 		background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/2010/768.webp') !important;
 		background-repeat: no-repeat;
@@ -219,10 +219,6 @@
 	}
 	.spz_2010_v3.spz_2010_v3_buynow .spz-logo-list-wrapper{
 		padding: 55px 32px 64px 32px;
-	}
-	.spz_2010_v3 .spz-logo-list{
-		gap: 24px 48px;
-		justify-content: center;
 	}
 	.spz_2010_v3 .spz-dummy-header-links{
 		display: flex;
@@ -252,6 +248,17 @@
 	}
 	.spz_2010_v3 .footer__bottom-inner{
 		padding: 0 32px;
+	}
+}
+@media(max-width: 1023px){
+	.spz_2010_v3 .spz-logo-list{
+		gap: 24px 48px;
+		justify-content: center;
+	}
+	.spz_2010_v3 .spz-dummy-header-links{
+		display: flex;
+		gap: 12px;
+		align-items: center;
 	}
 }
 
@@ -308,6 +315,10 @@
 }
 
 @media(max-width: 450px){
+	.spz_2010_v3 #main{
+		background-position: 0 67%;
+	}
+	
 	.spz_2010_v3 .spz-logo-list-wrapper{
 		max-width: 360px;
 	}

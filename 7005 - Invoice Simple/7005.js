@@ -65,58 +65,62 @@ const testVersion = 'v'
 
 console.log('7005 ping')
 
-function checkAndShowPopup() {
-    console.log('pre clause - 7005')
-    const isFreeTrial = !!document.querySelector('[data-sentry-component="getFreeBannerTitle"]')
+let previousPath = window.location.pathname
 
-    if (!isFreeTrial) return
+function isFreeTrial() {
+    const bannerText = document.querySelector('.spz-banner_text > strong')
+    return !!document.querySelector('[data-sentry-component="getFreeBannerTitle"]') || (bannerText && bannerText.textContent.includes('free trial'))
+}
+
+function cameFromInvoiceCreation() {
+    // Check if user came from /invoices/new or /invoices/[id] (editing/creating)
+    return previousPath === '/invoices/new' || (previousPath.startsWith('/invoices/') && previousPath !== '/invoices')
+}
+
+function checkAndShowPopup() {
+    console.log('7005: Checking popup conditions')
+    console.log('7005: Previous path:', previousPath)
+    console.log('7005: Current path:', window.location.pathname)
+
+    // Must be on /invoices page
+    if (window.location.pathname !== '/invoices') return
+
+    // Must be free trial user
+    if (!isFreeTrial()) {
+        console.log('7005: Not a free trial user, skipping')
+        return
+    }
 
     console.log('7005 test started')
     document.body.classList.add(`spz_${testNumber}_${testVersion}`)
 
-    let retryCount = 0;
-    const maxRetries = 3;
-
-    function attemptShowPopup() {
-        console.log(`Attempt ${retryCount + 1} to find DocListRow elements`);
-
-        waitForElement('[data-sentry-component="DocListRow"]', () => {
-            const docList = document.querySelectorAll('[data-sentry-component="DocListRow"]')
-            console.log(`Document count:`, docList.length)
-
-            if (docList.length == 1 && !localStorage.getItem('plus_popup_shown')) {
-                showPopup('plus');
-                localStorage.setItem('plus_popup_shown', 'true');
-            }
-            else if (docList.length == 2 && !localStorage.getItem('premium_popup_shown')) {
-                showPopup('premium');
-                localStorage.setItem('premium_popup_shown', 'true');
-            }
-        });
-
-        // Retry mechanism: check if elements exist after timeout
-        setTimeout(() => {
-            const docList = document.querySelectorAll('[data-sentry-component="DocListRow"]');
-            const plusShown = localStorage.getItem('plus_popup_shown');
-            const premiumShown = localStorage.getItem('premium_popup_shown');
-
-            // If popup should have been shown but wasn't, retry
-            if ((docList.length == 1 && !plusShown) || (docList.length == 2 && !premiumShown)) {
-                retryCount++;
-                if (retryCount < maxRetries) {
-                    console.log(`Retry ${retryCount}/${maxRetries} - elements exist but popup not shown`);
-                    attemptShowPopup();
-                } else {
-                    console.log('Max retries reached');
-                }
-            }
-        }, 6000); // Check after waitForElement timeout (5s) + buffer
+    // Must have come from invoice creation/editing
+    if (!cameFromInvoiceCreation()) {
+        console.log('7005: Did not come from invoice creation, skipping popup')
+        return
     }
 
-    // Add initial delay to let React mount
-    setTimeout(() => {
-        attemptShowPopup();
-    }, 1000);
+    console.log('7005: User came from invoice creation')
+
+    // Wait for invoice list to load and count invoices
+    waitForElement('[data-sentry-component="DocListRow"]', function () {
+        setTimeout(function () {
+            const docList = document.querySelectorAll('[data-sentry-component="DocListRow"]')
+            const currentCount = docList.length
+            console.log('7005: Invoice count:', currentCount)
+
+            // Show Plus popup only after 1st invoice creation
+            if (currentCount === 1 && !localStorage.getItem('spz_7005_plus_popup_shown')) {
+                showPopup('plus')
+                localStorage.setItem('spz_7005_plus_popup_shown', 'true')
+            }
+            // Show Premium popup only after 2nd invoice creation
+            else if (currentCount === 2 && !localStorage.getItem('spz_7005_premium_popup_shown')) {
+                showPopup('premium')
+                localStorage.setItem('spz_7005_premium_popup_shown', 'true')
+            }
+        }, 1000)
+    })
 }
 
 function handleSubscriptionPage() {
@@ -172,6 +176,9 @@ function handleRoute() {
     } else if (pathname === "/invoices") {
         checkAndShowPopup();
     }
+
+    // Update previousPath AFTER checking (so we can compare old vs new)
+    previousPath = pathname;
 }
 
 // Intercept Next.js navigation
@@ -193,8 +200,15 @@ function handleRoute() {
 // Listen for back/forward button
 window.addEventListener('popstate', handleRoute);
 
-// Initial load
-waitForElement('#tailwind', handleRoute);
+// Initial load - only set up the class, don't show popup on initial page load
+waitForElement('#tailwind', function () {
+    // On initial load, just add the class if free trial, but don't show popup
+    if (isFreeTrial()) {
+        document.body.classList.add(`spz_${testNumber}_${testVersion}`)
+    }
+    // Store initial path
+    previousPath = window.location.pathname;
+});
 
 function showPopup(plan) {
     console.log(`Showing ${plan} popup`);
@@ -204,7 +218,7 @@ function showPopup(plan) {
         <div class="spz-popup">
             <div class="spz-popup-content">
                 <div class="spz-popup-badge">
-                    <span>7 days</span> LEFT on your free trial
+                    <span>${plan === 'plus' ? '1 INVOICE' : 'NO INVOICES'}</span> LEFT ON YOUR FREE TRIAL
                 </div>
                 <img class="spz-popup-logo" src="https://res.cloudinary.com/spiralyze/image/upload/v1763403938/invoicesimple/7005/vector.svg" alt="Invoice Simple logo">
                 <h2>Based on your usage we recommend</h2>

@@ -175,7 +175,7 @@
 
 /* medias */
 
-@media(max-width: 1023px){
+@media(max-width: 1024px){
 	.spz_2010_v2 #main > section{
 		padding-top: 64px !important;	
 	}
@@ -186,10 +186,6 @@
 	
 	.spz_2010_v2.spz_2010_v2_buynow .spz-logo-list-wrapper{
 		padding: 55px 32px 64px 32px;
-	}
-	.spz_2010_v2 .spz-logo-list{
-		gap: 24px 48px;
-		justify-content: center;
 	}
 	.spz_2010_v2 .spz-dummy-header-links{
 		display: flex;
@@ -219,6 +215,13 @@
 	}
 	.spz_2010_v2 .footer__bottom-inner{
 		padding: 0 32px;
+	}
+}
+
+@media(max-width: 1023px){
+	.spz_2010_v2 .spz-logo-list{
+		gap: 24px 48px;
+		justify-content: center;
 	}
 }
 

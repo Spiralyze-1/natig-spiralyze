@@ -213,7 +213,7 @@
 }
 
 .spz_8002_v1 .spz-author-name {
-    color: #000;
+    color: #171717;
     font-family: "Sharp Earth OL";
     font-size: 18px;
     font-weight: 700;
@@ -223,7 +223,7 @@
 }
 
 .spz_8002_v1 .spz-author-position {
-    color: #000;
+    color: rgba(23, 23, 23, 0.70);
     font-family: "Sharp Earth OL";
     font-size: 15px;
     font-weight: 400;
@@ -340,7 +340,7 @@
     }
 
     .spz_8002_v1 .spz-content-wrapper {
-        padding: 6px 20px;
+        padding: 6px 20px 40px 20px;
     }
 
     .spz_8002_v1 .spz-slide-text {

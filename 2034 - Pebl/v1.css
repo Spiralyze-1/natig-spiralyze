@@ -21,6 +21,7 @@
 	
 	height: calc(100vh - 95px);
 	min-height: 975px;
+	max-height: 985px;
 }
 
 .spz_2034_v1 .spz-hero-content {
@@ -204,7 +205,7 @@
     flex-shrink: 0;
     
     padding-right: 88px;
-    animation: spin 20s infinite linear;
+    animation: spin 25s infinite linear;
 }
 /*card*/
 .spz_2034_v1 .spz-logo-list li {
@@ -247,6 +248,7 @@
 		
 		height: calc(100vh - 135px);
 		min-height: 820px;
+		max-height: none;
 	}
 
 	.spz_2034_v1 .spz-hero-content{
