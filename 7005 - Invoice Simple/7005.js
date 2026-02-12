@@ -66,79 +66,127 @@ const testVersion = 'v'
 console.log('7005 ping')
 
 let previousPath = window.location.pathname
+let pendingCreationCheck = false // Flag to track if we came from invoice creation
 
-function isFreeTrial() {
-    const bannerText = document.querySelector('.spz-banner_text > strong')
-    return !!document.querySelector('[data-sentry-component="getFreeBannerTitle"]') || (bannerText && bannerText.textContent.includes('free trial'))
+function getCurrentUserId() {
+    try {
+        // Search for any localStorage key that contains 'currentUser'
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i)
+            if (key && key.includes('currentUser')) {
+                const userData = localStorage.getItem(key)
+                if (userData) {
+                    const parsed = JSON.parse(userData)
+                    if (parsed.objectId) {
+                        console.log('7005: Found user ID:', parsed.objectId)
+                        return parsed.objectId
+                    }
+                }
+            }
+        }
+    } catch (e) {
+        console.log('7005: Error getting user ID', e)
+    }
+    return null
 }
 
-function cameFromInvoiceCreation() {
-    // Check if user came from /invoices/new or /invoices/[id] (editing/creating)
-    return previousPath === '/invoices/new' || (previousPath.startsWith('/invoices/') && previousPath !== '/invoices')
+function getStorageKey(popupType) {
+    const userId = getCurrentUserId()
+    if (userId) {
+        return `spz_7005_${popupType}_popup_shown_${userId}`
+    }
+    // Fallback if no user ID found
+    return `spz_7005_${popupType}_popup_shown`
 }
 
 function checkAndShowPopup() {
-    console.log('7005: Checking popup conditions')
-    console.log('7005: Previous path:', previousPath)
-    console.log('7005: Current path:', window.location.pathname)
+    const pathname = window.location.pathname
 
     // Must be on /invoices page
-    if (window.location.pathname !== '/invoices') return
+    if (pathname !== '/invoices') return
 
-    // Must be free trial user
-    if (!isFreeTrial()) {
-        console.log('7005: Not a free trial user, skipping')
-        return
-    }
+    console.log('7005: Checking popup conditions')
+    console.log('7005: pendingCreationCheck flag:', pendingCreationCheck)
 
-    console.log('7005 test started')
-    document.body.classList.add(`spz_${testNumber}_${testVersion}`)
+    // Wait for either the original banner OR the modified banner (by another test like 7006)
+    // Original: [data-sentry-component="getFreeBannerTitle"]
+    // Modified: .spz-banner (7006 replaces the banner)
+    const bannerSelector = '[data-sentry-component="getFreeBannerTitle"], .spz-banner'
 
-    // Must have come from invoice creation/editing
-    if (!cameFromInvoiceCreation()) {
-        console.log('7005: Did not come from invoice creation, skipping popup')
-        return
-    }
+    waitForElement(bannerSelector, function (bannerEl) {
+        console.log('7005: Free trial banner found', bannerEl)
+        document.body.classList.add(`spz_${testNumber}_${testVersion}`)
 
-    console.log('7005: User came from invoice creation')
+        // Check and reset the flag INSIDE the callback to avoid race conditions
+        const cameFromCreation = pendingCreationCheck
+        pendingCreationCheck = false // Reset after capturing
 
-    // Wait for invoice list to load and count invoices
-    waitForElement('[data-sentry-component="DocListRow"]', function () {
-        setTimeout(function () {
-            const docList = document.querySelectorAll('[data-sentry-component="DocListRow"]')
-            const currentCount = docList.length
-            console.log('7005: Invoice count:', currentCount)
+        console.log('7005: Came from creation:', cameFromCreation)
 
-            // Show Plus popup only after 1st invoice creation
-            if (currentCount === 1 && !localStorage.getItem('spz_7005_plus_popup_shown')) {
-                showPopup('plus')
-                localStorage.setItem('spz_7005_plus_popup_shown', 'true')
-            }
-            // Show Premium popup only after 2nd invoice creation
-            else if (currentCount === 2 && !localStorage.getItem('spz_7005_premium_popup_shown')) {
-                showPopup('premium')
-                localStorage.setItem('spz_7005_premium_popup_shown', 'true')
-            }
-        }, 1000)
+        // Only show popup if user came from invoice creation
+        if (!cameFromCreation) {
+            console.log('7005: Did not come from invoice creation, skipping popup')
+            return
+        }
+
+        console.log('7005: User came from invoice creation, checking invoice count')
+
+        // Wait for invoice list to load and count invoices
+        waitForElement('[data-sentry-component="DocListRow"]', function () {
+            setTimeout(function () {
+                const docList = document.querySelectorAll('[data-sentry-component="DocListRow"]')
+                const currentCount = docList.length
+                const plusKey = getStorageKey('plus')
+                const premiumKey = getStorageKey('premium')
+
+                console.log('7005: Invoice count:', currentCount)
+                console.log('7005: Plus key:', plusKey, '| Value:', localStorage.getItem(plusKey))
+                console.log('7005: Premium key:', premiumKey, '| Value:', localStorage.getItem(premiumKey))
+
+                // Show Plus popup only after 1st invoice creation
+                if (currentCount === 1 && !localStorage.getItem(plusKey)) {
+                    console.log('7005: Showing PLUS popup')
+                    showPopup('plus')
+                    localStorage.setItem(plusKey, 'true')
+                }
+                // Show Premium popup only after 2nd invoice creation
+                else if (currentCount === 2 && !localStorage.getItem(premiumKey)) {
+                    console.log('7005: Showing PREMIUM popup')
+                    showPopup('premium')
+                    localStorage.setItem(premiumKey, 'true')
+                }
+                else {
+                    console.log('7005: No popup shown - conditions not met')
+                }
+            }, 500)
+        })
     })
 }
 
 function handleSubscriptionPage() {
+    console.log('7005: handleSubscriptionPage called')
     const urlParams = new URLSearchParams(window.location.search);
     const plan = urlParams.get('plan');
     const billing = urlParams.get('billing');
     const isDesktop = window.screen.width >= 768
+
+    console.log('7005: URL params - plan:', plan, 'billing:', billing)
+    console.log('7005: isDesktop:', isDesktop)
 
     if (plan && billing) {
         console.log(`7005: Auto-selecting ${plan} ${billing}`);
 
         // Wait for the subscription page elements to load
         waitForElement('[data-testid="plan-tier-cards"]', () => {
+            console.log('7005: Plan tier cards found')
+
             // 1. Select billing cycle (monthly/annual)
             const billingSelector = billing === 'monthly'
                 ? '[data-testid="btn-monthly"]'
                 : '[data-testid="btn-annual"]';
             const billingBtn = document.querySelector(billingSelector);
+            console.log('7005: Billing selector:', billingSelector)
+            console.log('7005: Billing button found:', !!billingBtn)
             if (billingBtn) billingBtn.click();
 
             if (isDesktop) {
@@ -147,8 +195,13 @@ function handleSubscriptionPage() {
                     ? '[data-testid="desktop-plus-buy-button"]'
                     : '[data-testid="desktop-premium-buy-button"]';
                 const planBtn = document.querySelector(planSelector);
+                console.log('7005: Plan selector:', planSelector)
+                console.log('7005: Plan button found:', !!planBtn)
                 setTimeout(() => {
-                    if (planBtn) planBtn.click();
+                    if (planBtn) {
+                        console.log('7005: Clicking plan button')
+                        planBtn.click();
+                    }
                 }, 500)
             }
             else {
@@ -157,28 +210,48 @@ function handleSubscriptionPage() {
                     ? '[data-testid="mobile-plus-tier-card"]'
                     : '[data-testid="mobile-premium-tier-card"]';
                 const planCard = document.querySelector(planCardSelector);
+                console.log('7005: Plan card selector:', planCardSelector)
+                console.log('7005: Plan card found:', !!planCard)
                 if (planCard) planCard.click();
 
                 const planBtn = document.querySelector('[data-testid="mobile-buy-button"]');
+                console.log('7005: Mobile buy button found:', !!planBtn)
                 setTimeout(() => {
-                    if (planBtn) planBtn.click();
+                    if (planBtn) {
+                        console.log('7005: Clicking mobile buy button')
+                        planBtn.click();
+                    }
                 }, 500);
             }
         });
+    } else {
+        console.log('7005: No plan/billing params, skipping auto-select')
     }
 }
 
 function handleRoute() {
     const pathname = window.location.pathname;
 
-    if (pathname === "/subscription") {
-        handleSubscriptionPage();
-    } else if (pathname === "/invoices") {
-        checkAndShowPopup();
+    console.log('7005: Route change detected')
+    console.log('7005: From:', previousPath, 'To:', pathname)
+
+    // Check if navigating TO /invoices FROM invoice creation/editing
+    if (pathname === '/invoices') {
+        const cameFromCreation = previousPath === '/invoices/new' ||
+            (previousPath.startsWith('/invoices/') && previousPath !== '/invoices')
+
+        if (cameFromCreation) {
+            console.log('7005: Setting pendingCreationCheck flag')
+            pendingCreationCheck = true
+        }
+
+        checkAndShowPopup()
+    } else if (pathname === "/subscription") {
+        handleSubscriptionPage()
     }
 
-    // Update previousPath AFTER checking (so we can compare old vs new)
-    previousPath = pathname;
+    // Update previousPath AFTER processing
+    previousPath = pathname
 }
 
 // Intercept Next.js navigation
@@ -200,14 +273,25 @@ function handleRoute() {
 // Listen for back/forward button
 window.addEventListener('popstate', handleRoute);
 
-// Initial load - only set up the class, don't show popup on initial page load
+// Initial load
 waitForElement('#tailwind', function () {
-    // On initial load, just add the class if free trial, but don't show popup
-    if (isFreeTrial()) {
+    console.log('7005: Initial load, path:', window.location.pathname)
+    previousPath = window.location.pathname
+
+    // On initial load, just add the class if free trial banner exists (don't show popup)
+    // Check for both original and modified banner
+    waitForElement('[data-sentry-component="getFreeBannerTitle"], .spz-banner', function () {
         document.body.classList.add(`spz_${testNumber}_${testVersion}`)
-    }
-    // Store initial path
-    previousPath = window.location.pathname;
+    })
+
+    // Add dot at the end of the footer auto-save text
+    console.log("footer add dot1")
+    waitForElement('footer > p', function (el) {
+        console.log("footer add dot2")
+        if (el.textContent.trim() === 'All your invoices are auto saved here') {
+            el.textContent = 'All your invoices are auto saved here.'
+        }
+    })
 });
 
 function showPopup(plan) {

@@ -189,7 +189,15 @@
 
 /* medias */
 
-@media (min-width: 1025px) and (min-height: 1200px) {
+@media (min-width: 1024px) and (min-height: 1200px) and (min-resolution: 2dppx) {
+	.spz_2010_v3 .footer__bottom-legal .legal-copyright--country-dropdown-hidden,
+	.spz_2010_v3 .footer__bottom-legal .legal-copyright{
+		flex-direction: column !important;
+		gap: 24px !important;
+	}
+}
+
+@media (min-width: 1024px) and (min-height: 1200px) {
 	.spz_2010_v3 #main{
 		background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/2010/1032_3.webp') !important;
 		background-repeat: no-repeat;
@@ -240,8 +248,8 @@
 	}
 	.spz_2010_v3 .footer__bottom-legal .legal-copyright--country-dropdown-hidden,
 	.spz_2010_v3 .footer__bottom-legal .legal-copyright{
-		flex-direction: column;
-		gap: 24px;
+		flex-direction: column !important;
+		gap: 24px !important;
 	}
 	.spz_2010_v3 .footer__bottom-legal .legal-links{
 		gap: 16px 24px;

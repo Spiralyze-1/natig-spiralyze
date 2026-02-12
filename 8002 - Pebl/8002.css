@@ -319,6 +319,9 @@
 }
 
 @media(max-width: 767.98px){
+    html::before{
+        background-image:radial-gradient(at 42% 30%, rgb(219, 235, 255) 0px, transparent 50%),  radial-gradient(at 9% 12%, rgb(219, 235, 255) 0px, transparent 50%),  radial-gradient(at 64% 69%, rgba(219, 235, 255, 0.5) 0px, transparent 50%),  radial-gradient(at 10% 47%, rgb(219, 235, 255) 0px, transparent 50%),  radial-gradient(at 75% 14%, rgb(219, 235, 255) 0px, transparent 50%),  radial-gradient(at 22% 94%, rgba(202, 239, 246, 0.64) 0px, transparent 50%),  radial-gradient(at 90% 85%, rgba(180, 210, 240, 0.3) 0px, transparent 50%) !important;
+    }
     .spz_8002_v1 .spz-carousel-slide {
         flex: 0 0 306px;
         width: 306px;

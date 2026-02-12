@@ -248,9 +248,6 @@ function initCarousel() {
 
     let slideWidth = 614; // Default width for desktop
     let gap = 20; // Gap between slides
-    let autoScrollInterval;
-    const autoScrollDelay = 5000; // 5 seconds between slides
-
     function getSlideWidth() {
         const width = window.innerWidth;
         return width >= 768 ? 614 : 306;
@@ -284,39 +281,20 @@ function initCarousel() {
         updateCarousel();
     }
 
-    function startAutoScroll() {
-        stopAutoScroll(); // Clear any existing interval first
-        autoScrollInterval = setInterval(() => {
-            nextSlide();
-        }, autoScrollDelay);
-    }
-
-    function stopAutoScroll() {
-        clearInterval(autoScrollInterval);
-    }
-
-    function resetAutoScroll() {
-        stopAutoScroll();
-        startAutoScroll();
-    }
-
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             prevSlide();
-            resetAutoScroll(); // Reset timer when user manually navigates
         });
     }
 
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             nextSlide();
-            resetAutoScroll(); // Reset timer when user manually navigates
         });
     }
 
     // Initial setup
     updateCarousel();
-    startAutoScroll(); // Start autoscroll
 
     // Update on window resize
     let resizeTimer;
