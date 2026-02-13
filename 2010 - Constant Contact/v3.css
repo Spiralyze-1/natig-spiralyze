@@ -189,20 +189,13 @@
 
 /* medias */
 
-@media (min-width: 1024px) and (min-height: 1200px) and (min-resolution: 2dppx) {
-	.spz_2010_v3 .footer__bottom-legal .legal-copyright--country-dropdown-hidden,
-	.spz_2010_v3 .footer__bottom-legal .legal-copyright{
-		flex-direction: column !important;
-		gap: 24px !important;
-	}
-}
-
 @media (min-width: 1024px) and (min-height: 1200px) {
 	.spz_2010_v3 #main{
 		background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/2010/1032_3.webp') !important;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
+		user-select: none;
 	}
 }
 
@@ -256,6 +249,19 @@
 	}
 	.spz_2010_v3 .footer__bottom-inner{
 		padding: 0 32px;
+	}
+}
+@media (min-width: 1024px) and (min-height: 1200px) and (min-resolution: 2dppx) {
+	.spz_2010_v3 .footer__bottom-legal .legal-copyright--country-dropdown-hidden,
+	.spz_2010_v3 .footer__bottom-legal .legal-copyright{
+		flex-direction: column !important;
+		gap: 24px !important;
+	}
+	.spz_2010_v3 #main{
+		background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/2010/1032_3.webp') !important;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 }
 @media(max-width: 1023px){

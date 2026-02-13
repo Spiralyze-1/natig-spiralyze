@@ -175,6 +175,14 @@
 
 /* medias */
 
+@media (min-width: 1024px) and (min-height: 1200px) and (min-resolution: 2dppx) {
+	.spz_2010_v2 .footer__bottom-legal .legal-copyright--country-dropdown-hidden,
+	.spz_2010_v2 .footer__bottom-legal .legal-copyright{
+		flex-direction: column !important;
+		gap: 24px !important;
+	}
+}
+
 @media(max-width: 1024px){
 	.spz_2010_v2 #main > section{
 		padding-top: 64px !important;	

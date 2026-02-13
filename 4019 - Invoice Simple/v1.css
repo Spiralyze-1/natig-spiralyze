@@ -94,11 +94,10 @@
     font-family: "Roboto" !important;
     font-size: 12px !important;
     font-weight: 500 !important;
-    line-height: 15px !important;
+    line-height: 21px !important;
     width: 72px !important;
     height: 21px !important;
     padding: 0 !important;
-    padding-top: 3px !important;
     letter-spacing: 0.1px !important;
 }
 
@@ -162,12 +161,13 @@
     display: none !important;
 }
 
+
 .spz_4019_v1 #tailwind.spz-show-badge [data-testid="subscription-badge-v2"],
 .spz_4019_v1 .spz-show-badge .spz-price-year,
 .spz_4019_v1 .spz-coupon-page .spz-discounted-price-coupon,
 .spz_4019_v1 .spz-show-badge .spz-discounted-price,
 .spz_4019_v1 .spz-coupon-page [data-testid="subscription-badge-v2-c"],
-.spz_4019_v1 .spz-show-badge [data-testid="subscription-badge-v2"] {
+.spz_4019_v1 .spz-show-badge [data-testid="subscription-badge-v2"]{
     display: block !important;
 }
 

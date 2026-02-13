@@ -86,13 +86,13 @@
     font-family: "Roboto" !important;
     font-size: 12px !important;
     font-weight: 500 !important;
-    line-height: 15px !important;
+    line-height: 21px !important;
     width: 72px !important;
     height: 21px !important;
     padding: 0 !important;
-    padding-top: 3px !important;
     letter-spacing: 0.1px !important;
 }
+
 
 /* ─── Card subscription badges ────────────────────────────────────────────── */
 
