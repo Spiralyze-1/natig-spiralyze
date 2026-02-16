@@ -1,5 +1,5 @@
 .spz_2003_v1 .spz-red-banner {
-    background-color: #E61D30;
+    background-color: #e61d30;
     padding: 8px 0px;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .spz_2003_v1 .spz-red-content li span {
-    color: #FFF;
+    color: #fff;
     font-family: "Arial", sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -42,8 +42,37 @@
     border: 0;
 }
 
-@media(max-width: 767.98px) {
+@media(max-width: 1023px) {
+    .spz_2003_v1 .ast-site-identity {
+        padding: 30px 0 34px !important;
+    }
+
+    .spz_2003_v1 header .custom-logo-link img {
+        max-width: 220px !important;
+        width: 220px !important;
+    }
+
+    .spz_2003_v1 .ast-button-wrap .menu-toggle.main-header-menu-toggle {
+        padding: 0 23px;
+    }
+}
+
+@media (max-width: 767.98px) {
     .spz_2003_v1 .spz-red-content ul {
         justify-content: space-between;
     }
+
+    .spz_2003_v1 header .custom-logo-link img {
+        max-width: 147px;
+        width: 147px;
+    }
+
+    .spz_2003_v1 .ast-site-identity {
+        padding: 18px 0 27px !important;
+    }
+
+    .spz_2003_v1 .ast-button-wrap .menu-toggle.main-header-menu-toggle {
+        padding: 0;
+    }
+
 }

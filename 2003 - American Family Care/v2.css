@@ -43,8 +43,23 @@
     padding-left: 0 !important;
 }
 
+.spz_2003_v2 .ast-desktop .ast-mega-menu-enabled.main-header-menu>.menu-item-has-children>.menu-link .sub-arrow:after {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.spz_2003_v2 .ast-site-identity {
+    padding: 18px 0 !important;
+}
+
+.spz_2003_v2 #primary-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .spz_2003_v2 .main-navigation ul .menu-item .menu-link {
-    padding: 0 8px !important;
+    padding: 0 !important;
 }
 
 .spz_2003_v2 .main-header-bar-wrap {
@@ -56,8 +71,28 @@
 }
 
 .spz_2003_v2 .sub-arrow::after {
-    margin-left: 4px !important;
+    margin-left: 12px !important;
 }
+
+/* .spz_2003_v2 #menu-item-2008 .sub-arrow::after {
+    transform: translate(-3px, -2px);
+}
+
+.spz_2003_v2 #menu-item-53387 .sub-arrow::after {
+    transform: translate(-3px, -2px);
+}
+
+.spz_2003_v2 #menu-item-2963 .sub-arrow::after {
+    transform: translate(-3px, -2px);
+}
+
+.spz_2003_v2 #menu-item-2007 .sub-arrow::after {
+    transform: translate(-5px, -2px);
+}
+
+.spz_2003_v2 #menu-item-2496 .sub-arrow::after {
+    transform: translate(-7px, -2px);
+} */
 
 .spz_2003_v2 .spz-link-wrapper {
     display: flex;
