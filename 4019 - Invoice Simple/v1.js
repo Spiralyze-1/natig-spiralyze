@@ -284,10 +284,10 @@ waitForElement('#tailwind', () => {
                             <div data-testid="subscription-badge-v2">Save 16%</div>
                         </div>
                         <p class="mt-4 mb-8 text-gray-800 text-xl lg:text-2xl font-medium h-22 lg:h-auto">For freelancers &amp; solo business</p>
-                        <strong class="spz-discounted-price-coupon">$4.99</strong>
-                        <strong class="spz-discounted-price">$59.88</strong>
-                        <p class="text-[28px] font-extrabold text-gray-900 mt-1 spz-price-month" data-testid="mobile-essentials-price">${isCouponPage ? "$2.49" : "$4.99"}<span class="text-2xl font-semibold text-gray-500 ml-1">/mo</span></p>
-                        <p class="text-[28px] font-extrabold text-gray-900 mt-1 spz-price-year" data-testid="mobile-essentials-price">$49.99<span class="text-2xl font-semibold text-gray-500 ml-1">/yr</span></p>
+                        <strong class="spz-discounted-price-coupon">$6.99</strong>
+                        <strong class="spz-discounted-price">$83.88</strong>
+                        <p class="text-[28px] font-extrabold text-gray-900 mt-1 spz-price-month" data-testid="mobile-essentials-price">${isCouponPage ? "$2.49" : "$6.99"}<span class="text-2xl font-semibold text-gray-500 ml-1">/mo</span></p>
+                        <p class="text-[28px] font-extrabold text-gray-900 mt-1 spz-price-year" data-testid="mobile-essentials-price">$69.99<span class="text-2xl font-semibold text-gray-500 ml-1">/yr</span></p>
                         <button type="button" data-testid="mobile-essentials-buy-button" class="spz-buy-btn mt-8 mb-1 no-underline block w-full flex-grow rounded-[4px] border-[1px] border-solid py-3 text-center text-[14px] font-bold hover:opacity-70 bg-orange-is text-white border-orange-is">Upgrade now</button>
                     </div>
                     <div class="px-[20px] pt-[20px] rounded-b-[30px] pb-24 h-[230px]" style="border-width: 0px 2px 2px; border-style: solid; border-color: rgb(229, 231, 235); border-image: initial;">

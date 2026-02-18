@@ -8,12 +8,7 @@
   --spz-bento-bg: #f7f5ee;
   --spz-card-light: #e7eead;
   --spz-card-dark: #25201f;
-  --spz-card-dark-overlay: linear-gradient(
-    -43.2066deg,
-    rgb(2, 84, 0) 1.0782%,
-    rgba(0, 89, 1, 0.72) 30.983%,
-    rgb(0, 39, 0) 73.749%
-  );
+  --spz-card-dark-overlay: linear-gradient(306deg, #025400 1.08%, rgba(0, 89, 1, 0.72) 30.98%, #002700 73.75%);
   --spz-text-primary: #004822;
   --spz-text-light: #fcfbf8;
   --spz-text-secondary: #f1ecda;
@@ -25,8 +20,21 @@
   --spz-border-radius: 24px;
   --spz-section-padding: 124px 0;
 }
-.spz_3004_v1 #main section:nth-child(2){
-    margin-bottom: 0;
+
+.spz_3004_v1 #main section:nth-child(2) {
+  margin-bottom: 0;
+}
+
+.spz_3004_v1 .homepage>section:nth-child(1) {
+  margin-bottom: 0;
+}
+
+.spz_3004_v1 .spz-bento-section-v1.spz-bento-desk {
+  display: block;
+}
+
+.spz_3004_v1 .spz-bento-section-v1.spz-bento-mob {
+  display: none;
 }
 
 .spz_3004_v1 .spz-bento-section-v1 {
@@ -139,6 +147,7 @@
   line-height: 1.3;
   letter-spacing: 0;
   color: var(--spz-text-dark);
+  padding-right: 2px;
 }
 
 .spz_3004_v1 .spz-card-dark .spz-card-description {
@@ -188,14 +197,14 @@
   transition: all 0.3s ease;
   cursor: pointer;
 
-  font-family: "Poppins", var(--spz-font-body);
+  font-family: var(--spz-font-body);
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0;
   color: var(--spz-text-primary);
 
-  width: 168px;
+  width: 164px;
 }
 
 .spz_3004_v1 .spz-bento-button:hover {
@@ -207,16 +216,22 @@
   transform: translateY(0);
 }
 
+.spz_3004_v1 .product-family {
+  display: none !important;
+}
+
 /* ==================== MEDIA QUERIES ==================== */
 
-@media(max-width: 1440px){
+@media(max-width: 1440px) {
   :root {
     /* --spz-section-padding: 96px 75px 72px; */
     --spz-section-padding: 96px 0 72px;
   }
+
   .spz_3004_v1 .spz-bento-container {
     max-width: 1196px;
   }
+
   /* .spz-card-large {
     flex: 0 1 661px;
     min-width: 661px;
@@ -229,9 +244,10 @@
 }
 
 @media (max-width: 1299px) {
-  .spz_3004_v1 .spz-bento-row{
+  .spz_3004_v1 .spz-bento-row {
     padding: 0 15px;
   }
+
   .spz_3004_v1 .spz-card-large {
     flex: 1 1 auto;
     min-width: 425px;
@@ -250,6 +266,25 @@
     --spz-border-radius: 20px;
   }
 
+  .spz_3004_v1 .homepage>section:nth-child(1) {
+    margin-bottom: 24px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .spz_3004_v1 .homepage>section:nth-child(1) .elevate:first-child {
+    padding: 0 20px;
+  }
+
+  .spz_3004_v1 .homepage .micro-text {
+    padding: 0 20px;
+  }
+
+
+  /* .spz_3004_v1 .homepage>section:nth-child(1) .elevate:last-child>*:not(.spz-bento-section-v1) {
+    padding: 0 20px;
+  } */
+
   .spz_3004_v1 .spz-card-large {
     flex: 0 1 354px;
     min-width: auto;
@@ -260,12 +295,12 @@
     min-width: auto;
   }
 
-  .spz_3004_v1 .spz-bento-row{
+  .spz_3004_v1 .spz-bento-row {
     padding: 0;
     justify-content: center;
   }
 
-  .spz_3004_v1 .spz-card-image img{
+  .spz_3004_v1 .spz-card-image img {
     object-fit: cover;
   }
 
@@ -295,10 +330,21 @@
   .spz_3004_v1 .spz-card-description {
     font-size: 14px;
     line-height: 1.3;
+    padding-right: 0;
   }
 
-  .spz_3004_v1 .spz-bento-cta-v1{
+  .spz_3004_v1 .spz-bento-cta-v1 {
     margin-top: 5px;
+  }
+}
+
+@media(max-width: 1023px) {
+  .spz_3004_v1 .spz-bento-section-v1.spz-bento-desk {
+    display: none;
+  }
+
+  .spz_3004_v1 .spz-bento-section-v1.spz-bento-mob {
+    display: block;
   }
 }
 
@@ -312,7 +358,7 @@
     gap: 29px;
   }
 
-  .spz_3004_v1 .spz-card-content{
+  .spz_3004_v1 .spz-card-content {
     gap: 10px;
   }
 
@@ -328,9 +374,10 @@
   .spz_3004_v1 .spz-bento-card {
     min-height: 336px;
   }
-  .spz_3004_v1 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img{
+
+  .spz_3004_v1 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img {
     transform: translateY(-28px);
-    height: 186px;
+    height: 196px;
   }
 
   .spz_3004_v1 .spz-card-large,
@@ -339,7 +386,7 @@
     flex: none;
   }
 
-  .spz_3004_v1 .spz-card-image img{
+  .spz_3004_v1 .spz-card-image img {
     object-fit: contain;
   }
 
@@ -352,13 +399,18 @@
     order: 1;
   }
 
-  .spz_3004_v1 .spz-bento-cta-v1{
+  .spz_3004_v1 .spz-bento-cta-v1 {
     margin-top: 2px;
   }
 }
 
-@media(max-width: 400px){
-  .spz_3004_v1 .spz-card-image img{
+@media(max-width: 375px) {
+  .spz_3004_v1 .spz-card-image img {
     object-fit: cover;
+  }
+
+  .spz_3004_v1 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img {
+    transform: translateY(-28px);
+    height: auto;
   }
 }
