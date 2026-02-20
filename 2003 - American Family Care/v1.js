@@ -109,6 +109,10 @@ waitForElement('body', () => {
     }
     console.log('2003 v1 started')
 
+    setTimeout(() => {
+        document.querySelector('.main-header-container').click()
+    }, 100);
+
     // put red badge
     const redBanner = document.querySelector('[data-elementor-id="1912"]')
 
@@ -118,13 +122,21 @@ waitForElement('body', () => {
                 <ul>
                     <li>
                         <a href="https://www.afcurgentcare.com/locations/?utm_source=app.asana.com&amp;utm_medium=referral&amp;landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link lazyloaded" data-wc-basekw="" wc_modded="1"> 
-                            <img src="https://res.cloudinary.com/spiralyze/image/upload/v1770659685/americanfamilycare/2003/location_on.svg" alt="Find a clinic icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 10.0001C10.4583 10.0001 10.8507 9.83689 11.1771 9.5105C11.5035 9.18411 11.6667 8.79175 11.6667 8.33341C11.6667 7.87508 11.5035 7.48272 11.1771 7.15633C10.8507 6.82994 10.4583 6.66675 10 6.66675C9.54168 6.66675 9.14932 6.82994 8.82293 7.15633C8.49654 7.48272 8.33334 7.87508 8.33334 8.33341C8.33334 8.79175 8.49654 9.18411 8.82293 9.5105C9.14932 9.83689 9.54168 10.0001 10 10.0001ZM10 16.1251C11.6945 14.5695 12.9514 13.1563 13.7708 11.8855C14.5903 10.6147 15 9.48619 15 8.50008C15 6.98619 14.5174 5.74661 13.5521 4.78133C12.5868 3.81605 11.4028 3.33341 10 3.33341C8.59723 3.33341 7.4132 3.81605 6.44793 4.78133C5.48265 5.74661 5.00001 6.98619 5.00001 8.50008C5.00001 9.48619 5.40973 10.6147 6.22918 11.8855C7.04862 13.1563 8.30557 14.5695 10 16.1251ZM10 18.3334C7.7639 16.4306 6.09376 14.6633 4.98959 13.0313C3.88543 11.3994 3.33334 9.88897 3.33334 8.50008C3.33334 6.41675 4.00348 4.75703 5.34376 3.52091C6.68404 2.2848 8.23612 1.66675 10 1.66675C11.7639 1.66675 13.316 2.2848 14.6563 3.52091C15.9965 4.75703 16.6667 6.41675 16.6667 8.50008C16.6667 9.88897 16.1146 11.3994 15.0104 13.0313C13.9063 14.6633 12.2361 16.4306 10 18.3334Z" fill="white"/>
+                            </svg>
                             <span>Find a Clinic</span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.afcurgentcare.com/patient-resources/pay-your-bill/?utm_source=app.asana.com&utm_medium=referral&landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link lazyloaded" data-wc-basekw="" wc_modded="1"> 
-                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/americanfamilycare/2003/cards.svg" alt="Find a clinic icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M1.66669 10.5083H15.8334" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.8334 8.56658V14.5249C15.8084 16.8999 15.1583 17.4999 12.6833 17.4999H4.81671C2.30004 17.4999 1.66669 16.8749 1.66669 14.3916V8.56658C1.66669 6.31658 2.19169 5.59159 4.16669 5.47492C4.36669 5.46659 4.58338 5.45825 4.81671 5.45825H12.6833C15.2 5.45825 15.8334 6.08325 15.8334 8.56658Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.3334 5.60833V11.4333C18.3334 13.6833 17.8084 14.4083 15.8334 14.525V8.56667C15.8334 6.08333 15.2 5.45833 12.6833 5.45833H4.81671C4.58338 5.45833 4.36669 5.46667 4.16669 5.475C4.19169 3.1 4.84171 2.5 7.31671 2.5H15.1833C17.7 2.5 18.3334 3.125 18.3334 5.60833Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4.375 14.8416H5.80831" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7.59167 14.8416H10.4583" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                             <span>Pay Your Bill</span>
                         </a>
                     </li>

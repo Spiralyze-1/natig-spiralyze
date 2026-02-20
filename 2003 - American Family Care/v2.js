@@ -109,41 +109,53 @@ waitForElement('body', () => {
     }
     console.log('2003 v2 started')
 
+    const isIOS = /iP(hone|od|ad)/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    if (isIOS) {
+        document.body.classList.add('spz-ios');
+    }
+
+
     const headerContent = document.querySelector('.main-header-container')
-
-    headerContent.insertAdjacentHTML('beforeend', `
-        <div class="spz-link-wrapper">
-            <ul>
-                <li>
-                    <a href="https://www.afcurgentcare.com/locations/?utm_source=app.asana.com&amp;utm_medium=referral&amp;landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link lazyloaded" data-wc-basekw="" wc_modded="1"> 
-                        Find a location
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.afcurgentcare.com/patient-resources/pay-your-bill/?utm_source=app.asana.com&utm_medium=referral&landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link lazyloaded" data-wc-basekw="" wc_modded="1"> 
-                        Pay Your Bill
-                    </a>
-                </li>
-            </ul>
-        </div>
-    `)
-
     const mainNavigationBurgerMenu = document.querySelector('.main-navigation')
 
-    mainNavigationBurgerMenu.insertAdjacentHTML('beforeend', `
-        <div class="spz-link-wrapper spz-link-wrapper-mobile">
-            <ul>
-                <li>
-                    <a href="https://www.afcurgentcare.com/locations/?utm_source=app.asana.com&amp;utm_medium=referral&amp;landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link lazyloaded" data-wc-basekw="" wc_modded="1"> 
-                        Find a location
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.afcurgentcare.com/patient-resources/pay-your-bill/?utm_source=app.asana.com&utm_medium=referral&landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link lazyloaded" data-wc-basekw="" wc_modded="1"> 
-                        Pay Your Bill
-                    </a>
-                </li>
-            </ul>
-        </div>
-    `)
+    if (!document.querySelector('.spz-link-wrapper')) {
+        headerContent.insertAdjacentHTML('beforeend', `
+            <div class="spz-link-wrapper">
+                <ul>
+                    <li>
+                        <a href="https://www.afcurgentcare.com/locations/?utm_source=app.asana.com&amp;utm_medium=referral&amp;landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link"> 
+                            Find a location
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.afcurgentcare.com/patient-resources/pay-your-bill/?utm_source=app.asana.com&utm_medium=referral&landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link"> 
+                            Pay Your Bill
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        `)
+    }
+
+
+    if (!document.querySelector('.spz-link-wrapper-mobile')) {
+        mainNavigationBurgerMenu.insertAdjacentHTML('beforeend', `
+            <div class="spz-link-wrapper spz-link-wrapper-mobile">
+                <ul>
+                    <li>
+                        <a href="https://www.afcurgentcare.com/locations/?utm_source=app.asana.com&amp;utm_medium=referral&amp;landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link"> 
+                            Find a Location
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.afcurgentcare.com/patient-resources/pay-your-bill/?utm_source=app.asana.com&utm_medium=referral&landing_page=https%3A%2F%2Fwww.afcurgentcare.com%2F" class="spz-banner-link"> 
+                            Pay Your Bill
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        `)
+    }
 })

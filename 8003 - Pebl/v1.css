@@ -1,0 +1,71 @@
+.spz_8003_v1 .spz-wrapper {
+    max-width: 1156px;
+    padding: 0 24px;
+    margin: 0 auto;
+}
+
+.spz_8003_v1 .sc-cPWnoe {
+    display: none;
+}
+
+.spz_8003_v1 .spz-heading {
+    margin-top: 24px;
+
+    color: #30415A;
+    font-family: "FK Roman Standard";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: -2px;
+}
+
+.spz_8003_v1 .spz-subhead {
+    color: rgba(23, 23, 23, 0.70);
+    font-family: "Sharp Earth OL";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    max-width: 770px;
+    width: 100%;
+    padding: 16px 0 32px;
+    /* letter-spacing: 0.05px; */
+}
+
+@media(max-width: 1023px) {
+    .spz_8003_v1 .spz-heading {
+        margin-top: 27px;
+    }
+
+    .spz_8003_v1 .spz-wrapper {
+        padding: 0 32px;
+        /* max-width: 750px; */
+    }
+
+    .spz_8003_v1 .spz-subhead {
+        max-width: 700px;
+    }
+}
+
+@media(max-width: 767.98px) {
+    .spz_8003_v1 .spz-heading {
+        margin-top: 11px;
+        font-size: 32px;
+    }
+
+    .spz_8003_v1 .spz-subhead {
+        font-size: 16px;
+        padding: 16px 0 24px;
+    }
+
+    .spz_8003_v1 .spz-wrapper {
+        max-width: 750px;
+    }
+}
+
+@media(max-width: 639px) {
+    .spz_8003_v1 .spz-wrapper {
+        padding: 0 16px;
+    }
+}

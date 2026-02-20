@@ -133,7 +133,7 @@ waitForElement("body", (docBody) => {
         window.addEventListener("scroll", function () {
             const header = document.querySelector("header.navigation-container");
             if (!header) return;
-            if (window.scrollY > 78.64) {
+            if (window.scrollY > 42.64) {
                 header.classList.add("sticky-shadow");
             } else {
                 header.classList.remove("sticky-shadow");

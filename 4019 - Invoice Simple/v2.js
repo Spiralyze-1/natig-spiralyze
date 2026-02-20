@@ -384,7 +384,7 @@ waitForElement('#tailwind', () => {
                         </div>
                     `).join('')}
                 </div>
-                <a href="#pricing-anchor" class="spz${testNumber}_${testType}">
+                <a href="#pricing-anchor" class="spz${testNumber}_${testType}_gs">
                     Get started
                 </a>
             </div>
@@ -409,7 +409,7 @@ waitForElement('#tailwind', () => {
 
     // Delegate "Get started" clicks (4017 button scrolls back up to pricing)
     document.addEventListener('click', function (e) {
-        if (e.target && e.target.classList.contains(`spz${testNumber}_${testType}`)) {
+        if (e.target && e.target.classList.contains(`spz${testNumber}_${testType}_gs`)) {
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
