@@ -1,0 +1,599 @@
+/* ── Red Banner ────────────────────────────────────────────────────────────── */
+.spz_2003_v3 .spz-red-banner {
+    background-color: #e61d30;
+    padding: 8px 0px;
+}
+
+.spz_2003_v3 .spz-red-content {
+    max-width: 1280px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.spz_2003_v3 .spz-red-content ul {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+    margin: 0;
+    height: 21px;
+    list-style: none;
+}
+
+.spz_2003_v3 .spz-red-content a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+}
+
+.spz_2003_v3 .spz-red-content li {
+    opacity: 1;
+}
+
+.spz_2003_v3 .spz-red-content li:hover {
+    opacity: 0.8;
+}
+
+.spz_2003_v3 .spz-red-content li span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.spz_2003_v3 .main-header-bar .main-header-bar-navigation .menu-item-has-children>.menu-link:after {
+    /* display: none; */
+}
+
+.spz_2003_v3 .main-header-bar {
+    border: 0;
+    margin-top: 37px !important;
+}
+
+.spz_2003_v3 .main-header-bar-wrap {
+    border-bottom: 0.667px solid #DDD;
+}
+
+@media(max-width: 1023px) {
+    .spz_2003_v3 .main-header-bar {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .spz_2003_v3 .spz-red-content ul {
+        gap: 36px;
+    }
+
+    .spz_2003_v3 .main-header-bar-wrap.sticky-element-original.element-is-sticky {
+        top: 37px !important;
+    }
+
+    .spz_2003_v3 .ast-site-identity {
+        padding: 30px 0 34px !important;
+    }
+
+    .spz_2003_v3 header .custom-logo-link img {
+        max-width: 220px !important;
+        width: 220px !important;
+    }
+
+    .spz_2003_v3 .ast-button-wrap .menu-toggle.main-header-menu-toggle {
+        padding: 0 23px;
+        transform: translate(-17px, -3px);
+    }
+}
+
+@media(max-width: 920px) {
+    .spz_2003_v3.ast-header-break-point .main-navigation .sub-menu .menu-item .menu-link {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .spz_2003_v3 .main-header-bar-navigation {
+        max-height: calc(100vh - 89px - 21px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .spz_2003_v3 .main-header-bar-navigation::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    .spz_2003_v3 .main-header-bar,
+    .ast-header-break-point .main-header-bar {
+        padding: 0;
+    }
+
+    .spz_2003_v3 .entry-content {
+        margin-top: 37px !important;
+    }
+
+    .spz_2003_v3 .main-header-bar-wrap {
+        margin-top: 0 !important;
+    }
+
+    .spz_2003_v3 .spz-red-content ul {
+        justify-content: space-between;
+    }
+
+    .spz_2003_v3 header .custom-logo-link img {
+        max-width: 147px !important;
+        width: 147px !important;
+    }
+
+    .spz_2003_v3 .ast-site-identity {
+        padding: 18px 0 27px !important;
+    }
+
+    .spz_2003_v3 .ast-button-wrap .menu-toggle.main-header-menu-toggle {
+        padding: 0;
+        transform: translate(-7px, -6px);
+    }
+}
+
+
+/* ── Homepage Hero (from 2001-V3) ──────────────────────────────────────────── */
+@media screen and (max-width: 766.98px) {
+    .spz_2003_v3 .astra-advanced-hook-1800 {
+        display: none !important;
+    }
+}
+
+.spz_2003_v3 div[class*='astra-advanced-hook'] section.nitro-stretch {
+    display: none;
+}
+
+.spz_2003_v3 .bannerSection {
+    background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/americanfamilycare/2001/bg_1921.webp") !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    padding: 120px 130px !important;
+    width: 100% !important;
+}
+
+.spz_2003_v3 .bannerSection>.elementor-background-overlay {
+    opacity: 0 !important;
+}
+
+.spz_2003_v3 .bannerSection .elementor-container {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spz_2003_v3 .bannerSection .bannerLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 512px;
+    margin-right: 40px;
+}
+
+.spz_2003_v3 .bannerSection .bannerLeft .review {
+    display: flex;
+    align-items: center;
+}
+
+.spz_2003_v3 .bannerSection .bannerLeft .review p {
+    color: #3A3A3A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: 1px;
+}
+
+.spz_2003_v3 .bannerSection .bannerLeft .review p span {
+    font-weight: 700;
+}
+
+.spz_2003_v3 .bannerSection .bannerLeft h3 {
+    color: #3A3A3A;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 110%;
+    margin: 24px 0 8px 5px;
+}
+
+.spz_2003_v3 .bannerSection .bannerLeft h1 {
+    color: #000;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    margin: 0px 0px 24px 0px;
+}
+
+.spz_2003_v3 .bannerLeft .spzBannerTags {
+    list-style: none;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-width: 530px;
+}
+
+.spz_2003_v3 .bannerLeft .spzBannerTag {
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    padding: 4px 16px;
+    border-radius: 3px;
+    backdrop-filter: blur(2px);
+    background: rgba(210, 232, 240, 0.60);
+    color: #3A3A3A;
+}
+
+/* Banner Right Side */
+.spz_2003_v3 .bannerRight>div>div:first-child,
+.spz_2003_v3 .bannerRight>div>section .elementor-element-populated>div:not(:last-child) {
+    display: none;
+}
+
+.spz_2003_v3 .bannerRight {
+    width: 100%;
+    max-width: 512px;
+    height: 212px;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #FFF;
+    -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+    padding: 55px 31px 32px !important;
+    position: relative;
+}
+
+.spz_2003_v3 .bannerRight:after {
+    content: "";
+    width: 96px;
+    height: 96px;
+    background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/americanfamilycare/2001/location_webp.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 53.5px;
+    pointer-events: none;
+}
+
+.spz_2003_v3 .bannerRight>div:not(.formWrapper) {
+    display: none;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper {
+    width: 100%;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper form {
+    display: flex;
+    flex-direction: column;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper .inputWrapper {
+    position: relative;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper label {
+    overflow: hidden;
+    color: #78787C;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    padding: 0 6px;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper input:-webkit-autofill,
+.spz_2003_v3 .bannerRight .formWrapper input:-webkit-autofill:hover,
+.spz_2003_v3 .bannerRight .formWrapper input:-webkit-autofill:focus,
+.spz_2003_v3 .bannerRight .formWrapper input:-webkit-autofill:active {
+    -webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+    box-shadow: 0 0 0 1000px #fff inset;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper input {
+    border-radius: 99px;
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    padding: 15px;
+    width: 100%;
+    height: 56px;
+    text-align: start;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper input:focus,
+.spz_2003_v3 .bannerRight .formWrapper input:hover {
+    border: 1px solid #000;
+}
+
+.spz_2003_v3 .inputWrapper:focus-within label,
+.spz_2003_v3 .inputWrapper.has-value label {
+    top: -12px;
+    color: #3A3A3A;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    background-color: #fff;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper button {
+    border-radius: 360px;
+    background: #E61D30;
+    box-shadow: 0 8px 8px 0 rgba(230, 29, 48, 0.24);
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    width: 100%;
+    min-height: 56px;
+    padding: 17px 21px 16px 16px;
+    margin: 12px 0 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper button:hover,
+.spz_2003_v3 .bannerRight .formWrapper button:focus {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.12) 100%), #E61D30;
+    box-shadow: 0 8px 8px 0 rgba(230, 29, 48, 0.24);
+}
+
+.spz_2003_v3 .bannerRight .formWrapper button:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.12) 100%), #E61D30;
+    box-shadow: none;
+}
+
+.spz_2003_v3 .bannerRight .formWrapper button svg {
+    margin-right: 11px;
+    position: relative;
+    top: -1px;
+}
+
+@media (max-width: 1920.98px) {
+    .spz_2003_v3 .bannerSection {
+        background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/americanfamilycare/2001/bg_1441.webp") !important;
+        background-size: cover !important;
+        background-position: center top !important;
+    }
+}
+
+@media screen and (max-width: 1299.98px) {
+    .spz_2003_v3 .bannerSection {
+        padding: 120px 80px !important;
+    }
+}
+
+@media screen and (max-width: 1199.98px) {
+    .spz_2003_v3 .bannerSection {
+        padding: 120px 40px !important;
+    }
+}
+
+@media screen and (max-width: 1130.98px) {
+    .spz_2003_v3 .bannerRight {
+        max-width: 420px;
+    }
+
+    .spz_2003_v3 .bannerSection {
+        background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/americanfamilycare/2001/bg_1441.webp") !important;
+        background-size: cover !important;
+        background-position: -170px top !important;
+    }
+}
+
+@media screen and (max-width: 1024.98px) {
+    .spz_2003_v3 .bannerSection {
+        background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/americanfamilycare/2001/bg_768.webp") !important;
+        background-position: center !important;
+        padding: 65px 40px 485px !important;
+    }
+
+    .spz_2003_v3 .bannerSection .elementor-container {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .spz_2003_v3 .bannerSection .bannerLeft {
+        max-width: unset;
+        margin: 0 0 33px;
+    }
+
+    .spz_2003_v3 .bannerSection .bannerLeft .review {
+        justify-content: center;
+    }
+
+    .spz_2003_v3 .bannerSection .bannerLeft .review p {
+        color: #3a3a3a;
+        margin: 0px 0 0px 9px;
+    }
+
+    .spz_2003_v3 .bannerSection .bannerLeft h3 {
+        text-align: center;
+        color: #3A3A3A;
+        font-size: 22px;
+        margin: 21px 0px 7px 5px;
+    }
+
+    .spz_2003_v3 .bannerSection .bannerLeft h1 {
+        text-align: center;
+        color: #000;
+        margin: 0px 0px 19px 0px;
+    }
+
+    .spz_2003_v3 .bannerLeft .spzBannerTags {
+        justify-content: center;
+        gap: 8px;
+        max-width: 505px;
+        margin: 0 auto;
+    }
+
+    .spz_2003_v3 .bannerLeft .spzBannerTag {
+        padding: 4px 12px;
+    }
+
+    .spz_2003_v3 .bannerRight {
+        max-width: 524px;
+        padding: 31px !important;
+        height: 188px;
+    }
+
+    .spz_2003_v3 .bannerRight:after {
+        display: none;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper button {
+        padding: 18px 21px 15px 16px;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper input {
+        padding: 15px 15px 15px 41px;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper .inputWrapper:after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='18' viewBox='0 0 13 18' fill='none'%3E%3Cpath d='M6.5 0C4.77609 0 3.12279 0.63232 1.90381 1.75786C0.68482 2.88339 0 4.40995 0 6.0017C0 8.63494 4.0625 15.0042 5.80938 17.645C5.88224 17.7535 5.98392 17.8431 6.10478 17.9053C6.22564 17.9674 6.36167 18 6.5 18C6.63833 18 6.77436 17.9674 6.89522 17.9053C7.01608 17.8431 7.11776 17.7535 7.19063 17.645C8.9375 15.0042 13 8.63494 13 6.0017C13 4.40995 12.3152 2.88339 11.0962 1.75786C9.87721 0.63232 8.22391 0 6.5 0ZM6.5 8.62744C5.93756 8.62744 5.38775 8.47344 4.9201 8.18492C4.45245 7.8964 4.08795 7.48632 3.87272 7.00652C3.65748 6.52673 3.60117 5.99878 3.71089 5.48944C3.82062 4.98009 4.09146 4.51223 4.48917 4.14502C4.88687 3.7778 5.39358 3.52772 5.94521 3.42641C6.49685 3.32509 7.06863 3.37709 7.58826 3.57583C8.10788 3.77456 8.55202 4.11111 8.86449 4.54291C9.17697 4.97471 9.34375 5.48237 9.34375 6.0017C9.34375 6.69809 9.04414 7.36595 8.51084 7.85838C7.97753 8.3508 7.25421 8.62744 6.5 8.62744Z' fill='%23E61D30'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        top: 18px;
+        left: 17px;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper label {
+        left: 34px;
+    }
+
+    .spz_2003_v3 .inputWrapper:focus-within label,
+    .spz_2003_v3 .inputWrapper.has-value label {
+        left: 11px;
+    }
+}
+
+@media screen and (max-width: 766.98px) {
+    .spz_2003_v3 .bannerSection {
+        background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/americanfamilycare/2001/bg_361.webp") !important;
+        background-position: center bottom !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        padding: 23px 20px 70vw !important;
+    }
+
+    .spz_2003_v3 .bannerRight {
+        max-width: 524px;
+        padding: 24px 20px !important;
+        height: auto;
+    }
+
+    .spz_2003_v3 .bannerSection .bannerLeft {
+        margin: 0 0 11px;
+    }
+
+    .spz_2003_v3 .bannerSection .bannerLeft h3 {
+        font-size: 16px;
+        margin-bottom: 11px;
+        margin-top: 12px;
+    }
+
+    .spz_2003_v3 .bannerSection .bannerLeft h1 {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+    }
+
+    .spz_2003_v3 .bannerLeft .spzBannerTags {
+        gap: 4px;
+    }
+
+    .spz_2003_v3 .bannerLeft .spzBannerTag {
+        background: rgba(210, 232, 240, 0.60);
+        color: #3A3A3A;
+        padding: 4px 6px;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper input {
+        padding: 12px 12px 12px 41px;
+        height: 48px;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper button {
+        min-height: 48px;
+        padding: 15px 18px 14px 12px;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper label {
+        left: 29px;
+        top: 13px;
+    }
+
+    .spz_2003_v3 .inputWrapper:focus-within label,
+    .spz_2003_v3 .inputWrapper.has-value label {
+        left: 11px;
+        top: -10px;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper .inputWrapper:after {
+        top: 14px;
+        left: 12px;
+    }
+
+    .spz_2003_v3 .bannerRight .formWrapper {
+        width: 100%;
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 515.98px) {
+    .spz_2003_v3 .bannerSection .bannerLeft h1 {
+        max-width: 300px;
+        margin: 0 auto 11px auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .spz_2003_v3 .bannerSection {
+        padding: 23px 20px 255px !important;
+    }
+}

@@ -6,7 +6,7 @@
     // false – if you are not using a squeeze page (i.e., the page does not contain a form)
     // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
 
-    const squeezePage = true; // true / false / 'both'
+    const squeezePage = 'both'; // true / false / 'both'
     const expName = "8003"; //experiment name should be 1001, 1002, 1003 etc.
     const variantName = `variant_#` + expName; //variantName should be _variant, _true_control etc.
     const clientDomain = ".hellopebl.com"; //domain should be .spiralyze.com
