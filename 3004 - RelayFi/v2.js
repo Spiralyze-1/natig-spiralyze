@@ -99,10 +99,10 @@ const bentoConfig = {
   baseUrl: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/3004/',
   images: {
     checkingSavings: {
-      fourK: 'copy_20.webp',
-      desktop: 'copy_11.webp',
-      tablet: 'copy_5.webp',
-      mobile: 'copy_43.webp',
+      fourK: 'copy_46.webp',
+      desktop: 'copy_45.webp',
+      tablet: 'copy_47.webp',
+      mobile: 'copy_44.webp',
       alt: 'Business checking & savings'
     },
     creditDebit: {
@@ -192,7 +192,7 @@ function insertBentoSection() {
             <div class="spz-bento-card spz-card-light spz-card-large">
               <div class="spz-card-content">
                 <h3 class="spz-card-title">Business checking & savings</h3>
-                <p class="spz-card-description">Open up to 20 checking accounts and separate incoming deposits for taxes, payroll, bills, and more. Always know what's safe to spend and auto-transfer what's left into savings so you never waste a cent.</p>
+                <p class="spz-card-description">Open up to 20 checking accounts and separate incoming deposits for taxes, payroll, bills, and more. Get clarity on what’s safe to spend, then set up auto-transfer rules to direct the rest into savings.</p>
               </div>
               <div class="spz-card-image">
                 ${generatePicture(bentoConfig.images.checkingSavings)}

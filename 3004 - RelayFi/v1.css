@@ -318,7 +318,7 @@
   }
 
   .spz_3004_v1 .spz-card-content {
-    padding: 24px 24px 16px;
+    padding: 23px 23px 16px;
     min-height: 150px;
   }
 
@@ -335,6 +335,11 @@
 
   .spz_3004_v1 .spz-bento-cta-v1 {
     margin-top: 5px;
+  }
+
+  .spz_3004_v1 .spz-bento-container .spz-bento-grid .spz-bento-row:first-child .spz-bento-card:first-child .spz-card-image img {
+    transform: translateY(14px);
+    height: 172px;
   }
 }
 
@@ -359,7 +364,7 @@
   }
 
   .spz_3004_v1 .spz-card-content {
-    gap: 10px;
+    gap: 7px;
   }
 
   .spz_3004_v1 .spz-bento-heading {
@@ -376,7 +381,7 @@
   }
 
   .spz_3004_v1 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img {
-    transform: translateY(-28px);
+    transform: translateY(-7px);
     height: 196px;
   }
 
@@ -407,6 +412,11 @@
 @media(max-width: 375px) {
   .spz_3004_v1 .spz-card-image img {
     object-fit: cover;
+  }
+
+  .spz_3004_v1 .spz-bento-container .spz-bento-grid .spz-bento-row:first-child .spz-bento-card:first-child .spz-card-image img {
+    transform: translateY(0px);
+    height: 172px;
   }
 
   .spz_3004_v1 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img {
