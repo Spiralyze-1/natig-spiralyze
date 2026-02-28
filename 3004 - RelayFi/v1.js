@@ -99,43 +99,43 @@ const bentoConfig = {
   baseUrl: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/3004/',
   images: {
     checkingSavings: {
-      fourK: 'copy_46.webp',
-      desktop: 'copy_45.webp',
-      tablet: 'copy_47.webp',
-      mobile: 'copy_44.webp',
+      fourK: 'copy_67.webp',
+      desktop: 'copy_68.webp',
+      tablet: 'copy_66.webp',
+      mobile: 'copy_64.webp',
       alt: 'Business checking & savings'
     },
     creditDebit: {
-      fourK: 'copy_23.webp',
-      desktop: 'copy_14.webp',
-      tablet: 'copy_16.webp',
-      mobile: 'copy_4.webp',
+      fourK: 'copy_55.webp',
+      desktop: 'copy_61.webp',
+      tablet: 'copy_69.webp',
+      mobile: 'copy_65.webp',
       alt: 'Credit & debit'
     },
     spendManagement: {
-      fourK: 'copy_30.webp',
-      desktop: 'copy_28.webp',
+      fourK: 'copy_53.webp',
+      desktop: 'copy_63.webp',
       tablet: 'copy_27.webp',
       mobile: 'copy_29.webp',
       alt: 'Spend management'
     },
     accountsPayable: {
-      fourK: 'copy_22.webp',
-      desktop: 'copy_13.webp',
+      fourK: 'copy_62.webp',
+      desktop: 'copy_57.webp',
       tablet: 'copy_1.webp',
       mobile: 'copy_3.webp',
       alt: 'Accounts payable'
     },
     accountsReceivable: {
-      fourK: 'copy_33.webp',
-      desktop: 'copy_32.webp',
+      fourK: 'copy_56.webp',
+      desktop: 'copy_54.webp',
       tablet: 'copy_31.webp',
       mobile: 'copy_34.webp',
       alt: 'Accounts receivable'
     },
     integrations: {
-      fourK: 'copy_18.webp',
-      desktop: 'copy_17.webp',
+      fourK: 'copy_60.webp',
+      desktop: 'copy_52.webp',
       tablet: 'copy_2.webp',
       mobile: 'copy.webp',
       alt: 'Integrations'
@@ -260,6 +260,8 @@ function insertBentoSection() {
         <div class="spz-bento-cta-v1">
           <a href="${bentoConfig.ctaUrl}" class="spz-bento-button spz3004_v1">Get Started</a>
         </div>
+
+        <p class="spz-bento-disclaimer">Relay is a financial technology company and is not an FDIC-insured bank. Banking services provided by Thread Bank<sup>2</sup>, Member FDIC. FDIC deposit insurance covers the failure of an insured bank. Certain conditions must be satisfied for pass-through deposit insurance coverage to apply. The Relay Visa® Debit Card is issued by Thread Bank, member FDIC, pursuant to a license from Visa U.S.A. Inc. and may be used anywhere Visa debit cards are accepted. The Relay Visa Credit® Card is issued by Thread Bank, Member FDIC, pursuant to a license from Visa U.S.A. Inc and may be used anywhere Visa credit cards are accepted.</p>
       </div>
     </section>
   `;

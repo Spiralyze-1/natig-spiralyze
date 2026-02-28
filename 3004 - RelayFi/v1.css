@@ -220,9 +220,29 @@
   display: none !important;
 }
 
+.spz_3004_v1 .spz-bento-disclaimer {
+  color: #4D4747;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Basis Grotesque Pro";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+
+  margin-top: 4px;
+
+}
+
+.spz_3004_v1 .spz-bento-disclaimer>sup {
+  vertical-align: 0.1em;
+  font-size: 7px;
+  font-weight: 600;
+  padding-left: 0;
+}
+
 /* ==================== MEDIA QUERIES ==================== */
 
-@media(max-width: 1440px) {
+@media(max-width: 1500px) {
   :root {
     /* --spz-section-padding: 96px 75px 72px; */
     --spz-section-padding: 96px 0 72px;
@@ -256,6 +276,10 @@
   .spz_3004_v1 .spz-card-small {
     flex: 0 1 425px;
     min-width: 425px;
+  }
+
+  .spz_3004_v1 .spz-bento-disclaimer {
+    padding: 0 15px;
   }
 }
 
@@ -341,6 +365,16 @@
     transform: translateY(14px);
     height: 172px;
   }
+
+  .spz_3004_v1 .spz-bento-container .spz-bento-grid .spz-bento-row:first-child .spz-bento-card:last-child .spz-card-image img {
+    transform: translateY(34px);
+  }
+
+  .spz_3004_v1 .spz-bento-disclaimer {
+    padding: 0 20px;
+
+    margin-top: 5px;
+  }
 }
 
 @media(max-width: 1023px) {
@@ -407,7 +441,31 @@
   .spz_3004_v1 .spz-bento-cta-v1 {
     margin-top: 2px;
   }
+
+  .spz_3004_v1 .spz-bento-disclaimer {
+    padding: 0 1px;
+
+    margin-top: 3px;
+  }
+
+  .spz_3004_v1 .banking-highlights {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .spz_3004_v1 .spz-bento-container .spz-bento-grid .spz-bento-row:first-child .spz-bento-card:last-child .spz-card-image img {
+    transform: translateY(30px);
+  }
+
 }
+
+@media(max-width: 450px) {
+  .spz_3004_v1 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img {
+    height: auto;
+    transform: translateY(-27px);
+  }
+}
+
 
 @media(max-width: 375px) {
   .spz_3004_v1 .spz-card-image img {
@@ -420,7 +478,7 @@
   }
 
   .spz_3004_v1 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img {
-    transform: translateY(-28px);
+    transform: translateY(-25px);
     height: auto;
   }
 }

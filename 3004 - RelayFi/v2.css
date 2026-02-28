@@ -235,9 +235,28 @@
   transform: translateY(0);
 }
 
+.spz_3004_v2 .spz-bento-disclaimer {
+  color: #F1ECDA;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Basis Grotesque Pro";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+
+  margin-top: 4px;
+}
+
+.spz_3004_v2 .spz-bento-disclaimer>sup {
+  vertical-align: 0.1em;
+  font-size: 7px;
+  font-weight: 600;
+  padding-left: 0;
+}
+
 /* ==================== MEDIA QUERIES ==================== */
 
-@media(max-width: 1440px) {
+@media(max-width: 1500px) {
   :root {
     --spz-section-padding: 66px 0 36px;
   }
@@ -255,6 +274,7 @@
     flex: 0 1 511px;
     min-width: 511px;
   } */
+
 }
 
 @media (max-width: 1299px) {
@@ -274,6 +294,10 @@
 
   .spz_3004_v2 .spz-bento-row:last-child img {
     height: 100%;
+  }
+
+  .spz_3004_v2 .spz-bento-disclaimer {
+    padding: 0 15px;
   }
 }
 
@@ -344,11 +368,17 @@
     transform: translateY(14px);
     height: 172px;
   }
+
+  .spz_3004_v2 .spz-bento-disclaimer {
+    padding: 0;
+
+    margin-top: 5px;
+  }
 }
 
 @media (max-width: 767px) {
   :root {
-    --spz-section-padding: 64px 20px 76px;
+    --spz-section-padding: 64px 20px 36px;
     --spz-gap: 16px;
   }
 
@@ -428,16 +458,34 @@
     margin-top: 2px;
   }
 
+  .spz_3004_v2 .spz-bento-disclaimer {
+    padding: 0 1px;
 
+    margin-top: 3px;
+  }
+
+  .spz_3004_v2 .banking-highlights {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
+@media(max-width: 450px) {
+  .spz_3004_v2 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img {
+    height: auto;
+    transform: translateY(-27px);
+  }
 }
 
 @media(max-width: 375px) {
   :root {
-    --spz-section-padding: 64px 20px 76px;
+    --spz-section-padding: 64px 20px 36px;
   }
 
   .spz_3004_v2 .spz-bento-card:nth-of-type(2).spz-card-large .spz-card-image img {
     height: auto;
+    transform: translateY(-25px);
   }
 
   .spz_3004_v2 .spz-card-image img {
