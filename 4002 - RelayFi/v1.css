@@ -1,0 +1,60 @@
+.spz_4002_v1 section.tables-section>div>div:nth-child(3) {
+    grid-template-columns: auto !important;
+    grid-template-areas: "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f" !important;
+}
+
+/* remove parts */
+.spz_4002_v1 section.tables-section>div>div:nth-child(2)>div>div>div:nth-child(1)>div>img,
+.spz_4002_v1 section.tables-section>div>div:nth-child(3)>div>div>div>div:nth-child(1)>div>img {
+    display: none;
+}
+
+.spz_4002_v1 section.tables-section>div>div:nth-child(2)>div>div>div:nth-child(1)>p,
+.spz_4002_v1 section.tables-section>div>div:nth-child(3)>div>div>div>div:nth-child(1)>p {
+    display: none;
+}
+
+.spz_4002_v1 section.tables-section>div>div:nth-child(2)>div>div>div:nth-child(2)>button>span,
+.spz_4002_v1 section.tables-section>div>div:nth-child(3)>div>div>div>div:nth-child(2)>button>span {
+    display: none;
+}
+
+.spz_4002_v1 section.tables-section>div>div:nth-child(2)>div>div,
+.spz_4002_v1 section.tables-section>div>div:nth-child(3)>div>div>div {
+    padding: 24px;
+}
+
+/* add custom accordion trigger */
+
+.spz_4002_v1 .spz-accordion {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+
+
+    cursor: pointer;
+}
+
+.spz_4002_v1 section.tables-section>div>div:nth-child(2)>div:has(table) .spz-accordion,
+.spz_4002_v1 section.tables-section>div>div:nth-child(3)>div:has(table) .spz-accordion {
+    display: flex;
+}
+
+.spz_4002_v1 section.tables-section>div>div:nth-child(2)>div:has(table) .spz-accordion>img,
+.spz_4002_v1 section.tables-section>div>div:nth-child(3)>div:has(table) .spz-accordion>img {
+    transform: rotate(180deg);
+}
+
+.spz_4002_v1 .spz-accordion>h4 {
+    color: #004822;
+    font-family: "RadionB";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px;
+}

@@ -321,6 +321,11 @@
         margin-right: 0px !important;
     }
 
+    .spz_2003_v2.spz-ios .ast-header-break-point .main-header-bar-navigation {
+        position: relative !important;
+        width: 100% !important;
+    }
+
     .spz_2003_v2.ast-header-break-point .main-navigation .sub-menu .menu-item .menu-link {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
