@@ -1,0 +1,20 @@
+// -----------------------------Disclaimer---------------------------------
+
+// ------------------------------------------------------------------------
+// This code includes the SPZ-2034 (Pebl) code we used to successfully run this
+// experiement on VWO. We have fully QAed the code while the test was
+// running, but we recommend you rewrite this code to fit your codebase's 
+// needs. Please ensure to conduct QA again after making the changes.
+//-------------------------------------------------------------------------
+
+//------------------ Document changes -------------------
+
+1. Added squircle in the top left side with content inside (.spz-hero-content)
+2. Added hero background image in CSS only 
+3. Replace all images with provided assets (check /assets folder)
+4. There are two sliders. The first one is for Desktop/Tablet, the second one is for mobile
+5. Slider is CSS based. We have another clone (<ul aria-hidden class="spz-logo-list">) list to make infinite slider effect
+6. Hide original slider that comes right after hero section (you can find it in v2.css) 
+7. All changes made in hero section + hide slider right after hero section
+8. Tablet: 768 - 1023; Mobile: 0 - 767.98px; Desktop: 1024 - inf
+9. You can find final look of new variant /assets/final-look
