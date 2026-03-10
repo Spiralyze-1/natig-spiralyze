@@ -24,7 +24,7 @@
     overflow: hidden;
 }
 
-.spz_4002_v1 .spz-accordion-item thead {
+.spz_4002_v1 .spz-accordion-item .spz-table-wrapper>div>table>thead {
     display: none !important;
 }
 
@@ -60,6 +60,14 @@
     width: 16px;
     height: 16px;
     filter: brightness(0) saturate(100%) invert(20%) sepia(10%) saturate(6593%) hue-rotate(114deg) brightness(96%) contrast(103%);
+}
+
+.spz_4002_v1 .spz-accordion-item .spz-accordion {
+    height: 61px;
+}
+
+.spz_4002_v1 .spz-accordion-item.is-open .spz-accordion {
+    height: auto;
 }
 
 .spz_4002_v1 .spz-accordion-item.is-open .spz-accordion-chevron {
@@ -106,7 +114,23 @@
 .spz_4002_v1 .spz-sticky-header.is-visible .spz-sticky-inner {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    position: relative;
 }
+
+.spz_4002_v1 .spz-sticky-header.is-visible .spz-sticky-inner::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% + 5px);
+    height: 40px;
+    background-color: #F8F5ED;
+    z-index: -1;
+}
+
 
 .spz_4002_v1 .spz-sticky-inner {
     max-width: 1120px;
@@ -121,7 +145,9 @@
         ". disclaimer disclaimer disclaimer"
         ". starter grow scale";
     gap: 12px 24px;
+}
 
+.spz_4002_v1 .spz-sticky-header.is-visible .spz-sticky-inner {
     box-shadow: 0 8px 12px 0 rgba(111, 106, 88, 0.07);
 }
 
@@ -257,6 +283,43 @@
     background: #256141;
 }
 
+/* TOOLTIP */
+
+@keyframes an {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.spz_4002_v1 .spz-tooltip-popup {
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
+    padding: 25px 20px;
+    font-size: 13px;
+    line-height: 1.5;
+    font-family: 'BasisGrotesque', sans-serif;
+    animation: an 0.2s ease 1;
+}
+
+.spz_4002_v1 .spz-tooltip-popup a {
+    color: #fff;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.spz_4002_v1 .spz-tooltip-popup a:hover {
+    opacity: 0.8;
+}
+
+.spz_4002_v1 .spz-tooltip-popup p {
+    margin: 0;
+}
+
 /* MEDIAS */
 
 @media(max-width: 1023px) {
@@ -277,7 +340,9 @@
 
     .spz_4002_v1 .spz-accordion-container {
         padding: 0 15px;
-        margin: 16px auto 0;
+        margin: 13px auto 0;
+
+        gap: 14px;
     }
 
     .spz_4002_v1 .spz-accordion {
@@ -314,15 +379,7 @@
     .spz_4002_v1 .spz-accordion-item.is-open {
         padding-bottom: 20px;
     }
-}
 
-@media(max-width: 768px) {
-    .spz_4002_v1 .spz-sticky-inner {
-        justify-content: normal;
-    }
-}
-
-@media(max-width: 767.98px) {
     .spz_4002_v1 .tables-section .section-header h2 {
         font-size: 48px !important;
         margin-bottom: 16px;
@@ -334,6 +391,23 @@
         line-height: 1.25;
     }
 
+    .spz_4002_v1 .spz-tooltip-popup {
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 11px;
+        line-height: 15.4px;
+    }
+}
+
+@media(max-width: 768px) {
+    .spz_4002_v1 .spz-sticky-inner {
+        justify-content: normal;
+    }
+}
+
+@media(max-width: 767.98px) {
+
+
     .spz_4002_v1 .tables-section>div:first-child {
         padding: 0 20px;
     }
@@ -342,8 +416,6 @@
         display: block;
         justify-content: space-between;
         padding: 20px 15px;
-        border-top-left-radius: 24px;
-        border-top-right-radius: 24px;
 
         box-shadow: none;
     }
@@ -360,6 +432,7 @@
 
     .spz_4002_v1 .spz-sticky-plan {
         min-width: auto;
+        gap: 10px;
     }
 
     .spz_4002_v1 .spz-sticky-badge {
@@ -370,9 +443,18 @@
         display: none;
     }
 
-    .spz_4002_v1 .spz-sticky-cta.spz-sticky-cta--mobile {
+    .spz_4002_v1 .spz-sticky-plan .spz-sticky-cta.spz-sticky-cta--mobile {
         display: flex;
         margin-top: auto;
+    }
+
+    .spz_4002_v1 .spz-sticky-plan:last-child .spz-sticky-cta.spz-sticky-cta--mobile {
+        display: flex;
+        margin-top: 5px;
+    }
+
+    .spz_4002_v1 .spz-accordion-container {
+        margin: 14px auto 0;
     }
 
     .spz_4002_v1 .spz-sticky-cta--primary,
@@ -385,7 +467,7 @@
     }
 
     .spz_4002_v1 .spz-sticky-disclaimer {
-        margin-bottom: 4px;
+        margin-bottom: 8px;
     }
 
     .spz_4002_v1 .spz-sticky-plan-price {
