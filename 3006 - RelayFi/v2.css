@@ -1,0 +1,109 @@
+/* ============ STICKY BAR ============ */
+.spz_3006_v2 .spz-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9000;
+    background: #002813;
+    box-shadow: 0px -27px 30px 0px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.spz_3006_v2 .spz-sticky-bar.spz-visible {
+    opacity: 1;
+}
+
+/* ============ INNER WRAPPER ============ */
+.spz_3006_v2 .spz-bar-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ============ DISCLAIMER TEXT ============ */
+.spz_3006_v2 .spz-disclaimer {
+    color: #f1ecda;
+    font-family: 'Basis Grotesque Pro', sans-serif;
+    font-size: 13.6px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    text-align: justify;
+
+    padding-right: 1px;
+}
+
+.spz_3006_v2 .spz-disclaimer sup {
+    font-size: 8.8px;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+.spz_3006_v2 .floating-cta {
+    display: none !important;
+}
+
+.spz_3006_v2 .rt-h-800,
+.spz_3006_v2 .rt-h-1100 {
+    transition: opacity 0.3s ease !important;
+}
+
+.spz_3006_v2 .spz-header-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+@media (min-width: 1920px) {
+    .spz_3006_v2 .spz-disclaimer {
+        font-size: 15.2px;
+    }
+
+    .spz_3006_v2 .spz-disclaimer sup {
+        font-size: 9.8px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .spz_3006_v2 .spz-disclaimer {
+        font-size: 13.6px;
+    }
+
+    .spz_3006_v2 .spz-disclaimer sup {
+        font-size: 8.8px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .spz_3006_v2 .spz-disclaimer {
+        font-size: 12px;
+    }
+
+    .spz_3006_v2 .spz-disclaimer sup {
+        font-size: 7.7px;
+    }
+}
+
+
+@media(max-width: 1023px) {
+    .spz_3006_v2 .spz-disclaimer {
+        font-size: 10.4px;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .spz_3006_v2 .spz-bar-inner {
+        padding: 24px 16px;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .spz_3006_v2 .spz-disclaimer sup {
+        font-size: 6.7px;
+    }
+}

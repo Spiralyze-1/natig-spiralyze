@@ -19,7 +19,7 @@
     margin: 0 auto;
 
     margin-bottom: 80px;
-    margin-top: 3px;
+    margin-top: 4px;
 }
 
 .spz_5007_v2 .spz-before-after-content {
@@ -172,6 +172,10 @@
         margin-bottom: 42px;
     }
 
+    .spz_5007_v2 .spz-before-after-first {
+        background: #F1ECDA;
+    }
+
     .spz_5007_v2 .spz-before-after-first>p,
     .spz_5007_v2 .spz-before-after-second>p {
         font-size: 16px;
@@ -217,6 +221,7 @@
     .spz_5007_v2 .spz-before-after-first,
     .spz_5007_v2 .spz-before-after-second {
         height: 540px;
+        overflow: hidden;
     }
 
     .spz_5007_v2 .spz-before-after-second>div:nth-child(3) {
@@ -225,6 +230,8 @@
 
     .spz_5007_v2 .spz-before-after-first>div {
         padding: 0 16px;
+        width: 100%;
+        transform: translate(2px, 3px);
     }
 }
 
@@ -234,10 +241,6 @@
     .spz_5007_v2 .spz-before-after-second {
         width: 648px;
         height: auto;
-    }
-
-    .spz_5007_v2 .spz-before-after-first {
-        background: #F1ECDA;
     }
 
     .spz_5007_v2 .spz-before-after-second {
@@ -326,6 +329,8 @@
     .spz_5007_v2 .spz-before-after-first>div {
         padding: 0 6px;
         padding-top: 2px;
+
+        transform: translate(1px, 1px);
     }
 
     .spz_5007_v2 .spz-before-after-image {
