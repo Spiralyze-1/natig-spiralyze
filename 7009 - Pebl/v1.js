@@ -2,7 +2,7 @@
     const squeezePage = 'both'
     const expName = '7009'
     const variantName = `variant_#${expName}`
-    const clientDomain = 'hellopebl.com'
+    const clientDomain = '.hellopebl.com'
 
     const formHiddenValue = variantName
     if (squeezePage === true) {
@@ -169,12 +169,11 @@ waitForElement('body', (docBody) => {
         nextBtn.addEventListener('click', () => {
             const selected = overlay.querySelector('input[name="spz-countries"]:checked')
             if (!selected) {
-                /* nextBtn.classList.add('is-error')
-                nextBtn.textContent = 'Please select an option'
-                setTimeout(() => {
-                    nextBtn.classList.remove('is-error')
-                    nextBtn.textContent = 'Next'
-                }, 1500) */
+                if (!document.querySelector('.spz-error')) {
+                    nextBtn.insertAdjacentHTML('beforebegin', `
+                        <p class="spz-error">Please select an option to continue</p>    
+                    `)
+                }
                 return
             }
             console.log('Selected:', selected.value)

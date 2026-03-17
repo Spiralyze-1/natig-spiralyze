@@ -132,6 +132,8 @@ waitForElement("body", (docBody) => {
             document.body.classList.add("hr-contact-ps-page");
         } else if (url.includes("/contact-brand-calculator-ps/")) {
             document.body.classList.add("contact-brand-calculator-ps-page");
+        } else if (url.includes("/peo-contact-ps/")) {
+            document.body.classList.add("peo-contact-ps-page");
         }
 
         const interval = setInterval(() => {
