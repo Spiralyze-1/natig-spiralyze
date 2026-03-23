@@ -2,20 +2,12 @@
 // https://app.asana.com/1/77217210692853/project/1210751323511158/task/1213201826590455
 
 (function () {
-    //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
-
-    // Set the value of the squeezePage variable as needed:
-    // true  – if you are using a squeeze page (i.e., the page contains a form)
-    // false – if you are not using a squeeze page (i.e., the page does not contain a form)
-    // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
-
     var pageName = 'product';
 
     const squeezePage = 'both'; // Do not change this value for RelayFi
-    const expName = '5007'; //experiment name should be 1001, 1002, 1003 etc. 3004-home-test-variant1
-    const variantName = expName + '-' + pageName + '-test-variant2'; //variantName should be -test-variant, -test-control etc.
-    const clientDomain = '.relayfi.com'; //domain should be .spiralyze.com
-
+    const expName = '5007';
+    const variantName = expName + '-' + pageName + '-test-variant2';
+    const clientDomain = '.relayfi.com';
 
     /***********************************
     ************************************
@@ -78,12 +70,9 @@
             let ExistingSidValue = getCookie('sid4');
             let ExistingExperimentValueList = ExistingExperimentValue ? ExistingExperimentValue.split(',') : [];
             let ExistingSidValueList = ExistingSidValue ? decodeURIComponent(ExistingSidValue).split(',') : [];
-            // Items in Sid that are not in Experiment
             let newItems = ExistingSidValueList.filter(
                 sidItem => !ExistingExperimentValueList.includes(sidItem)
             );
-
-            // Final ordered merged list
             let mergedList = [...newItems, ...ExistingExperimentValueList];
             setCookie('sid4', mergedList.join(','), 1);
             maxCookieSetIntervalCount++;
@@ -92,31 +81,92 @@
     }
 }());
 
-function waitForElement(selector, callback, timeout = 5000) {
-    const el = document.querySelector(selector);
-    if (el) return callback(el);
+function waitForElement(cssSelector, callback) {
+    var stop,
+        elementCached,
+        timeout,
+        check = function () {
+            try {
+                elementCached = document.querySelector(cssSelector)
 
-    const observer = new MutationObserver((_, obs) => {
-        const el = document.querySelector(selector);
-        if (el) {
-            obs.disconnect();
-            callback(el);
+                if (stop) return
+
+                if (elementCached) {
+                    callback(elementCached)
+                    clearTimeout(timeout)
+                } else {
+                    window.requestAnimationFrame(check)
+                }
+            } catch (err) {
+                console.log(err)
+            }
         }
-    });
 
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-    setTimeout(() => observer.disconnect(), timeout);
+    window.requestAnimationFrame(check)
+
+    timeout = setTimeout(function () {
+        stop = true
+    }, 5000)
 }
 
-const testNumber = "5007";
-const testType = "v2";
+if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) {
+    const cloudinary = 'https://res.cloudinary.com/spiralyze/image/upload';
 
-waitForElement('.make-money', (docEl) => {
-    const body = document.body
-    const className = `spz_${testNumber}_${testType}`
-    if (!body.classList.contains(className)) body.classList.add(className)
+    const logos = ['03', '04', '05', '01', '06', '07', '08', '09', '02', '11', '10', '12'];
+    const logosAlt = ['Ambient', 'Yang Law', 'Goshen', 'Rebel Bread', 'TFV', 'Happy Bees', 'Dance', 'Logo', 'Real Estate Robinsons', "Kyri's Kookies", 'Apex', 'Grill Your Ass Off'];
 
-    docEl.insertAdjacentHTML('afterend', `
+    function buildHero() {
+        return `
+      <div class="spz-bg-wrap">
+        <div class="spz-form-wrap">
+          <div class="content-section">
+            <div class="content-heading">All-in-one banking for small business</div>
+            <div class="spz-features-wrap">
+              <div class="feature-item">
+                <img src="${cloudinary}/v1763728227/relay/5001/frame_1171276285.svg" alt="checkmark" />
+                <span><b>Streamline banking.</b> Split funds for payroll, bills, and taxes with up to 20 checking accounts. Pay and get paid via ACH, wire, check, and more.</span>
+              </div>
+              <div class="feature-item">
+                <img src="${cloudinary}/v1763728227/relay/5001/frame_1171276285.svg" alt="checkmark" />
+                <span><b>Automate bill payments.</b> Capture vendor data, categorize expenses, and approve bills. Cut manual reconciliation by syncing with accounting tools.</span>
+              </div>
+              <div class="feature-item">
+                <img src="${cloudinary}/v1763728227/relay/5001/frame_1171276285.svg" alt="checkmark" />
+                <span><b>Get paid faster.</b> Create, send, and track invoices, all in one place. Accept one-time or recurring payments. Send reminders to reduce late payments.</span>
+              </div>
+            </div>
+            <div class="hero-cta-wrap">
+              <a href="https://app.relayfi.com/v3/register/user" class="spz-cta primary-cta" data-location="hero">Get Started</a>
+              <a href="https://relayfi.com/request-demo/" class="spz-cta secondary-cta">Get a Demo</a>
+            </div>
+            <div class="content-disclaimer">No credit card required</div>
+          </div>
+          <div class="spz-hero-image">
+            <img class="desktop-image" src="${cloudinary}/f_auto/relay/5001/frame_1171276284.webp" alt="Relay Checking Accounts Dashboard" />
+            <img class="tablet-image" src="${cloudinary}/f_auto/relay/5001/frame_1171276288.webp" alt="Relay Checking Accounts Dashboard" />
+            <img class="mobile-image" src="${cloudinary}/f_auto/relay/5001/interface_360.webp" alt="Relay Checking Accounts Dashboard" />
+          </div>
+        </div>
+        <div class="social-proof-section">
+          <div class="social-proof-heading">Join more than 100k small businesses using Relay</div>
+          <div class="social-proof-logos splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                ${logos.map((num, index) => `
+                  <li class="splide__slide logo-item"><img src="${cloudinary}/f_auto/relay/5001/logo-${num}.webp" alt="${logosAlt[index]}" /></li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="legal-disclaimer">
+          Relay is a financial technology company and is not an FDIC-insured bank. Banking services provided by Thread Bank<sup>2</sup>, Member FDIC. FDIC deposit insurance covers the failure of an insured bank. Certain conditions must be satisfied for pass-through deposit insurance coverage to apply. The Relay Visa Debit Card is issued by Thread Bank, Member FDIC, pursuant to a license from Visa U.S.A. Inc. and may be used anywhere Visa cards are accepted.
+        </div>
+      </div>`;
+    }
+
+    function buildBeforeAfter() {
+        return `
         <section class="spz-before-after">
             <h2 class="spz-before-after-headline">Manage your finances with full visibility and control</h2>
             <div class="spz-before-after-content">
@@ -125,25 +175,25 @@ waitForElement('.make-money', (docEl) => {
                     <p>Money is scattered across accounts, causing overspending and no visibility into how much you have. Card spend is untracked. Payments, invoices, and approvals live in messages and email threads.</p>
                     <div>
                         <picture>
-                            <source media="(min-width: 2560px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773314953/relay/5007/before-img_6.webp">
-                            <source media="(min-width: 1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773315082/relay/5007/before-img_7.webp">
-                            <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773237911/relay/5007/before-img_3.webp">
-                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773237913/relay/5007/before-img_4.webp" alt="Before image" />
+                            <source media="(min-width: 2560px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/before-img_18.webp">
+                            <source media="(min-width: 1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/before-img_17.webp">
+                            <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/before-img_19.webp">
+                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/before-img_16.webp" alt="Before Relay" />
                         </picture>
                     </div>
                 </div>
                 <div class="spz-before-after-second">
                     <h3>after relay</h3>
-                    <p>Get dedicated checking accounts for things like payroll, bills, taxes, and more. Never overspend and always know what’s available. Set card limits. Track transactions, receipts, invoices, approvals, and more.</p>
+                    <p>Get dedicated checking accounts for things like payroll, bills, taxes, and more. Never overspend and always know what's available. Set card limits. Track transactions, receipts, invoices, approvals, and more.</p>
                     <div>
                         <a href="https://app.relayfi.com/v3/register/user">Get Started</a>
                     </div>
                     <div>
                         <picture>
-                            <source media="(min-width: 2560px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_6.webp">
-                            <source media="(min-width: 1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_5.webp">
-                            <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_7.webp">
-                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_8.webp" alt="After image" />
+                            <source media="(min-width: 2560px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_12.webp">
+                            <source media="(min-width: 1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_10.webp">
+                            <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_13.webp">
+                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_9.webp" alt="Relay banking dashboard" />
                         </picture>
                     </div>
                 </div>
@@ -152,10 +202,153 @@ waitForElement('.make-money', (docEl) => {
                         <source media="(min-width: 2560px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773236554/relay/5007/frame_2095584725.webp">
                         <source media="(min-width: 1440px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773315080/relay/5007/frame_2095584728.webp">
                         <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773236554/relay/5007/frame_2095584726.webp">
-                        <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773236553/relay/5007/frame_2095584727.webp" alt="Relay circle logo" />
+                        <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773236553/relay/5007/frame_2095584727.webp" alt="Relay logo" />
                     </picture>
                 </div>
             </div>
-        </section>    
-    `)
-})
+        </section>`;
+    }
+
+    let testObserver;
+
+    function init() {
+        waitForElement('main#main header', () => {
+            const target = document.querySelector('main#main header');
+            const section = document.querySelector('.business-checking');
+
+            if (document.querySelector('.spz-bg-wrap')) {
+                return;
+            }
+
+            target.style.display = 'none';
+            document.body.classList.add('spz_5007_v2');
+
+            target.insertAdjacentHTML('beforebegin', buildHero());
+            if (section) section.style.display = 'none';
+
+            // Inject Before/After section after .make-money
+            const makeMoney = document.querySelector('.make-money');
+            if (makeMoney && !document.querySelector('.spz-before-after')) {
+                makeMoney.insertAdjacentHTML('afterend', buildBeforeAfter());
+            }
+
+            testObserver = new MutationObserver(() => {
+                setTimeout(() => {
+                    if (!document.querySelector('.spz-bg-wrap')) {
+                        document.querySelector('main#main header').insertAdjacentHTML('beforebegin', buildHero());
+                        document.querySelector('.business-checking').style.display = 'none';
+                        loadSplide();
+                    }
+                    const makeMoney = document.querySelector('.make-money');
+                    if (makeMoney && !document.querySelector('.spz-before-after')) {
+                        makeMoney.insertAdjacentHTML('afterend', buildBeforeAfter());
+                    }
+                }, 50);
+            });
+            testObserver.observe(document.body, { childList: true, subtree: true });
+
+            function loadSplide() {
+                const SLIDER_SELECTOR = '.social-proof-logos';
+                const SPLIDE_CSS_CDN = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
+                const SPLIDE_CORE_JS_CDN = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js';
+                const SPLIDE_AUTOSCROLL_JS_CDN = 'https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js';
+
+                function initializeSplideSlider() {
+                    const sliderElement = document.querySelector(SLIDER_SELECTOR);
+                    if (sliderElement) {
+                        new Splide(sliderElement, {
+                            type: 'loop',
+                            perPage: 5,
+                            gap: '72px',
+                            focus: 'center',
+                            drag: false,
+                            arrows: false,
+                            pagination: false,
+                            autoWidth: true,
+                            autoScroll: {
+                                speed: 0.5,
+                                pauseOnHover: false,
+                                pauseOnFocus: false,
+                            }
+                        }).mount(window.splide.Extensions);
+                    } else {
+                        console.warn("Could not find slider element or Splide library is not defined.");
+                    }
+                }
+
+                if (!document.getElementById('splide-css')) {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = SPLIDE_CSS_CDN;
+                    link.id = 'splide-css';
+                    document.head.appendChild(link);
+                }
+
+                function loadScript(src, id, callback) {
+                    if (!document.getElementById(id)) {
+                        const script = document.createElement('script');
+                        script.src = src;
+                        script.onload = callback;
+                        script.onerror = () => console.error(`Failed to load script: ${src}`);
+                        script.id = id;
+                        document.body.appendChild(script);
+                    } else {
+                        callback();
+                    }
+                }
+
+                loadScript(SPLIDE_CORE_JS_CDN, 'splide-core-js', function () {
+                    loadScript(SPLIDE_AUTOSCROLL_JS_CDN, 'splide-autoscroll-js', function () {
+                        initializeSplideSlider();
+                    });
+                });
+            }
+            loadSplide();
+        });
+    }
+
+    document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+
+    function onRouteChange(callback) {
+        let lastUrl = location.href;
+        new MutationObserver(() => {
+            const url = location.href;
+            if (url !== lastUrl) {
+                lastUrl = url;
+                callback(url);
+            }
+        }).observe(document, { subtree: true, childList: true });
+    }
+
+    onRouteChange(() => {
+        if (window.location.pathname === '/product/') {
+            waitForElement('.business-checking', () => {
+                if (!document.querySelector('.spz-bg-wrap')) {
+                    init();
+                }
+            });
+        } else {
+            cleanCode();
+        }
+    });
+
+    function cleanCode() {
+        console.log('Cleaning up Relay #5007 V2');
+        const hero = document.querySelector('.spz-bg-wrap');
+        const section = document.querySelector('.business-checking');
+        const beforeAfter = document.querySelector('.spz-before-after');
+        if (hero) {
+            document.body.classList.remove('spz_5007_v2');
+            testObserver.disconnect();
+            hero.remove();
+            if (beforeAfter) beforeAfter.remove();
+            if (section) section.style.display = 'block';
+            const splideCSS = document.getElementById('splide-css');
+            const splideCoreJS = document.getElementById('splide-core-js');
+            const splideAutoScrollJS = document.getElementById('splide-autoscroll-js');
+            if (splideCSS) splideCSS.remove();
+            if (splideCoreJS) splideCoreJS.remove();
+            if (splideAutoScrollJS) splideAutoScrollJS.remove();
+        }
+    }
+}

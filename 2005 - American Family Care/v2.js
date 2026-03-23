@@ -39,7 +39,7 @@ const checkIcon = `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773
 
     const squeezePage = "both"; // true / false / 'both'
     const expName = "2005"; //experiment name should be 1001, 1002, 1003 etc.
-    const variantName = expName + `_v1`; //variantName should be _variant, _true_control etc.
+    const variantName = expName + `_v2`; //variantName should be _variant, _true_control etc.
     const clientDomain = ".afcurgentcare.com"; //domain should be .spiralyze.com
 
     /***********************************
@@ -126,9 +126,9 @@ function waitForElement(selector, callback) {
 
 function init() {
     if (window.location.pathname !== '/') return;
-    if (document.body.classList.contains('spz_2005_v1')) return;
+    if (document.body.classList.contains('spz_2005_v2')) return;
     waitForElement(template_selector, function (ctrl) {
-        document.body.classList.add('spz_2005_v1');
+        document.body.classList.add('spz_2005_v2');
 
         // Inject bullets
         ctrl.insertAdjacentHTML(template_position, buildHTML());
@@ -236,7 +236,7 @@ function init() {
             <span>Find A Clinic NEAR YOU</span>
         `;
 
-        button.classList.add('spz2005_v1')
+        button.classList.add('spz2005_v2')
     });
 }
 

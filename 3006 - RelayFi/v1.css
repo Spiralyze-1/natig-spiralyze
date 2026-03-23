@@ -23,6 +23,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    position: relative;
 }
 
 /* ============ DISCLAIMER TEXT ============ */
@@ -56,6 +58,8 @@
     border-radius: 50%;
     background: none;
     cursor: pointer;
+
+    right: -20px;
 }
 
 .spz_3006_v1 .spz-close:hover {
@@ -88,11 +92,7 @@
     }
 
     .spz_3006_v1 .spz-disclaimer sup {
-        font-size: 9.8px;
-    }
-
-    .spz_3006_v1 .spz-close {
-        right: 216px;
+        font-size: 10.8px;
     }
 }
 
@@ -101,8 +101,12 @@
         font-size: 13.6px;
     }
 
+    .spz_3006_v1 .spz-close {
+        right: 25px;
+    }
+
     .spz_3006_v1 .spz-disclaimer sup {
-        font-size: 8.8px;
+        font-size: 10.8px;
     }
 }
 
@@ -112,7 +116,7 @@
     }
 
     .spz_3006_v1 .spz-disclaimer sup {
-        font-size: 7.7px;
+        font-size: 8.7px;
     }
 }
 
@@ -131,6 +135,6 @@
     }
 
     .spz_3006_v1 .spz-disclaimer sup {
-        font-size: 6.7px;
+        font-size: 7.7px;
     }
 }

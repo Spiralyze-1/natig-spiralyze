@@ -276,6 +276,7 @@ function buildAccordion(data, isOpen) {
                         ? (window.innerWidth - popupWidth) / 2 + window.scrollX
                         : rect.left + window.scrollX + (rect.width / 2) - (popupWidth / 2)
                     top = rect.bottom + window.scrollY + gap
+                    left = Math.max(window.scrollX + 8, Math.min(left, window.scrollX + window.innerWidth - popupWidth - 8))
                 } else {
                     left = rect.right + window.scrollX + gap
                     top = rect.top + window.scrollY - 10
@@ -298,7 +299,7 @@ function buildAccordion(data, isOpen) {
                 popup.addEventListener('mouseleave', () => {
                     hideTimeout = setTimeout(() => {
                         document.querySelector('.spz-tooltip-popup')?.remove()
-                    }, 100)
+                    }, 200)
                 })
             })
 
@@ -319,9 +320,10 @@ function buildAccordion(data, isOpen) {
                 const popupWidth = 320
                 const gap = 10
 
-                const left = window.innerWidth <= 400
+                let left = window.innerWidth <= 400
                     ? (window.innerWidth - popupWidth) / 2 + window.scrollX
                     : rect.left + window.scrollX + (rect.width / 2) - (popupWidth / 2)
+                left = Math.max(window.scrollX + 8, Math.min(left, window.scrollX + window.innerWidth - popupWidth - 8))
                 const top = rect.bottom + window.scrollY + gap
 
                 popup.style.cssText = `
@@ -347,7 +349,7 @@ function buildAccordion(data, isOpen) {
             btn.addEventListener('mouseleave', () => {
                 hideTimeout = setTimeout(() => {
                     document.querySelector('.spz-tooltip-popup')?.remove()
-                }, 100)
+                }, 200)
             })
         })
     }
@@ -405,7 +407,6 @@ function buildStickyHeader() {
     sticky.className = 'spz-sticky-header'
     sticky.innerHTML = `
         <div class="spz-sticky-inner">
-            <div class="spz-sticky-disclaimer">Relay is a financial technology company and is not an FDIC-insured bank. Banking services provided by Thread Bank², Member FDIC.</div>
             <div class="spz-sticky-plans">
                 <div class="spz-sticky-plan">
                     <p class="spz-sticky-plan-name">Starter</p>
@@ -438,6 +439,7 @@ function buildStickyHeader() {
         sticky.classList.toggle('is-visible', stickyTop <= 70 && containerBottom > 0)
     })
 }
+
 function applyTest() {
     // Prevent double-running
     if (document.querySelector('.spz-accordion-container')) return
@@ -470,6 +472,7 @@ function applyTest() {
         items.forEach(fn => fn())
     })
 }
+
 waitForElement('section.tables-section', () => {
     applyTest()
 
@@ -484,3 +487,80 @@ waitForElement('section.tables-section', () => {
         subtree: true
     })
 })
+
+// ============================================================
+// STICKY BAR (3006 → 4002)
+// ============================================================
+const FOOTER_SELECTOR = 'footer';
+const HEADER_SELECTOR = '.rt-h-800, .rt-h-1100';
+
+const COOKIE_SELECTORS = [
+    '.osano-cm-window',
+    '#CybotCookiebotDialog',
+    '.cc-window',
+    '[class*="cookie-banner"]',
+    '[id*="cookie-consent"]',
+    '[class*="consent-banner"]'
+];
+
+function buildStickyHTML() {
+    return `
+    <div class="spz-sticky-bar">
+      <div class="spz-bar-inner">
+        <p class="spz-disclaimer">Relay is a financial technology company and is not an FDIC-insured bank. Banking services provided by Thread Bank<sup>2</sup>, Member FDIC. FDIC deposit insurance covers the failure of an insured bank. Certain conditions must be satisfied for pass-through deposit insurance coverage to apply. The Relay Visa<sup>&reg;</sup> Debit Card is issued by Thread Bank, member FDIC, pursuant to a license from Visa U.S.A. Inc. and may be used anywhere Visa debit cards are accepted. The Relay Visa<sup>&reg;</sup> Credit Card is issued by Thread Bank, Member FDIC, pursuant to a license from Visa U.S.A. Inc and may be used anywhere Visa credit cards are accepted.</p>
+      </div>
+    </div>
+  `;
+}
+
+function isCookieConsentVisible() {
+    return COOKIE_SELECTORS.some(function (sel) {
+        const el = document.querySelector(sel);
+        return el && el.offsetParent !== null;
+    });
+}
+
+function setupScrollBehavior(bar) {
+    let footerVisible = false;
+    let belowFold = false;
+
+    function updateVisibility() {
+        const headers = document.querySelectorAll(HEADER_SELECTOR);
+
+        if (isCookieConsentVisible()) {
+            bar.classList.remove('spz-visible');
+            headers.forEach(h => h.classList.remove('spz-header-hidden'));
+            return;
+        }
+        if (belowFold && !footerVisible) {
+            bar.classList.add('spz-visible');
+            headers.forEach(h => h.classList.add('spz-header-hidden'));
+        } else {
+            bar.classList.remove('spz-visible');
+            headers.forEach(h => h.classList.remove('spz-header-hidden'));
+        }
+    }
+
+    window.addEventListener('scroll', function () {
+        belowFold = window.scrollY > window.innerHeight;
+
+        const footer = document.querySelector(FOOTER_SELECTOR);
+        if (footer) {
+            footerVisible = footer.getBoundingClientRect().top <= window.innerHeight;
+        }
+
+        updateVisibility();
+    }, { passive: true });
+}
+
+function initStickyBar() {
+    if (document.querySelector('.spz-sticky-bar')) return;
+
+    document.body.insertAdjacentHTML('beforeend', buildStickyHTML());
+    const bar = document.querySelector('.spz-sticky-bar');
+    setupScrollBehavior(bar);
+}
+
+document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', initStickyBar)
+    : (initStickyBar(), setTimeout(initStickyBar, 1000), setTimeout(initStickyBar, 2000));

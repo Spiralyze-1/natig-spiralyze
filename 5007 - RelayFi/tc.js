@@ -1,13 +1,21 @@
-// #5007 | Relay | Product | Before and After - V1
+// #5007 | Relay | Product | Before and After - True control
 // https://app.asana.com/1/77217210692853/project/1210751323511158/task/1213201826590455
 
 (function () {
+    //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
+
+    // Set the value of the squeezePage variable as needed:
+    // true  – if you are using a squeeze page (i.e., the page contains a form)
+    // false – if you are not using a squeeze page (i.e., the page does not contain a form)
+    // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
+
     var pageName = 'product';
 
     const squeezePage = 'both'; // Do not change this value for RelayFi
-    const expName = '5007';
-    const variantName = expName + '-' + pageName + '-test-variant1';
-    const clientDomain = '.relayfi.com';
+    const expName = '5007'; //experiment name should be 1001, 1002, 1003 etc. 3004-home-test-variant1
+    const variantName = expName + '-' + pageName + '-test-control'; //variantName should be -test-variant, -test-control etc.
+    const clientDomain = '.relayfi.com'; //domain should be .spiralyze.com
+
 
     /***********************************
     ************************************
@@ -70,9 +78,12 @@
             let ExistingSidValue = getCookie('sid4');
             let ExistingExperimentValueList = ExistingExperimentValue ? ExistingExperimentValue.split(',') : [];
             let ExistingSidValueList = ExistingSidValue ? decodeURIComponent(ExistingSidValue).split(',') : [];
+            // Items in Sid that are not in Experiment
             let newItems = ExistingSidValueList.filter(
                 sidItem => !ExistingExperimentValueList.includes(sidItem)
             );
+
+            // Final ordered merged list
             let mergedList = [...newItems, ...ExistingExperimentValueList];
             setCookie('sid4', mergedList.join(','), 1);
             maxCookieSetIntervalCount++;
@@ -110,12 +121,22 @@ function waitForElement(cssSelector, callback) {
 }
 
 if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) {
+    // Relay SPZ Baseline Hero - #5001
+    const asana_URL = `https://app.asana.com/1/77217210692853/project/1208325668183449/task/1211796834819989`;
+
+    // Cloudinary base URL
     const cloudinary = 'https://res.cloudinary.com/spiralyze/image/upload';
 
+    // Social Proof Logos
     const logos = ['03', '04', '05', '01', '06', '07', '08', '09', '02', '11', '10', '12'];
     const logosAlt = ['Ambient', 'Yang Law', 'Goshen', 'Rebel Bread', 'TFV', 'Happy Bees', 'Dance', 'Logo', 'Real Estate Robinsons', "Kyri's Kookies", 'Apex', 'Grill Your Ass Off'];
 
+    // Build Hero Template
     function buildHero() {
+        const logosHTML = logos.map((num, index) =>
+            `<div class="logo-item"><img src="${cloudinary}/f_auto/relay/5001/logo-${num}.webp" alt="${logosAlt[index]}" /></div>`
+        ).join('');
+
         return `
       <div class="spz-bg-wrap">
         <div class="spz-form-wrap">
@@ -165,53 +186,11 @@ if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) 
       </div>`;
     }
 
-    function buildBeforeAfter() {
-        return `
-        <section class="spz-before-after">
-            <h2 class="spz-before-after-headline">Manage your finances with full visibility and control</h2>
-            <div class="spz-before-after-content">
-                <div class="spz-before-after-first">
-                    <h3>before relay</h3>
-                    <p>Money is scattered across accounts, causing overspending and no visibility into how much you have. Card spend is untracked. Payments, invoices, and approvals live in messages and email threads.</p>
-                    <div>
-                        <picture>
-                            <source media="(min-width: 2560px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/before-img_18.webp">
-                            <source media="(min-width: 1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/before-img_17.webp">
-                            <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/before-img_19.webp">
-                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/before-img_16.webp" alt="Before Relay" />
-                        </picture>
-                    </div>
-                </div>
-                <div class="spz-before-after-second">
-                    <h3>after relay</h3>
-                    <p>Get dedicated checking accounts for things like payroll, bills, taxes, and more. Never overspend and always know what's available. Set card limits. Track transactions, receipts, invoices, approvals, and more.</p>
-                    <div>
-                        <a href="https://app.relayfi.com/v3/register/user">Get Started</a>
-                    </div>
-                    <div>
-                        <picture>
-                            <source media="(min-width: 2560px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_14.webp">
-                            <source media="(min-width: 1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_15.webp">
-                            <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_16.webp">
-                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/relay/5007/container_11.webp" alt="Relay banking dashboard" />
-                        </picture>
-                    </div>
-                </div>
-                <div class="spz-before-after-image">
-                    <picture>
-                        <source media="(min-width: 2560px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773236556/relay/5007/frame_2095584722.webp">
-                        <source media="(min-width: 1440px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773315083/relay/5007/frame_2095584729.webp">
-                        <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773236556/relay/5007/frame_2095584723.webp">
-                        <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773236553/relay/5007/frame_2095584724.webp" alt="Relay logo" />
-                    </picture>
-                </div>
-            </div>
-        </section>`;
-    }
-
     let testObserver;
 
+    // Initialize
     function init() {
+
         waitForElement('main#main header', () => {
             const target = document.querySelector('main#main header');
             const section = document.querySelector('.business-checking');
@@ -221,16 +200,10 @@ if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) 
             }
 
             target.style.display = 'none';
-            document.body.classList.add('spz_5007_v1');
+            document.body.classList.add('spz-5007-tc');
 
             target.insertAdjacentHTML('beforebegin', buildHero());
             if (section) section.style.display = 'none';
-
-            // Inject Before/After section after .make-money
-            const makeMoney = document.querySelector('.make-money');
-            if (makeMoney && !document.querySelector('.spz-before-after')) {
-                makeMoney.insertAdjacentHTML('afterend', buildBeforeAfter());
-            }
 
             testObserver = new MutationObserver(() => {
                 setTimeout(() => {
@@ -239,22 +212,25 @@ if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) 
                         document.querySelector('.business-checking').style.display = 'none';
                         loadSplide();
                     }
-                    const makeMoney = document.querySelector('.make-money');
-                    if (makeMoney && !document.querySelector('.spz-before-after')) {
-                        makeMoney.insertAdjacentHTML('afterend', buildBeforeAfter());
-                    }
                 }, 50);
             });
             testObserver.observe(document.body, { childList: true, subtree: true });
 
+            // Load Splide CSS & JS if not present
             function loadSplide() {
+                // --- Configuration ---
                 const SLIDER_SELECTOR = '.social-proof-logos';
                 const SPLIDE_CSS_CDN = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
                 const SPLIDE_CORE_JS_CDN = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js';
+                // New CDN for the Auto Scroll Extension
                 const SPLIDE_AUTOSCROLL_JS_CDN = 'https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js';
 
+                // --- 1. Define the Initialization Function ---
                 function initializeSplideSlider() {
                     const sliderElement = document.querySelector(SLIDER_SELECTOR);
+
+                    // Check if the HTML element exists and the Splide library is loaded
+                    // The AutoScroll object will be available globally if the extension loaded correctly.
                     if (sliderElement) {
                         new Splide(sliderElement, {
                             type: 'loop',
@@ -276,41 +252,52 @@ if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) 
                     }
                 }
 
+                // Load CSS
                 if (!document.getElementById('splide-css')) {
                     const link = document.createElement('link');
                     link.rel = 'stylesheet';
                     link.href = SPLIDE_CSS_CDN;
-                    link.id = 'splide-css';
                     document.head.appendChild(link);
+                    link.id = 'splide-css';
                 }
 
+                // Function to load the next script
                 function loadScript(src, id, callback) {
                     if (!document.getElementById(id)) {
                         const script = document.createElement('script');
                         script.src = src;
                         script.onload = callback;
                         script.onerror = () => console.error(`Failed to load script: ${src}`);
-                        script.id = id;
                         document.body.appendChild(script);
+                        script.id = id;
                     } else {
                         callback();
                     }
                 }
 
+                // Load Core JS first, then load Auto Scroll Extension, then initialize
                 loadScript(SPLIDE_CORE_JS_CDN, 'splide-core-js', function () {
+                    console.log("Splide core JS loaded.");
+                    // Once core Splide is loaded, load the Auto Scroll extension
                     loadScript(SPLIDE_AUTOSCROLL_JS_CDN, 'splide-autoscroll-js', function () {
+                        console.log("Splide Auto Scroll extension loaded.");
+                        // Once Auto Scroll extension is loaded, initialize the slider
                         initializeSplideSlider();
                     });
                 });
+
             }
             loadSplide();
+
         });
     }
 
+    // Run when ready
     document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
 
     function onRouteChange(callback) {
         let lastUrl = location.href;
+
         new MutationObserver(() => {
             const url = location.href;
             if (url !== lastUrl) {
@@ -319,7 +306,6 @@ if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) 
             }
         }).observe(document, { subtree: true, childList: true });
     }
-
     onRouteChange(() => {
         if (window.location.pathname === '/product/') {
             waitForElement('.business-checking', () => {
@@ -327,22 +313,23 @@ if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) 
                     init();
                 }
             });
-        } else {
+        }
+        else {
             cleanCode();
         }
     });
 
     function cleanCode() {
-        console.log('Cleaning up Relay #5007 V1');
+        console.log('Cleaning up Relay #5001 V2');
+        //remove hero on route change
         const hero = document.querySelector('.spz-bg-wrap');
         const section = document.querySelector('.business-checking');
-        const beforeAfter = document.querySelector('.spz-before-after');
         if (hero) {
-            document.body.classList.remove('spz_5007_v1');
+            document.body.classList.remove('spz-5007-tc');
             testObserver.disconnect();
             hero.remove();
-            if (beforeAfter) beforeAfter.remove();
             if (section) section.style.display = 'block';
+            //remove splide css and js
             const splideCSS = document.getElementById('splide-css');
             const splideCoreJS = document.getElementById('splide-core-js');
             const splideAutoScrollJS = document.getElementById('splide-autoscroll-js');
@@ -351,4 +338,5 @@ if (!window.location.href.includes('https://app.relayfi.com/v3/register/user')) 
             if (splideAutoScrollJS) splideAutoScrollJS.remove();
         }
     }
+
 }

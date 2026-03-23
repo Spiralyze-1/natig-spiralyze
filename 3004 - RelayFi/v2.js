@@ -192,7 +192,7 @@ function insertBentoSection() {
             <div class="spz-bento-card spz-card-light spz-card-large">
               <div class="spz-card-content">
                 <h3 class="spz-card-title">Business checking & savings</h3>
-                <p class="spz-card-description">Open up to 20 checking accounts and separate incoming deposits for taxes, payroll, bills, and more. Get clarity on what’s safe to spend, then set up auto-transfer rules to direct the rest into savings.</p>
+                <p class="spz-card-description">Open up to 20 checking accounts and separate incoming deposits for taxes, payroll, bills, and more. Get clarity on what's safe to spend, then set up auto-transfer rules to direct the rest into savings.</p>
               </div>
               <div class="spz-card-image">
                 ${generatePicture(bentoConfig.images.checkingSavings)}
@@ -202,7 +202,7 @@ function insertBentoSection() {
             <div class="spz-bento-card spz-card-dark spz-card-small">
               <div class="spz-card-content">
                 <h3 class="spz-card-title">Credit & debit</h3>
-                <p class="spz-card-description">Issue up to 50 debit cards and 20 credit cards. Easily keep funds organized by linking cards to spend categories, vendors, and more.</p>
+                 <p class="spz-card-description">Issue up to 50 debit<sup>3</sup> cards and 20 credit<sup>4</sup> cards. Easily keep funds organized by linking cards to spend categories, vendors, and more.</p>
               </div>
               <div class="spz-card-image">
                 ${generatePicture(bentoConfig.images.creditDebit)}
@@ -260,8 +260,6 @@ function insertBentoSection() {
         <div class="spz-bento-cta-v2">
           <a href="${bentoConfig.ctaUrl}" class="spz-bento-button spz3004_v2">Get Started</a>
         </div>
-
-        <p class="spz-bento-disclaimer">Relay is a financial technology company and is not an FDIC-insured bank. Banking services provided by Thread Bank<sup>2</sup>, Member FDIC. FDIC deposit insurance covers the failure of an insured bank. Certain conditions must be satisfied for pass-through deposit insurance coverage to apply. The Relay Visa® Debit Card is issued by Thread Bank, member FDIC, pursuant to a license from Visa U.S.A. Inc. and may be used anywhere Visa debit cards are accepted. The Relay Visa Credit® Card is issued by Thread Bank, Member FDIC, pursuant to a license from Visa U.S.A. Inc and may be used anywhere Visa credit cards are accepted.</p>
       </div>
     </section>
   `;
@@ -277,3 +275,89 @@ function insertBentoSection() {
     console.log('addedMobile', targetSectionMobile)
   }
 }
+
+// ============================================================
+// STICKY BAR (3006 → 3004 V2)
+// ============================================================
+const FOOTER_SELECTOR = 'footer';
+const HEADER_SELECTOR = '.rt-h-800, .rt-h-1100';
+
+const COOKIE_SELECTORS = [
+  '.osano-cm-window',
+  '#CybotCookiebotDialog',
+  '.cc-window',
+  '[class*="cookie-banner"]',
+  '[id*="cookie-consent"]',
+  '[class*="consent-banner"]'
+];
+
+function buildStickyHTML() {
+  return `
+    <div class="spz-sticky-bar">
+      <div class="spz-bar-inner">
+        <p class="spz-disclaimer">Relay is a financial technology company and is not an FDIC-insured bank. Banking services provided by Thread Bank<sup>2</sup>, Member FDIC. FDIC deposit insurance covers the failure of an insured bank. Certain conditions must be satisfied for pass-through deposit insurance coverage to apply. The Relay Visa<sup>&reg;</sup> Debit Card is issued by Thread Bank, member FDIC, pursuant to a license from Visa U.S.A. Inc. and may be used anywhere Visa debit cards are accepted. The Relay Visa<sup>&reg;</sup> Credit Card is issued by Thread Bank, Member FDIC, pursuant to a license from Visa U.S.A. Inc and may be used anywhere Visa credit cards are accepted.</p>
+      </div>
+    </div>
+  `;
+}
+
+function isCookieConsentVisible() {
+  return COOKIE_SELECTORS.some(function (sel) {
+    const el = document.querySelector(sel);
+    return el && el.offsetParent !== null;
+  });
+}
+
+function setupScrollBehavior(bar) {
+  let footerVisible = false;
+  let belowFold = false;
+  let dismissed = false;
+
+  function showHeaders(headers) {
+    headers.forEach(h => h.classList.remove('spz-header-hidden'));
+  }
+
+  function hideHeaders(headers) {
+    headers.forEach(h => h.classList.add('spz-header-hidden'));
+  }
+
+  function updateVisibility() {
+    const headers = document.querySelectorAll(HEADER_SELECTOR);
+
+    if (dismissed || isCookieConsentVisible()) {
+      bar.classList.remove('spz-visible');
+      showHeaders(headers);
+      return;
+    }
+    if (belowFold && !footerVisible) {
+      bar.classList.add('spz-visible');
+      hideHeaders(headers);
+    } else {
+      bar.classList.remove('spz-visible');
+      showHeaders(headers);
+    }
+  }
+
+  window.addEventListener('scroll', function () {
+    belowFold = window.scrollY > window.innerHeight;
+
+    const footer = document.querySelector(FOOTER_SELECTOR);
+    if (footer) {
+      footerVisible = footer.getBoundingClientRect().top <= window.innerHeight;
+    }
+
+    updateVisibility();
+  }, { passive: true });
+}
+
+function initStickyBar() {
+  if (document.querySelector('.spz-sticky-bar')) return;
+
+  document.body.insertAdjacentHTML('beforeend', buildStickyHTML());
+  const bar = document.querySelector('.spz-sticky-bar');
+  setupScrollBehavior(bar);
+}
+
+document.readyState === 'loading'
+  ? document.addEventListener('DOMContentLoaded', initStickyBar)
+  : (initStickyBar(), setTimeout(initStickyBar, 1000), setTimeout(initStickyBar, 2000));
