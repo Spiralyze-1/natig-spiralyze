@@ -239,7 +239,7 @@
 .spz_2005_v1 [data-id="d400271"] {
     padding-top: 64px !important;
     padding-bottom: 64px !important;
-    padding-left: 125px !important;
+    /* padding-left: 125px !important; */
 }
 
 .spz_2005_v1 [data-id="2329b35"] {
@@ -322,14 +322,31 @@
     }
 }
 
+@media(min-width: 1441px) {
+    .spz_2005_v1 .elementor-14 .elementor-element.elementor-element-d400271 {
+        max-width: 720px !important;
+    }
+}
+
+
+@media(max-width: 1440px) {
+    .spz_2005_v1 [data-id="d400271"] {
+        padding-left: 129px !important;
+    }
+}
+
+@media(max-width: 1439px) {
+    .spz_2005_v1 [data-id="d400271"] {
+        padding-left: 50px !important;
+    }
+}
+
+
 @media (min-width: 1920px) {
     .spz_2005_v1 [data-elementor-type="wp-page"]>div:before {
         background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/americanfamilycare/2005/1920-v1_1.webp') !important;
     }
 
-    .elementor-14 .elementor-element.elementor-element-d400271 {
-        max-width: 720px !important;
-    }
 }
 
 @media (min-width: 2560px) {
@@ -431,6 +448,10 @@
 
     .spz_2005_v1 .elementor-14 .elementor-element.elementor-element-6329480 .elementor-heading-title {
         font-size: 22px;
+    }
+
+    .spz_2005_v1 [data-id="61f271f"] {
+        margin-bottom: 0px !important;
     }
 
     .spz_2005_v1 [data-id="61f271f"]::before {
